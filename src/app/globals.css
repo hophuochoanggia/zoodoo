@@ -18,10 +18,61 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
+  overflow-x: hidden;
+  background: linear-gradient(to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+ion-icon {
+  font-size: 1000px;
+}
+
+/* .swiper-button-next,
+.swiper-button-prev {
+  right: 10px;
+  margin: 30px 100px;
+} */
+
+
+/* fix arrows position */
+.swiper-button-next {
+  right: 20% !important;
+}
+
+.swiper-button-prev {
+  left: 20% !important;
+}
+
+/* target mobile */
+@media (max-width: 768px) {
+  .swiper-button-next {
+    right: 5% !important;
+  }
+
+  .swiper-button-prev {
+    left: 5% !important;
+  }
+}
+
+.swiper-button-next {
+  background-image: url(../../public/assets/icons/next-icon.png);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+}
+
+.swiper-button-next::after {
+  display: none;
+}
+
+.swiper-button-prev {
+  background-image: url(../../public/assets/icons/previous-icon.png);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+}
+
+.swiper-button-prev::after {
+  display: none;
 }
