@@ -15,7 +15,7 @@ import Icon1 from "../../public/assets/images/section-icons/icon1.png";
 
 const OverallSection = () => {
   return (
-    <MainContainer background={BG1.src}>
+    <MainContainer background={BG1.src} animation>
       <AddressAndOpenTime />
       <SectionIntro
         title="Tổng Quan về ZooDoo Đà Lạt"

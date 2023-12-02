@@ -9,6 +9,8 @@ import FooterMobile from "@/components/Footer/FooterMobile";
 
 const inter = Inter({ subsets: ["latin"] });
 
+// TODO: check server side rendering for each component
+
 export const metadata: Metadata = {
   title: "Zoodoo",
   // icons: {

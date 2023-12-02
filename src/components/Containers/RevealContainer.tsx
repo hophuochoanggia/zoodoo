@@ -1,7 +1,13 @@
 import clsx from "clsx";
-import React, { FC, Suspense, useRef } from "react";
+import React, { FC, Suspense, use, useEffect, useRef } from "react";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import {
+  motion,
+  useAnimation,
+  useInView,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 
 interface IAnimalsIntroProps {
   background?: string;
@@ -11,7 +17,7 @@ interface IAnimalsIntroProps {
   animationProps?: any;
 }
 
-const MainContainer: FC<IAnimalsIntroProps> = ({
+const RevealContainer: FC<IAnimalsIntroProps> = ({
   background,
   children,
   className,
@@ -19,13 +25,16 @@ const MainContainer: FC<IAnimalsIntroProps> = ({
   animationProps,
 }: IAnimalsIntroProps) => {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["0 1", "1.1 1"],
-  });
 
-  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
-  const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
+  const isInView = useInView(sectionRef, { once: true });
+
+  const mainControl = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      mainControl.start("visible");
+    }
+  }, [isInView]);
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
@@ -45,17 +54,20 @@ const MainContainer: FC<IAnimalsIntroProps> = ({
             </div>
           )}
           {animation && (
-            <motion.div
-              ref={sectionRef}
-              style={{ scale: scaleProgress, opacity: opacityProgress }}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              layout
-              className="flex flex-col items-center justify-center lg:max-w-7xl space-y-20 py-28 max-w-4xl"
-            >
-              {children}
-            </motion.div>
+            <motion.section ref={sectionRef}>
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, y: 75 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                transition={{ duration: 0.5, delay: 0.25 }}
+                initial="hidden"
+                animate={mainControl}
+                className="flex flex-col items-center justify-center lg:max-w-7xl space-y-20 py-28 max-w-4xl"
+              >
+                {children}
+              </motion.div>
+            </motion.section>
           )}
         </section>
       )}
@@ -74,4 +86,4 @@ const MainContainer: FC<IAnimalsIntroProps> = ({
   );
 };
 
-export default MainContainer;
+export default RevealContainer;

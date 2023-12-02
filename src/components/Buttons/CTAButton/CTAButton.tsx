@@ -20,7 +20,7 @@ const CTAButton: FC<ICTAButtonProps> = ({
     <button
       onClick={onClick}
       className={clsx(
-        "inline-flex rounded-lg items-center justify-center px-8 py-3 border border-transparent text-base font-medium text-white",
+        "inline-flex rounded-lg items-center justify-center px-8 py-3 border border-transparent text-base font-medium text-white hover:scale-105",
         bgColor === "green"
           ? "bg-green-light hover:bg-green-500"
           : "bg-orange-default hover:bg-orange-light"

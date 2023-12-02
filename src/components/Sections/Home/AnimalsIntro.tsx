@@ -5,6 +5,7 @@ import MainContainer from "@/components/Containers/MainContainer";
 import ImageGrid13 from "@/components/Grid/ImageGrid13";
 
 import BG2 from "../../../../public/assets/backgrounds/home/home-bg2.png";
+import RevealContainer from "@/components/Containers/RevealContainer";
 
 interface IAnimalsIntroProps {
   svg: string;
@@ -43,9 +44,9 @@ const AnimalsIntro = () => {
 
 const AnimalsIntroSection = () => {
   return (
-    <MainContainer background={BG2.src}>
+    <RevealContainer background={BG2.src} animation>
       <AnimalsIntro />
-    </MainContainer>
+    </RevealContainer>
   );
 };
 

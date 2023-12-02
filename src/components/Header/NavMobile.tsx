@@ -1,12 +1,12 @@
-import Image from "next/image";
+import clsx from "clsx";
 import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { Squash as Hamburger } from "hamburger-react";
+import { AnimatePresence, motion } from "framer-motion";
 
 import useClickAway from "@/hooks/useClickAway";
-import clsx from "clsx";
-import { AnimatePresence, motion } from "framer-motion";
-import { Squash as Hamburger } from "hamburger-react";
-import { usePathname } from "next/navigation";
 
 export const NavMobile = () => {
   const [isOpen, setOpen] = useState(false);
