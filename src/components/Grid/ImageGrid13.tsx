@@ -11,7 +11,7 @@ const ImageGrid13 = () => {
       <div className="w-full aspect-square relative">
         <Image
           src={AnimalsImage2.src}
-          alt="Company Logo"
+          alt="Zoodoo animal image"
           fill
           style={{
             objectFit: "contain",
@@ -22,7 +22,7 @@ const ImageGrid13 = () => {
         <div className="relative h-full">
           <Image
             src={AnimalsImage3.src}
-            alt="Company Logo"
+            alt="Zoodoo animals image"
             fill
             style={{
               objectFit: "contain",
@@ -33,7 +33,7 @@ const ImageGrid13 = () => {
           <div className="relative h-full">
             <Image
               src={AnimalsImage4.src}
-              alt="Company Logo"
+              alt="Zoodoo animals image"
               fill
               style={{
                 objectFit: "contain",
@@ -44,7 +44,7 @@ const ImageGrid13 = () => {
           <div className="relative h-full">
             <Image
               src={AnimalsImage5.src}
-              alt="Company Logo"
+              alt="Zoodoo animals image"
               fill
               style={{
                 objectFit: "contain",

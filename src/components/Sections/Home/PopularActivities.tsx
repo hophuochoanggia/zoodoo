@@ -32,8 +32,8 @@ const PopularActivities = () => {
     >
       <div className="flex items-center">
         <Image
-          src="/assets/images/icon4.png"
-          alt="Company Logo"
+          src="/assets/images/section-icons/icon4.png"
+          alt="Zoodoo logo"
           width={60}
           height={60}
         />

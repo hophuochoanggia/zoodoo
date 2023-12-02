@@ -12,7 +12,7 @@ const ImageGrid33 = () => {
           <div className="relative h-full">
             <Image
               src={AnimalsImage4.src}
-              alt="Company Logo"
+              alt="Zoodoo animal image"
               fill
               style={{
                 objectFit: "contain",
@@ -23,7 +23,7 @@ const ImageGrid33 = () => {
           <div className="relative h-full">
             <Image
               src={AnimalsImage5.src}
-              alt="Company Logo"
+              alt="Zoodoo animal image"
               fill
               style={{
                 objectFit: "contain",
@@ -34,7 +34,7 @@ const ImageGrid33 = () => {
         <div className="relative h-full">
           <Image
             src={AnimalsImage3.src}
-            alt="Company Logo"
+            alt="Zoodoo animal image"
             fill
             style={{
               objectFit: "contain",
@@ -46,7 +46,7 @@ const ImageGrid33 = () => {
         <div className="relative h-full">
           <Image
             src={AnimalsImage3.src}
-            alt="Company Logo"
+            alt="Zoodoo animal image"
             fill
             style={{
               objectFit: "contain",
@@ -57,7 +57,7 @@ const ImageGrid33 = () => {
           <div className="relative h-full">
             <Image
               src={AnimalsImage4.src}
-              alt="Company Logo"
+              alt="Zoodoo animal image"
               fill
               style={{
                 objectFit: "contain",
@@ -68,7 +68,7 @@ const ImageGrid33 = () => {
           <div className="relative h-full">
             <Image
               src={AnimalsImage5.src}
-              alt="Company Logo"
+              alt="Zoodoo animal image"
               fill
               style={{
                 objectFit: "contain",

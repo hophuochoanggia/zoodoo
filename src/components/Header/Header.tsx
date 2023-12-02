@@ -1,9 +1,9 @@
 "use client";
 import clsx from "clsx";
-import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 import CTAButton from "@/components/Buttons/CTAButton/CTAButton";
 import { NavMobile } from "./NavMobile";
@@ -41,15 +41,15 @@ const Header = () => {
           <Link href="/">
             {shouldShowTransparent ? (
               <Image
-                src="/assets/images/logo-zoodoo-white.png"
-                alt="Company Logo"
+                src="/assets/images/logos/logo-zoodoo-white.png"
+                alt="Zoodoo logo"
                 width={100}
                 height={100}
               />
             ) : (
               <Image
-                src="/assets/images/logo-zoodoo-green.png"
-                alt="Company Logo"
+                src="/assets/images/logos/logo-zoodoo-green.png"
+                alt="Zoodoo logo"
                 width={100}
                 height={100}
               />
@@ -57,7 +57,7 @@ const Header = () => {
           </Link>
         </div>
         <nav>
-          <ul className="flex space-x-4 flex-row justify-between items-center">
+          <ul className="flex space-x-6 flex-row justify-between items-center">
             <li>
               <Link
                 href="/about-us"
@@ -98,7 +98,7 @@ const Header = () => {
                 Tin tức hoạt động
               </Link>
             </li>
-            <li>
+            <li className="pl-6">
               <CTAButton
                 text="ĐẶT VÉ NGAY"
                 bgColor="green"

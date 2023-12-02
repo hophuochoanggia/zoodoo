@@ -1,12 +1,11 @@
-import { useRef, useEffect } from "react";
-import { useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 
-import { AnimatePresence, motion } from "framer-motion";
-import { Squash as Hamburger } from "hamburger-react";
 import useClickAway from "@/hooks/useClickAway";
 import clsx from "clsx";
+import { AnimatePresence, motion } from "framer-motion";
+import { Squash as Hamburger } from "hamburger-react";
 import { usePathname } from "next/navigation";
 
 export const NavMobile = () => {
@@ -55,22 +54,22 @@ export const NavMobile = () => {
           <Link href="/" onClick={handleClose}>
             {isOpen ? (
               <Image
-                src="/assets/images/logo-zoodoo-white.png"
-                alt="Company Logo"
+                src="/assets/images/logos/logo-zoodoo-white.png"
+                alt="Zoodoo logo"
                 width={100}
                 height={100}
               />
             ) : shouldShowTransparent ? (
               <Image
-                src="/assets/images/logo-zoodoo-white.png"
-                alt="Company Logo"
+                src="/assets/images/logos/logo-zoodoo-white.png"
+                alt="Zoodoo logo"
                 width={100}
                 height={100}
               />
             ) : (
               <Image
-                src="/assets/images/logo-zoodoo-green.png"
-                alt="Company Logo"
+                src="/assets/images/logos/logo-zoodoo-green.png"
+                alt="Zoodoo logo"
                 width={100}
                 height={100}
               />

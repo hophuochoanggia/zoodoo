@@ -1,5 +1,5 @@
-import React, { FC } from "react";
 import Image from "next/image";
+import { FC } from "react";
 
 import SectionTitle from "../common/SectionTitle";
 
@@ -22,7 +22,7 @@ const IntroWithOnePicture: FC<IIntroWithOnePictureProps> = ({
       <div className="w-full h-[300px] md:h-[500px] relative">
         <Image
           src={picture}
-          alt="Company Logo"
+          alt="Zoodoo logo"
           fill
           style={{
             objectFit: "contain",

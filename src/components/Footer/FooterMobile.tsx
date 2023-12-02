@@ -1,9 +1,7 @@
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 import FollowUs from "@/components/common/FollowUs";
-import ZoodooMap from "@/components/Map/ZoodooMap";
 
 const FooterMobile = () => {
   return (
@@ -14,7 +12,7 @@ const FooterMobile = () => {
             <a href="https://flowbite.com/" className="flex items-center">
               <Image
                 src="/assets/images/logos/logo-zoodoo-white-big.png"
-                alt="Company Logo"
+                alt="Zoodoo logo"
                 width={160}
                 height={160}
               />

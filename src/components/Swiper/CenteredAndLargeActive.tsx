@@ -11,7 +11,6 @@ const slides = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 const CenteredAndLargeActive = () => {
   const { width } = useWindowSize();
-  console.log(width);
   return (
     <div className=" w-screen">
       <Swiper
@@ -63,7 +62,9 @@ const CenteredAndLargeActive = () => {
                   borderRadius: "10px",
                 }}
               />
-              <figcaption className="text-center py-4">Your caption here</figcaption>
+              <figcaption className="text-center py-4">
+                Your caption here
+              </figcaption>
             </figure>
           </SwiperSlide>
         ))}

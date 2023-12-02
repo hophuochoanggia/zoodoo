@@ -1,8 +1,8 @@
 import Image from "next/image";
 
-import ImageGrid13 from "@/components/Grid/ImageGrid13";
 import CTAButton from "@/components/Buttons/CTAButton/CTAButton";
 import MainContainer from "@/components/Containers/MainContainer";
+import ImageGrid13 from "@/components/Grid/ImageGrid13";
 
 import BG2 from "../../../../public/assets/backgrounds/home/home-bg2.png";
 
@@ -18,8 +18,8 @@ const AnimalsIntro = () => {
     <div className="flex flex-col items-start justify-center space-y-6 w-full">
       <div className="flex items-center">
         <Image
-          src="/assets/images/icon5.png"
-          alt="Company Logo"
+          src="/assets/images/section-icons/icon5.png"
+          alt="Zoodoo logo"
           width={60}
           height={60}
         />

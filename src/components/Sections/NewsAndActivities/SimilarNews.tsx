@@ -11,7 +11,7 @@ const SimilarNews = () => {
         <div className="flex items-center">
           <Image
             src={"/assets/images/icon6.png"}
-            alt="Company Logo"
+            alt="Zoodoo logo"
             width={50}
             height={50}
           />

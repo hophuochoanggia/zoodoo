@@ -42,7 +42,6 @@ const ContactUs = () => {
   });
 
   const onSubmit = async (data: IFormInputs) => {
-    console.log(data);
     const fields = { fields: data };
   };
 

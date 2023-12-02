@@ -1,6 +1,6 @@
-import React, { FC } from "react";
-import Image from "next/image";
 import clsx from "clsx";
+import Image from "next/image";
+import { FC } from "react";
 
 interface ISectionTitleProps {
   icon?: string;
@@ -24,7 +24,7 @@ const SectionTitle: FC<ISectionTitleProps> = ({
     >
       {icon && (
         <div className="flex items-center">
-          <Image src={icon} alt="Company Logo" width={80} height={80} />
+          <Image src={icon} alt="Zoodoo logo" width={80} height={80} />
         </div>
       )}
       <div

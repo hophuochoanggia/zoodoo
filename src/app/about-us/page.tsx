@@ -1,24 +1,23 @@
 "use client";
-import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-import ZoodooMap from "@/components/Map/ZoodooMap";
-import FollowUs from "@/components/common/FollowUs";
-import Hiring from "@/components/Sections/AboutUs/Hiring";
-import SectionTitle from "@/components/common/SectionTitle";
 import MainContainer from "@/components/Containers/MainContainer";
+import ZoodooMap from "@/components/Map/ZoodooMap";
+import Hiring from "@/components/Sections/AboutUs/Hiring";
+import FollowUs from "@/components/common/FollowUs";
+import SectionTitle from "@/components/common/SectionTitle";
 
-import Icon3 from "@/../public/assets/images/section-icons/icon3.png";
-import Icon5 from "@/../public/assets/images/section-icons/icon5.png";
 import BG1 from "@/../public/assets/backgrounds/about-us/bg1.png";
 import BG2 from "@/../public/assets/backgrounds/about-us/bg2.png";
 import Animal1Image from "@/../public/assets/images/animals/animals1.png";
 import Animal2Image from "@/../public/assets/images/animals/animals2.png";
+import Icon3 from "@/../public/assets/images/section-icons/icon3.png";
+import Icon5 from "@/../public/assets/images/section-icons/icon5.png";
 
-import PhoneIcon from "@/../public/assets/icons/contact/PhoneCall.png";
 import EmailIcon from "@/../public/assets/icons/contact/Envelope.png";
 import MapPinIcon from "@/../public/assets/icons/contact/MapPinLine.png";
+import PhoneIcon from "@/../public/assets/icons/contact/PhoneCall.png";
 
 const AboutUs = () => {
   const router = useRouter();
@@ -60,7 +59,7 @@ const AboutUs = () => {
         <div className="w-full h-[300px] md:h-[500px] relative">
           <Image
             src={Animal1Image.src}
-            alt="Company Logo"
+            alt="Zoodoo logo"
             fill
             style={{
               objectFit: "contain",
@@ -102,7 +101,7 @@ const AboutUs = () => {
           <div className="">
             <Image
               src={Animal2Image.src}
-              alt="Company Logo"
+              alt="Zoodoo logo"
               width={600}
               height={600}
             />

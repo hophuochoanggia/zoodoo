@@ -1,11 +1,10 @@
 "use client";
-import React from "react";
 import Image from "next/image";
 
-import SectionTitle from "@/components/common/SectionTitle";
+import CTAButton from "@/components/Buttons/CTAButton/CTAButton";
 import MainContainer from "@/components/Containers/MainContainer";
 import ZoodooMap from "@/components/Map/ZoodooMap";
-import CTAButton from "@/components/Buttons/CTAButton/CTAButton";
+import SectionTitle from "@/components/common/SectionTitle";
 
 import BG1 from "@/../public/assets/backgrounds/visit-us/bg1.png";
 import BG2 from "@/../public/assets/backgrounds/visit-us/bg2.png";
@@ -222,7 +221,7 @@ const VisitUs = () => {
         <div className="flex flex-col items-center justify-center">
           <Image
             src="/assets/images/zoo-rules.png"
-            alt="Company Logo"
+            alt="Zoodoo rules"
             width={900}
             height={64}
             className="xl:p-0 px-8"
