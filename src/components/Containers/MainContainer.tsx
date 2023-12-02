@@ -17,14 +17,14 @@ const MainContainer: FC<IAnimalsIntroProps> = ({
       {background && (
         <div
           className={clsx(
-            "bg-cover bg-no-repeat h-full flex flex-col justify-start items-center mt-[-50px]",
+            "bg-cover bg-no-repeat h-full flex flex-col justify-start items-center mt-[-50px] px-10 lg:px-0",
             className
           )}
           style={{
             backgroundImage: `url(${background})`,
           }}
         >
-          <div className="flex flex-col items-center justify-center max-w-7xl space-y-20 py-28">
+          <div className="flex flex-col items-center justify-center lg:max-w-7xl space-y-20 py-28 max-w-4xl">
             {children}
           </div>
         </div>
@@ -32,7 +32,7 @@ const MainContainer: FC<IAnimalsIntroProps> = ({
       {!background && (
         <div
           className={clsx(
-            "flex flex-col items-center justify-center py-28 bg-white ",
+            "flex flex-col items-center justify-center py-28 bg-white px-10 lg:px-0",
             className
           )}
         >

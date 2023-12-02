@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import CTAButton from "@/components/Buttons/CTAButton/CTAButton";
+import MainContainer from "@/components/Containers/MainContainer";
 
 import BG2 from "../../../../public/assets/backgrounds/home/home-bg2.png";
 
@@ -81,12 +82,51 @@ const PricesAndNotice = () => {
 
 const PriceSection = () => {
   return (
-    <div
-      className="bg-cover bg-no-repeat h-full flex flex-col justify-start items-center mt-[-50px]"
-      style={{
-        backgroundImage: `url(${BG2.src})`,
-      }}
-    >
+    // <div
+    //   className="bg-cover bg-no-repeat h-full flex flex-col justify-start items-center mt-[-50px]"
+    //   style={{
+    //     backgroundImage: `url(${BG2.src})`,
+    //   }}
+    // >
+    //   <div className="flex flex-col items-center justify-center max-w-7xl space-y-20 py-28">
+    //     <div className="flex flex-col items-start justify-center space-y-6 w-full">
+    //       <div className="flex items-center">
+    //         <Image
+    //           src="/assets/images/icon3.png"
+    //           alt="Company Logo"
+    //           width={60}
+    //           height={60}
+    //         />
+    //       </div>
+    //       <div className="font-bold text-4xl text-text-default">
+    //         Giá vé tham quan
+    //       </div>
+    //       <div className="w-4/5 text-text-default text-start py-4 font-semibold">
+    //         Các hoạt động tham quan vườn thú mang đến cho bạn một trải nghiệm
+    //         thú vị và gần gũi với thế giới động vật. Bạn sẽ được tương tác với
+    //         các sinh vật đáng yêu, mà còn có thể biết thêm nhiều kiến thức mới
+    //         về môi trường sống của các loài vật này. Bạn có thể vừa tương tác,
+    //         vừa cho ăn và chụp ảnh với các bạn thú đáng yêu khi đến đây tham
+    //         quan.
+    //       </div>
+    //       <div className="grid grid-cols-2 gap-2 w-full">
+    //         <PricesAndNotice />
+    //         <div className="w-full aspect-square relative">
+    //           <Image
+    //             src={AnimalsImage2.src}
+    //             alt="Company Logo"
+    //             fill
+    //             style={{
+    //               objectFit: "contain",
+    //             }}
+    //           />
+    //         </div>
+    //       </div>
+    //     </div>
+    //   </div>
+    // </div>
+
+    <MainContainer background={BG2.src}>
       <div className="flex flex-col items-center justify-center max-w-7xl space-y-20 py-28">
         <div className="flex flex-col items-start justify-center space-y-6 w-full">
           <div className="flex items-center">
@@ -123,7 +163,7 @@ const PriceSection = () => {
           </div>
         </div>
       </div>
-    </div>
+    </MainContainer>
   );
 };
 

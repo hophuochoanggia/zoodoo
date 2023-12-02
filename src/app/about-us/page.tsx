@@ -27,15 +27,15 @@ const AboutUs = () => {
     <div className="flex flex-col pt-24">
       <MainContainer>
         <SectionTitle icon={Icon5.src} title={"Tổng Quan về ZooDoo Đà Lạt"} />
-        <div className="flex flex-col justify-center items-center gap-6 max-w-4xl py-8">
-          <p className="text-center font-medium ">
+        <div className="flex flex-col justify-center items-center gap-6 max-w-4xl py-8  px-10 lg:px-0">
+          <p className="text-center font-medium text-lg ">
             Thành lập vào năm 2015, ZooDoo Đà Lạt là một công viên động vật nằm
             tại thành phố Đà Lạt, một điểm đến du lịch nổi tiếng ở Việt Nam.
             Được thiết kế theo mô hình thân thiện tiêu chuẩn Úc duy nhất tại
             Việt Nam, công viên mang đến một trải nghiệm thú vị và hấp dẫn cho
             du khách mọi lứa tuổi.
           </p>
-          <p className="text-center font-medium ">
+          <p className="text-center font-medium text-lg ">
             Với diện tích rộng lớn, ZooDoo Đà Lạt là nơi bảo tồn nhiều loài động
             vật quý hiếm được đưa về từ nước Úc xa xôi như ngựa lùn Pony, chim
             vành khuyên, cừu alpacas, chuột lang nước, và chuột túi (kangaroo)
@@ -43,14 +43,14 @@ const AboutUs = () => {
             phỏng môi trường sống tự nhiên của chúng, mang đến cho du khách một
             cái nhìn gần gũi về cuộc sống động vật.
           </p>
-          <p className="text-center font-medium ">
+          <p className="text-center font-medium text-lg ">
             Ngoài việc khám phá các khu vực động vật, ZooDoo Đà Lạt còn có một
             quán cafe nhỏ xinh và khu cắm trại giữa đồi thông bạt ngàn đầy thơ
             mộng. Quán cafe ZooDoo Đà Lạt có tầm “view” nhìn ra thung lũng trong
             sương mờ, là nơi lý tưởng để bạn có thể thưởng thức các món ăn nhẹ
             và thư giãn giữa thiên nhiên trong xanh của Đà Lạt.
           </p>
-          <p className="text-center font-medium ">
+          <p className="text-center font-medium text-lg ">
             Công viên cũng có các tiện ích và dịch vụ khác như nhà hàng, quầy
             thức ăn nhanh và cửa hàng quà lưu niệm. Du khách có thể thưởng thức
             các món ăn ngon và thức uống trong khi thư giãn sau khi khám phá
@@ -69,20 +69,26 @@ const AboutUs = () => {
         </div>
       </MainContainer>
       <MainContainer background={BG1.src}>
-        <div className="grid grid-cols-2 w-full gap-16">
+        <div className="flex flex-col items-center justify-center lg:grid lg:grid-cols-2 w-full gap-16">
           <div className="flex flex-col gap-6">
-            <SectionTitle
-              icon={Icon5.src}
-              title={"TẦM NHÌN VÀ NHIỆM VỤ"}
-              align="left"
-            />
-            <p className="text-start font-medium ">
+            <div className="hidden lg:block">
+              <SectionTitle
+                icon={Icon5.src}
+                title={"TẦM NHÌN VÀ NHIỆM VỤ"}
+                align="left"
+              />
+            </div>
+            <div className="block lg:hidden">
+              <SectionTitle icon={Icon5.src} title={"TẦM NHÌN VÀ NHIỆM VỤ"} />
+            </div>
+
+            <p className="text-center font-medium text-lg  px-10 lg:px-0">
               Một trải nghiệm đặc biệt tại Zoodoo là bạn có thể tham gia vào
               hoạt động cho các bạn thú ăn. Điều này cho phép bạn tham gia trực
               tiếp vào quá trình chuẩn bị và cung cấp thức ăn cho các loài động
               vật.
             </p>
-            <p className="text-start font-medium ">
+            <p className="text-center font-medium text-lg  px-10 lg:px-0">
               Một trải nghiệm đặc biệt tại Zoodoo là bạn có thể tham gia vào
               hoạt động cho các bạn thú ăn. Điều này cho phép bạn tham gia trực
               tiếp vào quá trình chuẩn bị và cung cấp thức ăn cho các loài động
@@ -105,14 +111,23 @@ const AboutUs = () => {
       </MainContainer>
       <MainContainer>
         <div className="flex flex-col gap-32">
-          <div className="grid grid-cols-2 w-full gap-16">
+          <div className="flex flex-col lg:grid lg:grid-cols-2 w-full gap-16 justify-center items-center">
             <div className="flex flex-col gap-6">
-              <SectionTitle
-                icon={Icon3.src}
-                title={"LIÊN HỆ  VỚI CHÚNG TÔI"}
-                align="left"
-              />
-              <div className="flex flex-col py-6 gap-4 justify-between">
+              <div className="hidden lg:block">
+                <SectionTitle
+                  icon={Icon3.src}
+                  title={"LIÊN HỆ  VỚI CHÚNG TÔI"}
+                  align="left"
+                />
+              </div>
+              <div className="block lg:hidden">
+                <SectionTitle
+                  icon={Icon3.src}
+                  title={"LIÊN HỆ  VỚI CHÚNG TÔI"}
+                />
+              </div>
+
+              <div className="flex flex-col py-6 gap-4 justify-center items-center lg:justify-between lg:items-start">
                 <div className="flex flex-col py-6 gap-4">
                   <div className="flex flex-row justify-start items-center">
                     <Image

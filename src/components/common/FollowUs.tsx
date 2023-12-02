@@ -9,10 +9,10 @@ interface IFollowUsProps {
 const FollowUs: FC<IFollowUsProps> = ({ color = "text-white" }) => {
   return (
     <div>
-      <h2 className={clsx("mb-6 text-lg font-medium uppercase  pt-4", color)}>
+      <h2 className={clsx("mb-6 text-xl font-medium uppercase  pt-4", color)}>
         THEO DÕI CHÚNG TÔI
       </h2>
-      <div className="flex flex-row space-x-6">
+      <div className="flex flex-row space-x-6 items-center justify-center lg:items-start">
         <Image
           src="/assets/socials/facebook.png"
           width={40}

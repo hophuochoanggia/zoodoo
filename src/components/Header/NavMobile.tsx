@@ -38,6 +38,10 @@ export const NavMobile = () => {
     setOpen(false);
   }, [router]);
 
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <div
       className={clsx(
@@ -48,7 +52,7 @@ export const NavMobile = () => {
     >
       <div className="flex flex-row px-6 justify-between items-center w-full">
         <div className="flex items-center justify-center z-50">
-          <Link href="/">
+          <Link href="/" onClick={handleClose}>
             {isOpen ? (
               <Image
                 src="/assets/images/logo-zoodoo-white.png"
@@ -91,33 +95,49 @@ export const NavMobile = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed left-0 shadow-4xl right-0 top-0 py-5 pt-0 bg-[#14532D] border-b border-b-white/20 h-full"
+            className="fixed left-0 right-0 top-0 py-5 pt-0 bg-[#14532D] border-b border-b-white/20 h-full"
           >
             <nav className="mt-52 flex w-full flex-col justify-center items-center ">
               <ul className="w-full">
                 <li className="py-6 ">
-                  <Link href="/about-us" className="w-full h-full">
+                  <Link
+                    href="/about-us"
+                    className="w-full h-full"
+                    onClick={handleClose}
+                  >
                     <p className="text-center w-full p-6 focus:bg-green-800 active:bg-green-800 text-gray-light text-xl focus:text-white active:text-white">
                       Về chúng tôi
                     </p>
                   </Link>
                 </li>
                 <li className="py-6 ">
-                  <Link href="/visit-us" className="w-full h-full">
+                  <Link
+                    href="/visit-us"
+                    className="w-full h-full"
+                    onClick={handleClose}
+                  >
                     <p className="text-center w-full p-6 focus:bg-green-800 active:bg-green-800 text-gray-light text-xl focus:text-white active:text-white">
                       Ghé Thăm ZooDoo
                     </p>
                   </Link>
                 </li>
                 <li className="py-6 ">
-                  <Link href="/experiences" className="w-full h-full">
+                  <Link
+                    href="/experiences"
+                    className="w-full h-full"
+                    onClick={handleClose}
+                  >
                     <p className="text-center w-full p-6 focus:bg-green-800 active:bg-green-800 text-gray-light text-xl focus:text-white active:text-white">
                       Trải nghiệm ở ZooDoo
                     </p>
                   </Link>
                 </li>
                 <li className="py-6 ">
-                  <Link href="/news-and-activitiess" className="w-full h-full">
+                  <Link
+                    href="/news-and-activities"
+                    className="w-full h-full"
+                    onClick={handleClose}
+                  >
                     <p className="text-center w-full p-6 focus:bg-green-800 active:bg-green-800 text-gray-light text-xl focus:text-white active:text-white">
                       Tin tức hoạt động
                     </p>

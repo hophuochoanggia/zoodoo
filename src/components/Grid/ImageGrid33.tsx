@@ -6,7 +6,7 @@ import AnimalsImage5 from "../../../public/assets/images/animals/animals5.png";
 
 const ImageGrid33 = () => {
   return (
-    <div className="grid grid-cols-2 gap-2 w-full">
+    <div className="grid grid-cols-2 gap-2 w-full  px-10 lg:px-0">
       <div className="w-full aspect-square relative grid grid-rows-2 gap-2">
         <div className="grid grid-cols-2 gap-2 ">
           <div className="relative h-full">

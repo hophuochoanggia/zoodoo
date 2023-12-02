@@ -25,7 +25,7 @@ const data = [
 const PopularActivities = () => {
   return (
     <div
-      className="bg-cover bg-no-repeat h-full flex flex-col justify-start items-center mt-[-50px] md:pb-20 py-28 pb-44"
+      className="bg-cover bg-no-repeat h-full flex flex-col justify-start items-center mt-[-50px] md:pb-20 py-28 pb-44 px-10 lg:px-0"
       style={{
         backgroundImage: `url(${BG3.src})`,
       }}

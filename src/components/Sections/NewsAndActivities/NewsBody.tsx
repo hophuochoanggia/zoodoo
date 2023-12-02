@@ -57,12 +57,12 @@ const NewFooter = () => {
 
 const NewsBody = () => {
   return (
-    <div className="grid grid-cols-4 ">
+    <div className="flex flex-col lg:grid lg:grid-cols-4 ">
       <div className="col-span-3 flex flex-col items-start pr-16">
         <Markdown remarkPlugins={[remarkGfm]}>{markdownData}</Markdown>
         <NewFooter />
       </div>
-      <div className="col-span-1 flex flex-col items-start">
+      <div className="col-span-1 flex flex-col items-start pt-16 lg:pt-0">
         <NewestPost />
       </div>
     </div>

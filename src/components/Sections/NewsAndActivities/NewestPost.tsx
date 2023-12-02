@@ -31,7 +31,7 @@ const data = [
 const NewestPost = () => {
   return (
     <div className="flex flex-col">
-      <div className="font-bold text-lg pb-3">BÀI VIẾT MỚI NHẤT</div>
+      <div className="font-bold text-xl  pb-3">BÀI VIẾT MỚI NHẤT</div>
       <div className="flex flex-col space-y-3">
         {data.map((item, index) => (
           <button key={index} className="font-normal text-lg text-start hover:opacity-80">
