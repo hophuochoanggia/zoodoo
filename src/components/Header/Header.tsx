@@ -6,6 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import CTAButton from "@/components/Buttons/CTAButton/CTAButton";
+import { NavMobile } from "./NavMobile";
 
 const Header = () => {
   const [colorChange, setColorchange] = useState<boolean>(false);
@@ -35,7 +36,7 @@ const Header = () => {
         shouldShowTransparent ? "bg-transparent" : "bg-white shadow-md"
       )}
     >
-      <div className="flex flex-wrap justify-between items-center max-w-7xl w-full">
+      <div className="lg:flex flex-wrap justify-between items-center max-w-7xl w-full hidden">
         <div className="flex items-center">
           <Link href="/">
             {shouldShowTransparent ? (
@@ -107,6 +108,7 @@ const Header = () => {
           </ul>
         </nav>
       </div>
+      <NavMobile />
     </header>
   );
 };
