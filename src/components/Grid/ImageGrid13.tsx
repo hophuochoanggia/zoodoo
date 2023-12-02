@@ -1,10 +1,9 @@
-import React from "react";
 import Image from "next/image";
 
-import AnimalsImage2 from "../../../public/assets/images/animals2.png";
-import AnimalsImage3 from "../../../public/assets/images/animals3.png";
-import AnimalsImage4 from "../../../public/assets/images/animals4.png";
-import AnimalsImage5 from "../../../public/assets/images/animals5.png";
+import AnimalsImage2 from "../../../public/assets/images/animals/animals2.png";
+import AnimalsImage3 from "../../../public/assets/images/animals/animals3.png";
+import AnimalsImage4 from "../../../public/assets/images/animals/animals4.png";
+import AnimalsImage5 from "../../../public/assets/images/animals/animals5.png";
 
 const ImageGrid13 = () => {
   return (

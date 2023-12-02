@@ -1,16 +1,16 @@
-import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 import ReviewCard from "@/components/Cards/ReviewCard";
 import SectionTitle from "@/components/common/SectionTitle";
 
-import BG5 from "../../../public/assets/backgrounds/bg5.png";
-import Icon2 from "../../../public/assets/images/icon2.png";
+import BG5 from "../../../../public/assets/backgrounds/home/home-bg5.png";
+import Icon2 from "../../../../public/assets/images/section-icons/icon2.png";
+
+import useWindowSize from "@/hooks/useWindowSize";
 
 import "swiper/css";
 import "swiper/css/navigation";
-import "swiper/css/pagination";
-import useWindowSize from "@/hooks/useWindowSize";
 
 const slides = [
   {
@@ -52,7 +52,7 @@ const slides = [
 
 const getColumns = (width: number | undefined) => {
   if (width === undefined) return 3;
-  if (width > 1800) return 5;
+  if (width > 2560) return 5;
   if (width > 1496) return 3;
   if (width > 1024) return 2;
   return 1;

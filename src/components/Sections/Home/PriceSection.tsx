@@ -2,9 +2,9 @@ import Image from "next/image";
 
 import CTAButton from "@/components/Buttons/CTAButton/CTAButton";
 
-import BG2 from "../../../public/assets/backgrounds/bg2.png";
+import BG2 from "../../../../public/assets/backgrounds/home/home-bg2.png";
 
-import AnimalsImage2 from "../../../public/assets/images/animals2.png";
+import AnimalsImage2 from "../../../../public/assets/images/animals/animals2.png";
 
 interface IPriceSectionProps {
   svg: string;
@@ -56,7 +56,7 @@ const PricesAndNotice = () => {
         Giá vé tính theo chiều cao:
       </p>
       {priceData.map((item, index) => (
-        <div key={index}>renderPrice(item.height, item.price)</div>
+        <div key={index}>{renderPrice(item.height, item.price)}</div>
       ))}
       <div className="py-2">
         <CTAButton

@@ -1,10 +1,10 @@
 import Image from "next/image";
 
 import ImageGrid13 from "@/components/Grid/ImageGrid13";
-
 import CTAButton from "@/components/Buttons/CTAButton/CTAButton";
+import MainContainer from "@/components/Containers/MainContainer";
 
-import BG2 from "../../../public/assets/backgrounds/bg2.png";
+import BG2 from "../../../../public/assets/backgrounds/home/home-bg2.png";
 
 interface IAnimalsIntroProps {
   svg: string;
@@ -43,16 +43,9 @@ const AnimalsIntro = () => {
 
 const AnimalsIntroSection = () => {
   return (
-    <div
-      className="bg-cover bg-no-repeat h-full flex flex-col justify-start items-center mt-[-50px]"
-      style={{
-        backgroundImage: `url(${BG2.src})`,
-      }}
-    >
-      <div className="flex flex-col items-center justify-center max-w-7xl space-y-20 py-28">
-        <AnimalsIntro />
-      </div>
-    </div>
+    <MainContainer background={BG2.src}>
+      <AnimalsIntro />
+    </MainContainer>
   );
 };
 

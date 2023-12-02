@@ -1,6 +1,6 @@
-import CTAButton from "../Buttons/CTAButton/CTAButton";
+import CTAButton from "@/components/Buttons/CTAButton/CTAButton";
 
-import BannerImage from "../../../public/assets/images/banner.jpg";
+import BannerImage from "../../../../public/assets/images/banner.jpg";
 
 const MainBanner = () => {
   return (

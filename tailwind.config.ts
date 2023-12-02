@@ -25,11 +25,13 @@ const config: Config = {
         },
         gray: {
           default: "#D1D5DB",
+          light: "#F3F4F6",
         },
         text: {
           default: "#1F2937",
           title: "#111827",
           description: "#6B7280",
+          gray: "#807E73",
         },
       },
     },

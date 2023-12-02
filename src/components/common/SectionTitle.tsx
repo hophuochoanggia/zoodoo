@@ -1,23 +1,47 @@
 import React, { FC } from "react";
 import Image from "next/image";
+import clsx from "clsx";
 
 interface ISectionTitleProps {
-  icon: string;
+  icon?: string;
   title: string;
   description?: string;
+  align?: "center" | "left";
 }
 
-const SectionTitle: FC<ISectionTitleProps> = ({ icon, title, description }) => {
+const SectionTitle: FC<ISectionTitleProps> = ({
+  icon,
+  title,
+  description,
+  align = "center",
+}) => {
   return (
-    <div className="flex flex-col items-center justify-center space-y-6 w-full">
-      <div className="flex items-center">
-        <Image src={icon} alt="Company Logo" width={80} height={80} />
-      </div>
-      <div className="font-bold text-4xl text-text-default w-[600px] text-center">
+    <div
+      className={clsx(
+        "flex flex-col justify-center space-y-6 w-full",
+        align === "center" ? "items-center" : "items-start"
+      )}
+    >
+      {icon && (
+        <div className="flex items-center">
+          <Image src={icon} alt="Company Logo" width={80} height={80} />
+        </div>
+      )}
+      <div
+        className={clsx(
+          "font-bold text-4xl text-text-default w-[700px] uppercase",
+          align === "center" ? "text-center" : " text-start"
+        )}
+      >
         {title}
       </div>
       {description && (
-        <div className="text-base text-text-default text-center mx-24">
+        <div
+          className={clsx(
+            "text-base text-text-default w-[700px]",
+            align === "center" ? "text-center mx-24" : " text-start"
+          )}
+        >
           {description}
         </div>
       )}

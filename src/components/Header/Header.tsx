@@ -16,7 +16,7 @@ const Header = () => {
 
   useEffect(() => {
     const changeNavbarColor = () => {
-      if (window.scrollY >= 800) {
+      if (window.scrollY > 0) {
         setColorchange(true);
       } else {
         setColorchange(false);
@@ -31,33 +31,35 @@ const Header = () => {
   return (
     <header
       className={clsx(
-        "fixed top-0 left-0 right-0 flex items-center justify-center p-4  text-white w-full z-50",
-        shouldShowTransparent ? "bg-transparent" : "bg-white"
+        "fixed top-0 left-0 right-0 flex items-center justify-center p-4  text-white w-full z-50 ",
+        shouldShowTransparent ? "bg-transparent" : "bg-white shadow-md"
       )}
     >
       <div className="flex flex-wrap justify-between items-center max-w-7xl w-full">
         <div className="flex items-center">
-          {shouldShowTransparent ? (
-            <Image
-              src="/assets/images/logo-zoodoo-white.png"
-              alt="Company Logo"
-              width={100}
-              height={100}
-            />
-          ) : (
-            <Image
-              src="/assets/images/logo-zoodoo-green.png"
-              alt="Company Logo"
-              width={100}
-              height={100}
-            />
-          )}
+          <Link href="/">
+            {shouldShowTransparent ? (
+              <Image
+                src="/assets/images/logo-zoodoo-white.png"
+                alt="Company Logo"
+                width={100}
+                height={100}
+              />
+            ) : (
+              <Image
+                src="/assets/images/logo-zoodoo-green.png"
+                alt="Company Logo"
+                width={100}
+                height={100}
+              />
+            )}
+          </Link>
         </div>
         <nav>
           <ul className="flex space-x-4 flex-row justify-between items-center">
             <li>
               <Link
-                href="#home"
+                href="/about-us"
                 className={clsx(
                   shouldShowTransparent ? "text-white" : "text-green-default"
                 )}
@@ -67,7 +69,7 @@ const Header = () => {
             </li>
             <li>
               <Link
-                href="#about"
+                href="/visit-us"
                 className={clsx(
                   shouldShowTransparent ? "text-white" : "text-green-default"
                 )}
@@ -77,7 +79,7 @@ const Header = () => {
             </li>
             <li>
               <Link
-                href="#about"
+                href="/experiences"
                 className={clsx(
                   shouldShowTransparent ? "text-white" : "text-green-default"
                 )}
@@ -87,7 +89,7 @@ const Header = () => {
             </li>
             <li>
               <Link
-                href="#contact"
+                href="/news-and-activities"
                 className={clsx(
                   shouldShowTransparent ? "text-white" : "text-green-default"
                 )}

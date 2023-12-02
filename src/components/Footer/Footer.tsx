@@ -2,7 +2,8 @@ import React from "react";
 
 import Image from "next/image";
 
-import ZooDooMap from "../../../public/assets/images/zoodoo-map.png";
+import FollowUs from "@/components/common/FollowUs";
+import ZoodooMap from "@/components/Map/ZoodooMap";
 
 const Footer = () => {
   return (
@@ -12,7 +13,7 @@ const Footer = () => {
           <div className="col-span-2 m-6">
             <a href="https://flowbite.com/" className="flex items-center">
               <Image
-                src="/assets/images/logo-zoodoo-white-big.png"
+                src="/assets/images/logos/logo-zoodoo-white-big.png"
                 alt="Company Logo"
                 width={160}
                 height={160}
@@ -55,29 +56,7 @@ const Footer = () => {
                   </a>
                 </li>
               </ul>
-              <h2 className="mb-6 text-lg font-medium uppercase text-white pt-4">
-                THEO DÕI CHÚNG TÔI
-              </h2>
-              <div className="flex flex-row space-x-6">
-                <Image
-                  src="/assets/socials/facebook.png"
-                  width={40}
-                  height={40}
-                  alt="facebook"
-                />
-                <Image
-                  src="/assets/socials/insta.png"
-                  width={40}
-                  height={40}
-                  alt="instagram"
-                />
-                <Image
-                  src="/assets/socials/tiktok.png"
-                  width={40}
-                  height={40}
-                  alt="tiktok"
-                />
-              </div>
+              <FollowUs />
             </div>
             <div className="col-span-1">
               <h2 className="mb-6 text-lg font-medium uppercase text-white">
@@ -98,7 +77,7 @@ const Footer = () => {
               </ul>
             </div>
             <div className="col-span-2">
-              <Image src={ZooDooMap} alt="map" width={500} height={500} />
+              <ZoodooMap width="400" height="400" />
             </div>
           </div>
         </div>

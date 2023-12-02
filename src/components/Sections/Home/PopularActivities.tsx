@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import ActivityCard from "@/components/Cards/ActivityCard";
 
-import BG3 from "../../../public/assets/backgrounds/bg3.png";
+import BG3 from "../../../../public/assets/backgrounds/home/home-bg3.png";
 
 const data = [
   {
