@@ -6,6 +6,7 @@ import MainBanner from "@/components/Sections/Home/MainBanner";
 import PopularActivities from "@/components/Sections/Home/PopularActivities";
 import PriceSection from "@/components/Sections/Home/PriceSection";
 import SectionIntro from "@/components/Sections/IntroWithOnePicture";
+import RevealContainer from "@/components/Containers/RevealContainer";
 
 import CustomerReviews from "@/components/Sections/Home/CustomerReviews";
 
@@ -15,7 +16,7 @@ import Icon1 from "../../public/assets/images/section-icons/icon1.png";
 
 const OverallSection = () => {
   return (
-    <MainContainer background={BG1.src} animation>
+    <RevealContainer background={BG1.src} animation>
       <AddressAndOpenTime />
       <SectionIntro
         title="Tổng Quan về ZooDoo Đà Lạt"
@@ -23,7 +24,7 @@ const OverallSection = () => {
         icon={Icon1.src}
         picture={Animals1.src}
       />
-    </MainContainer>
+    </RevealContainer>
   );
 };
 
