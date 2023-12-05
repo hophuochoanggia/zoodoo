@@ -34,7 +34,7 @@ const SharingCard: React.FC<ISharingCard> = ({
           imageSide === "right" ? "md:justify-start" : "md:justify-end"
         )}
       >
-        <p className="text-lg font-normal">{description}</p>
+        <p className="text-lg font-normal leading-loose">{description}</p>
         <p className="text-xl font-semibold mt-4">{author} - Zookeeper</p>
       </div>
     </div>

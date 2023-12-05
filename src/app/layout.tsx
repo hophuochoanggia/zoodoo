@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
+import manifest from "@/../../manifest";
 
 import "./globals.css";
 import FooterMobile from "@/components/Footer/FooterMobile";
@@ -12,21 +13,40 @@ const inter = Inter({ subsets: ["latin"] });
 // TODO: check server side rendering for each component
 
 export const metadata: Metadata = {
-  title: "Zoodoo",
-  // icons: {
-  //   icon: [
-  //     {
-  //       url: "/assets/images/logo-zoodoo-green.png",
-  //       media: "(prefers-color-scheme: light)",
-  //     },
-  //     {
-  //       url: "/assets/images/logo-zoodoo-white.png",
-  //       media: "(prefers-color-scheme: dark)",
-  //     },
-  //   ],
-  // },
+  title: "Zoodoo - VƯỜN THÚ THÂN THIỆN CHUẨN ÚC ĐẦU TIÊN TẠI VIỆT NAM",
+  icons: {
+    icon: [
+      {
+        url: "/assets/images/logo-zoodoo-green.png",
+        media: "(prefers-color-scheme: light)",
+      },
+      {
+        url: "/assets/images/logo-zoodoo-white.png",
+        media: "(prefers-color-scheme: dark)",
+      },
+    ],
+  },
   description:
-    "Welcome to Zoodoo, where the wonders of Australia's unique wildlife come to life! Immerse yourself in the diverse habitats of kangaroos, koalas, and other iconic Australian creatures. At Zoodoo, we blend education with entertainment, fostering a deep connection between visitors and our extraordinary wildlife. Join us in our commitment to wildlife conservation. Explore Zoodoo, where the wild heart of Australia beats.",
+    "Chào mừng bạn đến với Zoodoo, điểm đến kỳ diệu của động vật hoang dã độc đáo tại Việt Nam! Hòa mình vào những môi trường đa dạng của các loài kangaroo, koala và những sinh vật biểu tượng khác của Australia. Tại Zoodoo, chúng tôi hòa quyện niềm phấn khởi khám phá với sự hứng thú của việc học, mang đến trải nghiệm khó quên cho du khách. Cam kết của chúng tôi đối với bảo tồn động vật hoang dã nằm tại trái tim mọi hoạt động. Hãy cùng tham gia hành trình vượt qua giới giải trí, tạo nên một liên kết sâu sắc giữa bạn và những động vật hoang dã tuyệt vời của chúng tôi. Khám phá Zoodoo, nơi trái tim hoang dã của Việt Nam đập mạnh hơn bao giờ hết.",
+  openGraph: {
+    type: "website",
+    locale: "vn_VN",
+    url: "https://www.zoodoo.vn/",
+    title: "Zoodoo - VƯỜN THÚ THÂN THIỆN CHUẨN ÚC ĐẦU TIÊN TẠI VIỆT NAM",
+    description:
+      "Chào mừng bạn đến với Zoodoo, điểm đến kỳ diệu của động vật hoang dã độc đáo tại Việt Nam! Hòa mình vào những môi trường đa dạng của các loài kangaroo, koala và những sinh vật biểu tượng khác của Australia. Tại Zoodoo, chúng tôi hòa quyện niềm phấn khởi khám phá với sự hứng thú của việc học, mang đến trải nghiệm khó quên cho du khách. Cam kết của chúng tôi đối với bảo tồn động vật hoang dã nằm tại trái tim mọi hoạt động. Hãy cùng tham gia hành trình vượt qua giới giải trí, tạo nên một liên kết sâu sắc giữa bạn và những động vật hoang dã tuyệt vời của chúng tôi. Khám phá Zoodoo, nơi trái tim hoang dã của Việt Nam đập mạnh hơn bao giờ hết.",
+    images: [
+      {
+        url: "/assets/images/logo-zoodoo-white.png",
+        width: 1200,
+        height: 630,
+        alt: "Og Image Alt",
+      },
+    ],
+  },
+  twitter: {
+    site: "@zoodoo",
+  },
 };
 
 export default function RootLayout({

@@ -38,7 +38,7 @@ const SectionTitle: FC<ISectionTitleProps> = ({
       {description && (
         <div
           className={clsx(
-            "text-base text-text-default w-[700px]",
+            "text-lg text-text-default w-[750px] leading-loose",
             align === "center" ? "text-center mx-24" : " text-start"
           )}
         >

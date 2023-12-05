@@ -22,7 +22,7 @@ const MainBanner = () => {
           className="flex flex-col items-start justify-center w-full max-w-7xl h-1/2 2xl:h-full py-44 2xl:py-0 px-10 lg:px-0"
         >
           <div className="flex flex-col ">
-            <p className="lg:text-5xl 2xl:text-6xl  text-4xl font-bold w-10/12 lg:w-3/5  leading-snug lg:leading-snug">
+            <p className="lg:text-5xl 2xl:text-6xl 2xl:leading-relaxed  text-4xl font-bold w-10/12 lg:w-3/5  leading-normal lg:leading-relaxed">
               VƯỜN THÚ THÂN THIỆN CHUẨN ÚC ĐẦU TIÊN TẠI VIỆT NAM
             </p>
 
