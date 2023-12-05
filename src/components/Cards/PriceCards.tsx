@@ -3,7 +3,7 @@ import CTAButton from "../Buttons/CTAButton/CTAButton";
 
 const PriceCard120 = () => {
   return (
-    <div className="w-full bg-[#F9FAFB] flex flex-col justify-center items-start rounded-md">
+    <div className="w-full bg-[#F9FAFB] flex flex-col justify-between items-start rounded-md h-full">
       <div className="w-full bg-[#9CA3AF] h-2 rounded-t-md" />
       <div className="m-4 flex flex-col justify-center items-start">
         <p className="text-lg font-bold text-start">
@@ -26,7 +26,7 @@ const PriceCard120 = () => {
 
 const PriceCard90 = () => {
   return (
-    <div className="w-full bg-[#F9FAFB] flex flex-col justify-center items-start rounded-md">
+    <div className="w-full bg-[#F9FAFB] flex flex-col justify-between items-start rounded-md h-full">
       <div className="w-full bg-[#9CA3AF] h-2 rounded-t-md" />
       <div className="m-4 flex flex-col justify-center items-start">
         <p className="text-lg font-bold text-start">
@@ -48,7 +48,7 @@ const PriceCard90 = () => {
 
 const PriceCardUnder90 = () => {
   return (
-    <div className="w-full bg-[#F9FAFB] flex flex-col justify-center items-start rounded-md">
+    <div className="w-full bg-[#F9FAFB] flex flex-col justify-center items-start rounded-md h-full">
       <div className="w-full bg-[#9CA3AF] h-2 rounded-t-md" />
       <div className="m-4 flex flex-col justify-center items-start">
         <p className="text-lg font-bold text-start">Chiều cao dưới 90cm</p>

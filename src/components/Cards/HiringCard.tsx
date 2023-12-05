@@ -1,9 +1,5 @@
-import React from "react";
-
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-
-import CTAButtonTransperent from "@/components/Buttons/CTAButton/CTAButtonTransperent";
 
 import NewImage from "@/../public/assets/images/news/new1.png";
 import clsx from "clsx";
@@ -26,7 +22,7 @@ const HiringCard = () => {
     <button
       className="bg-gray-light border-none rounded-lg shadow hover:opacity-80 w-full"
       onClick={() => {
-        router.push(`/news-and-activities/${1}`);
+        router.push(`/tin-tuc-va-hoat-dong/${1}`);
       }}
     >
       <div className="relative pb-80 overflow-hidden rounded-t-lg">

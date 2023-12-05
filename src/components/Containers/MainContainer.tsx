@@ -26,7 +26,7 @@ const MainContainer: FC<IAnimalsIntroProps> = ({
             backgroundImage: `url(${background})`,
           }}
         >
-          <div className="flex flex-col items-center justify-center lg:max-w-7xl space-y-20 py-28 max-w-4xl">
+          <div className="flex flex-col items-center justify-center lg:max-w-7xl space-y-20  pb-32 pt-20 max-w-4xl">
             {children}
           </div>
         </section>
@@ -34,7 +34,7 @@ const MainContainer: FC<IAnimalsIntroProps> = ({
       {!background && (
         <section
           className={clsx(
-            "flex flex-col items-center justify-center py-28 bg-white px-10 lg:px-0",
+            "flex flex-col items-center justify-center pb-32 pt-20 bg-white px-10 lg:px-0",
             className
           )}
         >

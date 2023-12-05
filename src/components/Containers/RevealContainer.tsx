@@ -48,7 +48,7 @@ const RevealContainer: FC<IAnimalsIntroProps> = ({
         }}
       >
         {!animation && (
-          <div className="flex flex-col items-center justify-center lg:max-w-7xl space-y-20 py-28 max-w-4xl">
+          <div className="flex flex-col items-center justify-center lg:max-w-7xl space-y-20 pb-32 pt-20 max-w-4xl">
             {children}
           </div>
         )}
@@ -60,7 +60,7 @@ const RevealContainer: FC<IAnimalsIntroProps> = ({
           >
             <motion.div
               variants={cardVariants}
-              className="flex flex-col items-center justify-center lg:max-w-7xl space-y-20 py-28 max-w-4xl"
+              className="flex flex-col items-center justify-center lg:max-w-7xl space-y-20  pb-32 pt-20 max-w-4xl"
             >
               {children}
             </motion.div>

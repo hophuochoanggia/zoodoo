@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Image from "next/image";
 
 import CTAButton from "@/components/Buttons/CTAButton/CTAButton";
@@ -26,10 +26,10 @@ const AnimalsIntro = () => {
           height={60}
         />
       </div>
-      <div className="font-bold text-4xl text-text-default">
+      <div className="font-bold text-4xl text-text-default uppercase">
         Các loài động vật tại ZooDoo
       </div>
-      <div className="w-4/5 text-text-default text-start py-4">
+      <div className="w-4/5 text-start py-4 text-lg text-text-default leading-loose">
         Tại Zoodoo Dalat, bạn sẽ có cơ hội khám phá và tương tác với một loạt
         các loài động vật phong phú. Hãy đắm mình trong không gian xanh mát và
         gần gũi với thiên nhiên, và chiêm ngưỡng sự đa dạng của thế giới động
@@ -37,7 +37,12 @@ const AnimalsIntro = () => {
       </div>
       <ImageGrid13 />
       <div className="w-full flex flex-row items-center justify-center py-6">
-        <CTAButton text="Xem thêm" onClick={() => {}} bgColor="green" />
+        <CTAButton
+          text="Xem thêm"
+          onClick={() => {}}
+          bgColor="green"
+          className="px-12"
+        />
       </div>
     </div>
   );

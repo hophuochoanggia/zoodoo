@@ -1,10 +1,8 @@
-import React from "react";
-
 import SectionTitle from "@/components/common/SectionTitle";
 import MainContainer from "@/components/Containers/MainContainer";
 import CenteredAndLargeActive from "@/components/Swiper/CenteredAndLargeActive";
 
-import BgImage5 from "@/../public/assets/backgrounds/experiences/bg5.png";
+import BgImage5 from "@/../public/assets/backgrounds/tin-tuc-va-hoat-dong/bg5.png";
 import Icon3 from "@/../public/assets/images/section-icons/icon3.png";
 
 const EatingAndShopping = () => {

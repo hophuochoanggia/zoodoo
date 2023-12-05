@@ -25,22 +25,28 @@ const FooterMobile = () => {
               </h2>
               <ul className="text-white font-medium flex flex-col justify-center items-center">
                 <li className="mb-4">
-                  <Link href="/about-us" className="text-gray-light">
+                  <Link href="/ve-zoodoo" className="text-gray-light">
                     Về chúng tôi
                   </Link>
                 </li>
                 <li className="mb-4">
-                  <Link href="/news-and-activities" className="text-gray-light">
+                  <Link
+                    href="/tin-tuc-va-hoat-dong"
+                    className="text-gray-light"
+                  >
                     Tin tức & hoạt động
                   </Link>
                 </li>
                 <li className="mb-4">
-                  <Link href="/experiences" className="text-gray-light">
+                  <Link
+                    href="/tin-tuc-va-hoat-dong"
+                    className="text-gray-light"
+                  >
                     Trãi nghiệm ZooDoo
                   </Link>
                 </li>
                 <li className="mb-4">
-                  <Link href="/visit-us" className="text-gray-light">
+                  <Link href="/den-tham-zoodoo" className="text-gray-light">
                     Ghé thăm ZooDoo
                   </Link>
                 </li>

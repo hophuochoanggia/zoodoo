@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Asap } from "next/font/google";
 
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
-import manifest from "@/../../manifest";
 
 import "./globals.css";
 import FooterMobile from "@/components/Footer/FooterMobile";
 
-const inter = Inter({ subsets: ["latin"] });
+const asap = Asap({ subsets: ["vietnamese"] });
 
 // TODO: check server side rendering for each component
 
@@ -47,6 +46,7 @@ export const metadata: Metadata = {
   twitter: {
     site: "@zoodoo",
   },
+  metadataBase: new URL("https://www.zoodoo.vn/"),
 };
 
 export default function RootLayout({
@@ -60,7 +60,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body
-        className={`${inter.className} flex flex-col w-screen bg-[#FFF9E9] justify-between min-h-screen`}
+        className={`${asap.className} flex flex-col w-screen bg-[#FFF9E9] justify-between min-h-screen`}
       >
         <Header />
         {children}

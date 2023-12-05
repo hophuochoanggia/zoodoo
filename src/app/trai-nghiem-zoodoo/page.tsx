@@ -1,17 +1,16 @@
 "use client";
-import React from "react";
 
-import ImageGrid33 from "@/components/Grid/ImageGrid33";
 import ImageGrid13 from "@/components/Grid/ImageGrid13";
+import ImageGrid33 from "@/components/Grid/ImageGrid33";
 
-import SectionTitle from "@/components/common/SectionTitle";
 import MainContainer from "@/components/Containers/MainContainer";
 import AnimalInteraction from "@/components/Sections/Experiences/AnimalInteraction";
-import ZooKeeperSharing from "@/components/Sections/Experiences/ZooKeeperSharing";
 import EatingAndShopping from "@/components/Sections/Experiences/EatingAndShopping";
+import ZooKeeperSharing from "@/components/Sections/Experiences/ZooKeeperSharing";
+import SectionTitle from "@/components/common/SectionTitle";
 
+import BannerImage from "@/../public/assets/backgrounds/tin-tuc-va-hoat-dong/bg.png";
 import Icon5 from "@/../public/assets/images/section-icons/icon5.png";
-import BannerImage from "@/../public/assets/backgrounds/experiences/bg.png";
 import CheckInWithStatue from "@/components/Sections/Experiences/CheckInWithStatue";
 
 const Experiences = () => {

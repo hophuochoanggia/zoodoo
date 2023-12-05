@@ -1,15 +1,14 @@
 "use client";
-import React from "react";
-import { useForm } from "react-hook-form";
-import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Image from "next/image";
+import { useForm } from "react-hook-form";
+import * as yup from "yup";
 
 import MainContainer from "@/components/Containers/MainContainer";
 
 import SectionTitle from "@/components/common/SectionTitle";
 
-import BG from "@/../public/assets/backgrounds/contact-us/bg.png";
+import BG from "@/../public/assets/backgrounds/lien-he-zoodoo/bg.png";
 import Icon8 from "@/../public/assets/images/section-icons/icon8.png";
 
 const schema = yup.object().shape({

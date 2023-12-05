@@ -53,7 +53,7 @@ const PricesAndNotice = () => {
 
   return (
     <div className="flex flex-col items-start justify-start space-y-6 w-full">
-      <p className="text-text-default font-semibold">
+      <p className="text-text-default font-semibold text-lg">
         Giá vé tính theo chiều cao:
       </p>
       {priceData.map((item, index) => (
@@ -93,10 +93,10 @@ const PriceSection = () => {
               height={60}
             />
           </div>
-          <div className="font-bold text-4xl text-text-default">
+          <div className="font-bold text-4xl text-text-default uppercase">
             Giá vé tham quan
           </div>
-          <div className="w-4/5 text-text-default text-start py-4 font-semibold">
+          <div className="w-4/5 text-text-default text-start py-4 font-semibold text-lg leading-[27px]">
             Các hoạt động tham quan vườn thú mang đến cho bạn một trải nghiệm
             thú vị và gần gũi với thế giới động vật. Bạn sẽ được tương tác với
             các sinh vật đáng yêu, mà còn có thể biết thêm nhiều kiến thức mới

@@ -60,7 +60,7 @@ const Header = () => {
           <ul className="flex space-x-6 flex-row justify-between items-center">
             <li>
               <Link
-                href="/about-us"
+                href="/ve-zoodoo"
                 className={clsx(
                   shouldShowTransparent ? "text-white" : "text-green-default"
                 )}
@@ -70,7 +70,7 @@ const Header = () => {
             </li>
             <li>
               <Link
-                href="/visit-us"
+                href="/den-tham-zoodoo"
                 className={clsx(
                   shouldShowTransparent ? "text-white" : "text-green-default"
                 )}
@@ -80,7 +80,7 @@ const Header = () => {
             </li>
             <li>
               <Link
-                href="/experiences"
+                href="/trai-nghiem-zoodoo"
                 className={clsx(
                   shouldShowTransparent ? "text-white" : "text-green-default"
                 )}
@@ -90,7 +90,7 @@ const Header = () => {
             </li>
             <li>
               <Link
-                href="/news-and-activities"
+                href="/tin-tuc-va-hoat-dong"
                 className={clsx(
                   shouldShowTransparent ? "text-white" : "text-green-default"
                 )}

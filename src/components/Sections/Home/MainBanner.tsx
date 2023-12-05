@@ -19,11 +19,14 @@ const MainBanner = () => {
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="flex flex-col items-start justify-center w-full max-w-7xl h-1/2 2xl:h-full py-44 2xl:py-0 px-10 lg:px-0"
+          className="flex flex-col items-start justify-center w-full max-w-7xl h-1/2 2xl:h-full py-44 "
         >
           <div className="flex flex-col ">
-            <p className="lg:text-5xl 2xl:text-6xl 2xl:leading-relaxed  text-4xl font-bold w-10/12 lg:w-3/5  leading-normal lg:leading-relaxed">
-              VƯỜN THÚ THÂN THIỆN CHUẨN ÚC ĐẦU TIÊN TẠI VIỆT NAM
+            <p className="text-5xl 2xl:text-6xl 2xl:leading-relaxed font-bold w-9/12 xl:w-7/12  leading-normal lg:leading-relaxed">
+              VƯỜN THÚ THÂN THIỆN CHUẨN ÚC ĐẦU TIÊN
+            </p>
+            <p className="text-5xl 2xl:text-6xl 2xl:leading-relaxed  font-bold leading-normal lg:leading-relaxed">
+              TẠI VIỆT NAM
             </p>
 
             <div className="py-8">

@@ -3,10 +3,10 @@ import React from "react";
 import SectionTitle from "@/components/common/SectionTitle";
 import MainContainer from "@/components/Containers/MainContainer";
 
+import BgImage2 from "@/../public/assets/backgrounds/tin-tuc-va-hoat-dong/bg2.png";
 import Icon7 from "@/../public/assets/images/section-icons/icon7.png";
-import BgImage2 from "@/../public/assets/backgrounds/experiences/bg2.png";
-import Image from "next/image";
 import clsx from "clsx";
+import Image from "next/image";
 
 interface ISharingCard {
   description: string;

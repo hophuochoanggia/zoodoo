@@ -6,10 +6,10 @@ import MainContainer from "@/components/Containers/MainContainer";
 import ZoodooMap from "@/components/Map/ZoodooMap";
 import SectionTitle from "@/components/common/SectionTitle";
 
-import BG1 from "@/../public/assets/backgrounds/visit-us/bg1.png";
-import BG2 from "@/../public/assets/backgrounds/visit-us/bg2.png";
-import BG3 from "@/../public/assets/backgrounds/visit-us/bg3.png";
-import BG4 from "@/../public/assets/backgrounds/visit-us/bg4.png";
+import BG1 from "@/../public/assets/backgrounds/den-tham-zoodoo/bg1.png";
+import BG2 from "@/../public/assets/backgrounds/den-tham-zoodoo/bg2.png";
+import BG3 from "@/../public/assets/backgrounds/den-tham-zoodoo/bg3.png";
+import BG4 from "@/../public/assets/backgrounds/den-tham-zoodoo/bg4.png";
 import PriceSection from "@/components/Cards/PriceCards";
 
 interface IBusInfoProps {
@@ -226,7 +226,7 @@ const VisitUs = () => {
             height={64}
             className="xl:p-0 px-8"
           />
-          <div className="w-[900px] px-8 xl:px-0 py-8">
+          <div className="lg:w-[900px] px-8 xl:px-0 py-8">
             <p className="text-center font-medium text-lg">
               ZooDoo là vườn thú thân thiện, nếu quý khách tuân thủ các quy định
               trên thì chúng ta sẽ cùng có một trải nghiệm tuyệt vời. ZooDoo

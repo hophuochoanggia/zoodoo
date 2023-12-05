@@ -1,10 +1,8 @@
-import React from "react";
-
 import MainContainer from "@/components/Containers/MainContainer";
 import CenteredAndLargeActive from "@/components/Swiper/CenteredAndLargeActive";
 import SectionTitle from "@/components/common/SectionTitle";
 
-import BgImage1 from "@/../public/assets/backgrounds/experiences/bg1.png";
+import BgImage1 from "@/../public/assets/backgrounds/tin-tuc-va-hoat-dong/bg1.png";
 import Icon5 from "@/../public/assets/images/section-icons/icon5.png";
 
 const AnimalInteraction = () => {

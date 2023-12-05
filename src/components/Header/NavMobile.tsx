@@ -1,10 +1,10 @@
 import clsx from "clsx";
-import Link from "next/link";
+import { AnimatePresence, motion } from "framer-motion";
+import { Squash as Hamburger } from "hamburger-react";
 import Image from "next/image";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { Squash as Hamburger } from "hamburger-react";
-import { AnimatePresence, motion } from "framer-motion";
 
 import useClickAway from "@/hooks/useClickAway";
 
@@ -100,7 +100,7 @@ export const NavMobile = () => {
               <ul className="w-full">
                 <li className="py-6 ">
                   <Link
-                    href="/about-us"
+                    href="/ve-zoodoo"
                     className="w-full h-full"
                     onClick={handleClose}
                   >
@@ -111,7 +111,7 @@ export const NavMobile = () => {
                 </li>
                 <li className="py-6 ">
                   <Link
-                    href="/visit-us"
+                    href="/den-tham-zoodoo"
                     className="w-full h-full"
                     onClick={handleClose}
                   >
@@ -122,7 +122,7 @@ export const NavMobile = () => {
                 </li>
                 <li className="py-6 ">
                   <Link
-                    href="/experiences"
+                    href="/tin-tuc-va-hoat-dong"
                     className="w-full h-full"
                     onClick={handleClose}
                   >
@@ -133,7 +133,7 @@ export const NavMobile = () => {
                 </li>
                 <li className="py-6 ">
                   <Link
-                    href="/news-and-activities"
+                    href="/tin-tuc-va-hoat-dong"
                     className="w-full h-full"
                     onClick={handleClose}
                   >

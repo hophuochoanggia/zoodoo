@@ -8,8 +8,8 @@ import Hiring from "@/components/Sections/AboutUs/Hiring";
 import FollowUs from "@/components/common/FollowUs";
 import SectionTitle from "@/components/common/SectionTitle";
 
-import BG1 from "@/../public/assets/backgrounds/about-us/bg1.png";
-import BG2 from "@/../public/assets/backgrounds/about-us/bg2.png";
+import BG1 from "@/../public/assets/backgrounds/ve-zoodoo/bg1.png";
+import BG2 from "@/../public/assets/backgrounds/ve-zoodoo/bg2.png";
 import Animal1Image from "@/../public/assets/images/animals/animals1.png";
 import Animal2Image from "@/../public/assets/images/animals/animals2.png";
 import Icon3 from "@/../public/assets/images/section-icons/icon3.png";
@@ -81,13 +81,13 @@ const AboutUs = () => {
               <SectionTitle icon={Icon5.src} title={"TẦM NHÌN VÀ NHIỆM VỤ"} />
             </div>
 
-            <p className="text-center font-medium text-lg  px-10 lg:px-0">
+            <p className="text-center lg:text-start font-medium text-lg  px-10 lg:px-0">
               Một trải nghiệm đặc biệt tại Zoodoo là bạn có thể tham gia vào
               hoạt động cho các bạn thú ăn. Điều này cho phép bạn tham gia trực
               tiếp vào quá trình chuẩn bị và cung cấp thức ăn cho các loài động
               vật.
             </p>
-            <p className="text-center font-medium text-lg  px-10 lg:px-0">
+            <p className="text-center lg:text-start font-medium text-lg  px-10 lg:px-0">
               Một trải nghiệm đặc biệt tại Zoodoo là bạn có thể tham gia vào
               hoạt động cho các bạn thú ăn. Điều này cho phép bạn tham gia trực
               tiếp vào quá trình chuẩn bị và cung cấp thức ăn cho các loài động
@@ -177,7 +177,7 @@ const AboutUs = () => {
           >
             <button
               className="p-4 bg-green-light text-white rounded-md"
-              onClick={() => router.push("/contact-us")}
+              onClick={() => router.push("/lien-he-zoodoo")}
             >
               LIÊN HỆ HỢP TÁC
             </button>
