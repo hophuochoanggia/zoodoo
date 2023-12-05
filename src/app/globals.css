@@ -86,7 +86,7 @@ ion-icon {
   --pagination-item-size-sm: 24px;
   --pagination-font-family: Arial;
   --pagination-font-weight-active: 500;
-  --pagination-item-bg-active: #fff;
+  --pagination-item-bg-active: #39B33A;
   --pagination-item-link-bg: #fff;
   --pagination-item-disabled-color-active: #fff;
   --pagination-item-disabled-bg-active: darken(hsv(0, 0, 96%), 10%);
@@ -168,7 +168,7 @@ ion-icon {
 }
 
 .rc-pagination-item-active a {
-  color: var(--primary-color);
+  color: var(--pagination-item-input-bg);
 }
 
 .rc-pagination-item-active:hover,
@@ -178,7 +178,7 @@ ion-icon {
 
 .rc-pagination-item-active:hover a,
 .rc-pagination-item-active:focus a {
-  color: #39B33A;
+  color: --pagination-item-input-bg;
 }
 
 .rc-pagination-jump-prev,

@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 
 import ActivityCard from "@/components/Cards/ActivityCard";
@@ -38,7 +39,7 @@ const PopularActivities = () => {
           height={60}
         />
       </div>
-      <div className="font-bold text-4xl text-text-default py-6">
+      <div className="font-bold text-4xl lg:text-[48px] text-text-default py-6 uppercase">
         Hoạt động nổi bật
       </div>
       <div className="grid grid-cols-3 gap-4 w-full max-w-7xl pt-4 pb-16">

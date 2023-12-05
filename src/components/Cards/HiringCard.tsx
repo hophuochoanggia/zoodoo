@@ -35,22 +35,32 @@ const HiringCard = () => {
       </div>
       <div className="p-5 flex flex-col">
         <a href="#">
-          <h5 className="mb-3 text-text-default font-bold text-xl text-start">
+          <h5 className="mb-3 text-text-default font-bold text-xl lg:text-3xl text-start">
             Tuyển nhân viên Zookeeper
           </h5>
         </a>
-        <p className=" font-normal text-gray-700 dark:text-gray-400 line-clamp-2 text-start">
-          Hạn nộp hồ sơ: 30/11/2023
-        </p>
-        <p className=" font-normal text-gray-700 dark:text-gray-400 line-clamp-2 text-start">
-          Yêu cầu: Phải yêu thương và thích chăm sóc động vật.
-        </p>
+        <div className="flex flex-row gap-x-1">
+          <p className="text-lg font-bold text-gray-700  line-clamp-2 text-start">
+            Hạn nộp hồ sơ:
+          </p>
+          <p className="text-lg font-normal text-gray-700  line-clamp-2 text-start">
+            30/11/2023
+          </p>
+        </div>
+        <div className="flex">
+          <p className="text-lg font-[700] text-gray-700  line-clamp-2 text-start w-24">
+            Yêu cầu:
+          </p>
+          <p className="text-lg font-normal text-gray-700  line-clamp-2 text-start ">
+            Phải yêu thương và thích chăm sóc động vật.
+          </p>
+        </div>
         <div
           className={clsx(
-            "inline-flex items-center justify-start py-3 border border-transparent bg-transparent "
+            "inline-flex items-center justify-start py-3 border border-transparent bg-transparent mt-3"
           )}
         >
-          <span className={clsx("pr-2 uppercase  text-2xl text-[#39B33A]")}>
+          <span className={clsx("pr-2 uppercase  text-[20px] text-[#39B33A]")}>
             XEM CHI TIẾT
           </span>
           <svg

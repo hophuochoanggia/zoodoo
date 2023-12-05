@@ -9,9 +9,9 @@ import Icon7 from "@/../public/assets/images/section-icons/icon7.png";
 
 const CheckInWithStatue = () => {
   return (
-    <MainContainer background={BgImage4.src} className="-mt-28">
+    <MainContainer background={BgImage4.src} className="-mt-36">
       <div className="lg:grid lg:grid-cols-2 lg:relative flex flex-col">
-        <div className="">
+        <div className="pt-10">
           <SectionTitle
             icon={Icon7.src}
             title={"CHECK-IN CÙNG KANGAROO BẰNG GỖ TO NHẤT VIỆT NAM"}

@@ -26,21 +26,21 @@ const FiveStarsReview = () => {
 const ReviewCard = () => {
   return (
     <div
-      className="w-[550px] bg-contain p-10 bg-no-repeat bg-center h-auto flex flex-col justify-center items-start "
+      className="w-[650px] bg-contain p-10 bg-no-repeat bg-center h-auto flex flex-col justify-center items-start "
       style={{
         backgroundImage: `url(${CardBG.src})`,
       }}
     >
       <FiveStarsReview />
       <div className="ml-1">
-        <p className="mb-4 text-base text-text-default">
+        <p className="mb-4 text-base lg:text-xl text-[#374151] font-medium">
           Tuyệtttt vờiiiii! Một trải nghiệm thực sự rất thú vị & xứng đáng! Nên
           đi nhe mọi người ơi, vui lắm. Mình được các bạn hỗ trợ giờ giấc tham
           quan rất oke luôn, vì đi lần đầu nên không rành đường, lại có mưa nên
           trễ giờ (Zoo có xe đưa đón tại mình thích đi xe máy á). Được tương tác
           với mấy ẻm nên cảm giác rất gần gũi & mới lạ.
         </p>
-        <p className=" text-text-default font-semibold"> Hồ Thị Khả Ngân</p>
+        <p className=" text-xl font-bold"> Hồ Thị Khả Ngân</p>
       </div>
     </div>
   );

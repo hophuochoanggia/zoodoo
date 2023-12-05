@@ -8,7 +8,6 @@ interface IAnimalsIntroProps {
   background?: string;
   className?: string;
   children: React.ReactNode;
-  animation?: boolean;
   animationProps?: any;
 }
 
@@ -23,7 +22,8 @@ const cardVariants: Variants = {
     transition: {
       type: "spring",
       bounce: 0.2,
-      duration: 0.8,
+      duration: 1,
+      delay: 1,
     },
     scale: 1,
     opacity: 1,
@@ -34,12 +34,11 @@ const RevealContainer: FC<IAnimalsIntroProps> = ({
   background,
   children,
   className,
-  animation,
   animationProps,
 }: IAnimalsIntroProps) => {
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <section
+      <motion.section
         className={clsx(
           "bg-cover bg-no-repeat h-full flex flex-col justify-start items-center mt-[-30px] px-10 lg:px-0",
           className
@@ -48,12 +47,6 @@ const RevealContainer: FC<IAnimalsIntroProps> = ({
           backgroundImage: `url(${background})`,
         }}
       >
-        {!animation && (
-          <div className="flex flex-col items-center justify-center lg:max-w-7xl space-y-20 pb-32 pt-20 max-w-4xl">
-            {children}
-          </div>
-        )}
-        {animation && (
           <motion.div
             key="section"
             initial="offscreen"
@@ -64,8 +57,7 @@ const RevealContainer: FC<IAnimalsIntroProps> = ({
           >
             {children}
           </motion.div>
-        )}
-      </section>
+      </motion.section>
     </Suspense>
   );
 };

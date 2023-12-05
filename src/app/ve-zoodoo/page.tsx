@@ -18,6 +18,7 @@ import Icon5 from "@/../public/assets/images/section-icons/icon5.png";
 import EmailIcon from "@/../public/assets/icons/contact/Envelope.png";
 import MapPinIcon from "@/../public/assets/icons/contact/MapPinLine.png";
 import PhoneIcon from "@/../public/assets/icons/contact/PhoneCall.png";
+import CTAButton from "@/components/Buttons/CTAButton/CTAButton";
 
 const AboutUs = () => {
   const router = useRouter();
@@ -135,7 +136,7 @@ const AboutUs = () => {
                       width={30}
                       height={30}
                     />
-                    <span className="ml-2">090 7110 007 </span>
+                    <span className="ml-2">0979 11 00 07 </span>
                   </div>
                   <a
                     className="flex flex-row justify-start items-center"
@@ -157,11 +158,14 @@ const AboutUs = () => {
                       height={30}
                     />
                     <span className="ml-2">
-                      4H6P+VG6, ĐT723, Xã Đạ Nhim, Lạc Dương, Lâm Đồng
+                      Quốc lộ 27C, tiểu khu 94A, Đạ Nhim, Lạc Dương, Lâm Đồng
                     </span>
                   </div>
                 </div>
-                <FollowUs color="text-text-black" />
+                <FollowUs
+                  color="text-text-black"
+                  title="Theo dõi chúng tôi tại"
+                />
               </div>
             </div>
             <div className="pt-16">
@@ -175,12 +179,12 @@ const AboutUs = () => {
               backgroundImage: `url(${BG2.src})`,
             }}
           >
-            <button
-              className="p-4 bg-green-light text-white rounded-md"
+            <CTAButton
+              text="LIÊN HỆ HỢP TÁC"
+              bgColor="green"
               onClick={() => router.push("/lien-he-zoodoo")}
-            >
-              LIÊN HỆ HỢP TÁC
-            </button>
+              withIcon={false}
+            />
           </div>
         </div>
       </MainContainer>

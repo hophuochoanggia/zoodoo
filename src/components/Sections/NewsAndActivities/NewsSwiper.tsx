@@ -24,13 +24,13 @@ const NewCard = () => {
           <CTAButtonTransperent text="Xem thêm" onClick={() => {}} />
         </div>
       </div>
-      <div className="col-span-3 ml-16">
+      <div className="col-span-3 pl-16 ml-16">
         <Image
           src={NewsImage1.src}
           alt="Banner"
           layout="responsive"
-          width={500}
-          height={500}
+          width={200}
+          height={200}
         />
       </div>
     </div>

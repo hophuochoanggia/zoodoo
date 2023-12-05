@@ -1,3 +1,4 @@
+"use client";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -52,7 +53,6 @@ const slides = [
 
 const getColumns = (width: number | undefined) => {
   if (width === undefined) return 3;
-  if (width > 2560) return 5;
   if (width > 1496) return 3;
   if (width > 1024) return 2;
   return 1;

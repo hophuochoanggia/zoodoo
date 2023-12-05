@@ -8,39 +8,33 @@ import RightChevron from "../../../../public/assets/icons/chevron-forward-outlin
 interface ICTAButtonProps {
   bgColor: "green" | "orange";
   text: string;
-  onClick: () => void;
   className?: string;
   withIcon?: boolean;
-  uppercase?: boolean;
 }
 
-const CTAButton: FC<ICTAButtonProps> = ({
+const CallNumberButton: FC<ICTAButtonProps> = ({
   bgColor = "green",
   text,
-  onClick,
   className,
   withIcon = true,
-  uppercase = true,
 }) => {
   return (
-    <button
-      onClick={onClick}
+    <a
       className={clsx(
-        "inline-flex rounded-lg items-center justify-center px-10 py-3 border border-transparent text-[20px] font-medium text-white hover:scale-105",
+        "inline-flex rounded-lg items-center justify-center  border border-transparent text-[20px] font-medium text-white hover:scale-105",
         bgColor === "green"
           ? "bg-green-light hover:bg-green-500"
           : "bg-orange-default hover:bg-orange-light",
-        className
+        className ? className : "px-10 py-3"
       )}
+      href="tel:0979110007"
     >
-      <span className={clsx("text-white pr-2", uppercase && "uppercase")}>
-        {text}
-      </span>
+      <span className="text-white pr-2 uppercase">{text}</span>
       {withIcon && (
         <Image priority src={RightChevron} alt="Follow us on Twitter" />
       )}
-    </button>
+    </a>
   );
 };
 
-export default CTAButton;
+export default CallNumberButton;

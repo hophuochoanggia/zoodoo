@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 
 import CTAButton from "@/components/Buttons/CTAButton/CTAButton";
@@ -33,17 +34,21 @@ const PricesAndNotice = () => {
   const renderPrice = (height: string, price: string) => {
     return (
       <div className="flex flex-row pt-4">
-        <div className="w-10 h-5 bg-orange-200 rounded-[4px] mr-4 mt-1" />
+        <div className="w-10 h-6 bg-orange-200 rounded-[4px] mr-4 mt-2.5" />
         <div className="flex flex-col items-start justify-start space-y-4 w-full">
-          <p className="text-text-default font-normal uppercase text-2xl">
+          <p className="text-text-default font-normal uppercase text-[30px]">
             {height}
           </p>
           {price === "0" ? (
-            <p className="text-text-default font-bold">Miễn phí</p>
+            <p className="text-text-default text-xl lg:text-2xl font-bold">
+              Miễn phí
+            </p>
           ) : (
             <div className="flex flex-row space-x-2">
-              <p className="text-text-default font-semibold">{price}</p>
-              <p className="text-text-default font-bold">VNĐ/người</p>
+              <p className="text-text-default text-xl lg:text-2xl font-bold">
+                {price}
+              </p>
+              <p className="text-text-default text-xl lg:text-2xl">VNĐ/người</p>
             </div>
           )}
         </div>
@@ -62,18 +67,18 @@ const PricesAndNotice = () => {
       <div className="py-2">
         <CTAButton
           text="Đặt vé ngay"
-          onClick={() => console.log("Đặt vé ngay")}
+          onClick={() => console.log("Đặt vé")}
           bgColor="orange"
         />
       </div>
-      <p className="text-text-default font-semibold">Lưu ý</p>
-      <p className="text-text-default font-normal">
+      <p className="text-text-default font-semibold text-lg">Lưu ý:</p>
+      <p className="text-[#4B5563] font-normal">
         - Giá vé cho một chuyến tham quan 90 - 110 phút.
       </p>
-      <p className="text-text-default font-normal">
+      <p className="text-[#4B5563]  font-normal">
         - Trẻ em phải được đi kèm với cha mẹ hoặc người giám hộ.
       </p>
-      <p className="text-text-default font-normal">
+      <p className="text-[#4B5563] font-normal">
         - Người lớn chịu trách nhiệm với các con trẻ của mình.
       </p>
     </div>
@@ -83,7 +88,7 @@ const PricesAndNotice = () => {
 const PriceSection = () => {
   return (
     <MainContainer background={BG2.src}>
-      <div className="flex flex-col items-center justify-center max-w-7xl space-y-20 py-28">
+      <div className="flex flex-col items-center justify-center max-w-7xl space-y-20 pb-28 pt-10">
         <div className="flex flex-col items-start justify-center space-y-6 w-full">
           <div className="flex items-center">
             <Image
@@ -93,7 +98,7 @@ const PriceSection = () => {
               height={60}
             />
           </div>
-          <div className="font-bold text-4xl text-text-default uppercase">
+          <div className="font-bold text-4xl lg:text-[48px] text-text-default uppercase">
             Giá vé tham quan
           </div>
           <div className="w-4/5 text-text-default text-start py-4 font-semibold text-lg leading-[27px]">

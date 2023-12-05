@@ -5,8 +5,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
-import CTAButton from "@/components/Buttons/CTAButton/CTAButton";
 import { NavMobile } from "./NavMobile";
+import CallNumberButton from "@/components/Buttons/CallNumberButton/CallNumberButton";
 
 const Header = () => {
   const [colorChange, setColorchange] = useState<boolean>(false);
@@ -62,6 +62,7 @@ const Header = () => {
               <Link
                 href="/ve-zoodoo"
                 className={clsx(
+                  "text-lg",
                   shouldShowTransparent ? "text-white" : "text-green-default"
                 )}
               >
@@ -72,6 +73,7 @@ const Header = () => {
               <Link
                 href="/den-tham-zoodoo"
                 className={clsx(
+                  "text-lg",
                   shouldShowTransparent ? "text-white" : "text-green-default"
                 )}
               >
@@ -82,6 +84,7 @@ const Header = () => {
               <Link
                 href="/trai-nghiem-zoodoo"
                 className={clsx(
+                  "text-lg",
                   shouldShowTransparent ? "text-white" : "text-green-default"
                 )}
               >
@@ -92,6 +95,7 @@ const Header = () => {
               <Link
                 href="/tin-tuc-va-hoat-dong"
                 className={clsx(
+                  "text-lg",
                   shouldShowTransparent ? "text-white" : "text-green-default"
                 )}
               >
@@ -99,11 +103,7 @@ const Header = () => {
               </Link>
             </li>
             <li className="pl-6">
-              <CTAButton
-                text="ĐẶT VÉ NGAY"
-                bgColor="green"
-                onClick={() => {}}
-              />
+              <CallNumberButton text="ĐẶT VÉ NGAY" bgColor="green" />
             </li>
           </ul>
         </nav>

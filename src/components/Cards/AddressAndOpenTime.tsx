@@ -25,9 +25,11 @@ const AddressAndOpenTime = () => {
           className="pl-4"
         />
         <div className="ml-4">
-          <h3 className="text-lg font-semibold text-gray-700">Địa chỉ</h3>
-          <p className="text-base text-gray-500">ĐT723, Xã Đạ Nhim,</p>
-          <p className="text-base text-gray-500">Lạc Dương, Lâm Đồng</p>
+          <h3 className="text-2xl font-semibold text-gray-700">Địa chỉ</h3>
+          <p className="text-2xl text-gray-500">
+            Quốc lộ 27C, tiểu khu 94A, Đạ Nhim
+          </p>
+          <p className="text-2xl text-gray-500">Lạc Dương, Lâm Đồng</p>
         </div>
       </div>
       <div className="flex flex-row items-center">
@@ -38,9 +40,16 @@ const AddressAndOpenTime = () => {
           className="pl-4"
         />
         <div className="ml-4">
-          <h3 className="text-lg font-semibold text-gray-700">Giờ hoạt động</h3>
-          <p className="text-base text-gray-500">Mở cửa các ngày trong tuần</p>
-          <p className="text-base text-gray-500">9 giờ sáng - 6 giờ chiều</p>
+          <h3 className="text-2xl font-semibold text-gray-700">
+            Giờ hoạt động
+          </h3>
+          <p className="text-2xl text-gray-500">
+            Mở cửa tất cả các ngày trong tuần
+          </p>
+          <p className="text-2xl text-gray-500">9 giờ sáng - 6 giờ chiều</p>
+          <p className="text-2xl text-gray-500">
+            Giờ nhận khách cuối: 4h chiều
+          </p>
         </div>
       </div>
     </div>

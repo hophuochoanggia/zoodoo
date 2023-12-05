@@ -45,14 +45,14 @@ const data: ISharingCard[] = [
   {
     description:
       "Mình rất tự hào vì có cơ hội làm việc tại một vườn thú độc đáo mang phong cách Úc. Đây là một môi trường chuyên nghiệp, nơi mình đã học được nhiều kiến thức quan trọng về quản lý và chăm sóc động vật. Qua các khóa đào tạo, mình đã trang bị những kỹ năng cần thiết để làm việc hiệu quả với những loài động vật đa dạng. Là một zookeeper, công việc của mình không chỉ đơn thuần là chăm sóc động vật, mà còn là nhiệm vụ bảo vệ và giáo dục công chúng về tầm quan trọng của việc bảo tồn động vật hoang dã. Mình rất hạnh phúc và tự hào khi thấy khách tham quan đến vườn thú và có cơ hội tương tác gần gũi với các loài động vật. Điều này giúp mọi người hiểu và cảm nhận sự đa dạng và giá trị vô giá của tự nhiên.",
-    author: "Anna",
+    author: "Phương Thảo",
     image: "/assets/images/experience/experience1.png",
     imageSide: "right",
   },
   {
     description:
       "Tôi đã có một trải nghiệm tuyệt vời tại ZooDoo Đà Lạt. Tôi đã được tương tác với các loài vật đáng yêu. Tôi đã được tham gia các hoạt động thú vị và học hỏi rất nhiều điều mới lạ.",
-    author: "Jack",
+    author: "Khang",
     image: "/assets/images/experience/experience2.png",
     imageSide: "left",
   },

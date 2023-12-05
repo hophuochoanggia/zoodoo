@@ -1,6 +1,5 @@
-import { useRef, useEffect } from "react";
-
-import { useScroll, useTransform, motion } from "framer-motion";
+"use client";
+import { motion } from "framer-motion";
 
 import CTAButton from "@/components/Buttons/CTAButton/CTAButton";
 
@@ -22,7 +21,7 @@ const MainBanner = () => {
           className="flex flex-col items-start justify-center w-full max-w-7xl h-1/2 2xl:h-full py-44 "
         >
           <div className="flex flex-col ">
-            <p className="text-5xl 2xl:text-6xl 2xl:leading-relaxed font-bold w-9/12 xl:w-7/12  leading-normal lg:leading-relaxed">
+            <p className="text-5xl 2xl:text-[64px] 2xl:leading-relaxed font-bold w-9/12 xl:w-7/12  leading-normal lg:leading-relaxed">
               VƯỜN THÚ THÂN THIỆN CHUẨN ÚC ĐẦU TIÊN
             </p>
             <p className="text-5xl 2xl:text-6xl 2xl:leading-relaxed  font-bold leading-normal lg:leading-relaxed">

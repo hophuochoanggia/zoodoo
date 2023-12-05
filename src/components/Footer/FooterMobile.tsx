@@ -42,7 +42,7 @@ const FooterMobile = () => {
                     href="/tin-tuc-va-hoat-dong"
                     className="text-gray-light"
                   >
-                    Trãi nghiệm ZooDoo
+                    Trải nghiệm ZooDoo
                   </Link>
                 </li>
                 <li className="mb-4">
@@ -58,7 +58,7 @@ const FooterMobile = () => {
               </h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium flex flex-col justify-center items-center">
                 <li className="mb-4">
-                  <p className="text-gray-light">090 7110 007 </p>
+                  <p className="text-gray-light">0979 11 00 07 </p>
                 </li>
                 <li className="mb-4">
                   <a
@@ -75,7 +75,7 @@ const FooterMobile = () => {
                     href="https://maps.app.goo.gl/eSTLDVf8wjaMukXMA"
                   >
                     <p className=" focus:text-white text-center text-gray-light ">
-                      4H6P+VG6, ĐT723, Xã Đạ Nhim, Lạc Dương, Lâm Đồng{" "}
+                      Quốc lộ 27C, tiểu khu 94A, Đạ Nhim, Lạc Dương, Lâm Đồng{" "}
                     </p>
                   </a>
                 </li>
