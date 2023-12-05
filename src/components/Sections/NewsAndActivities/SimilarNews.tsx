@@ -10,7 +10,7 @@ const SimilarNews = () => {
       <div className="flex flex-row items-center justify-start py-10">
         <div className="flex items-center">
           <Image
-            src={"/assets/images/icon6.png"}
+            src={"/assets/images/section-icons/icon6.png"}
             alt="Zoodoo logo"
             width={50}
             height={50}

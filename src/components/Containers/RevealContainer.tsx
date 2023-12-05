@@ -1,3 +1,4 @@
+"use client";
 import clsx from "clsx";
 import React, { FC, Suspense } from "react";
 
@@ -53,18 +54,16 @@ const RevealContainer: FC<IAnimalsIntroProps> = ({
           </div>
         )}
         {animation && (
-          <motion.section
+          <motion.div
+            key="section"
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: true, amount: 0.8 }}
+            variants={cardVariants}
+            className="flex flex-col items-center justify-center lg:max-w-7xl space-y-20  pb-32 pt-20 max-w-4xl"
           >
-            <motion.div
-              variants={cardVariants}
-              className="flex flex-col items-center justify-center lg:max-w-7xl space-y-20  pb-32 pt-20 max-w-4xl"
-            >
-              {children}
-            </motion.div>
-          </motion.section>
+            {children}
+          </motion.div>
         )}
       </section>
     </Suspense>
