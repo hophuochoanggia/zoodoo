@@ -34,7 +34,12 @@ const AnimalsIntro = () => {
         gần gũi với thiên nhiên, và chiêm ngưỡng sự đa dạng của thế giới động
         vật
       </div>
-      <ImageGrid13 />
+      <ImageGrid13
+        image1="/assets/images/animals/alpaca-cut.png"
+        image2="/assets/images/animals/racoon-cut.png"
+        image3="/assets/images/animals/wallaby-cut.png"
+        image4="/assets/images/animals/capybara-cut.png"
+      />{" "}
       <div className="w-full flex flex-row items-center justify-center py-6">
         <CTAButton
           text="Xem thêm"

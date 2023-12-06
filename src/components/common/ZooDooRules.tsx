@@ -1,8 +1,6 @@
 import Image from "next/image";
 import RulesBG from "@/../public/assets/backgrounds/rules-bg.png";
 
-import Rule1 from "@/../public/assets/images/rules/rule1.png";
-
 const ZooDooRules = () => {
   return (
     <div

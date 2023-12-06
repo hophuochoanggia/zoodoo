@@ -1,12 +1,12 @@
 import React, { FC } from "react";
 
-interface IMapProps {
+interface IZooDooMapProps {
   width?: string;
   height?: string;
   borderRadius?: string;
 }
 
-const Map: FC<IMapProps> = ({
+const ZooDooMap: FC<IZooDooMapProps> = ({
   width = "600",
   height = "450",
   borderRadius = "0px",
@@ -22,4 +22,4 @@ const Map: FC<IMapProps> = ({
   );
 };
 
-export default Map;
+export default ZooDooMap;
