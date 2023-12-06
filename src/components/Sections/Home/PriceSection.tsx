@@ -93,7 +93,7 @@ const PriceSection = () => {
           <div className="flex items-center">
             <Image
               src="/assets/images/section-icons/icon3.png"
-              alt="Zoodoo logo"
+              alt="ZooDoo logo"
               width={60}
               height={60}
             />
@@ -114,7 +114,7 @@ const PriceSection = () => {
             <div className="w-full aspect-square relative">
               <Image
                 src={AnimalsImage2.src}
-                alt="Zoodoo logo"
+                alt="ZooDoo logo"
                 fill
                 style={{
                   objectFit: "contain",

@@ -64,7 +64,7 @@ const ZooKeeperSharing = () => {
         icon={Icon7.src}
         title={"CHIA SẺ CỦA ZOOKEEPER CHUYÊN NGHIỆP"}
       />
-      <div className="flex flex-col gap-10 pb-56">
+      <div className="flex flex-col gap-10 pb-72">
         {data.map((item, index) => (
           <SharingCard
             key={index}

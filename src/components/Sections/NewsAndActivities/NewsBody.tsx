@@ -1,13 +1,12 @@
-import React from "react";
+import Image from "next/image";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import Image from "next/image";
 
-import NewestPost from "./NewestPost";
 import BackButton from "@/components/Buttons/BackButton";
+import NewestPost from "./NewestPost";
 
 const markdownData = ` 
-Here's our logo (hover to see the title text): ất tần tật về vườn thú siêu cấp đáng yêu Zoodoo Đà Lạtất tần tật về vườn thú siêu cấp đáng yêu Zoodoo Đà Lạt ất tần tật về vườn thú siêu cấp đáng yêu Zoodoo Đà Lạt ất tần tật về vườn thú siêu cấp đáng yêu Zoodoo Đà Lạt
+Here's our logo (hover to see the title text): ất tần tật về vườn thú siêu cấp đáng yêu ZooDoo Đà Lạtất tần tật về vườn thú siêu cấp đáng yêu ZooDoo Đà Lạt ất tần tật về vườn thú siêu cấp đáng yêu ZooDoo Đà Lạt ất tần tật về vườn thú siêu cấp đáng yêu ZooDoo Đà Lạt
 
 Inline-style:
 ![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")

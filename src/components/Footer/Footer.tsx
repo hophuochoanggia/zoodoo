@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import FollowUs from "@/components/common/FollowUs";
-import ZoodooMap from "@/components/Map/ZoodooMap";
+import ZooDooMap from "@/components/Map/ZooDooMap";
 
 const Footer = () => {
   return (
@@ -13,7 +13,7 @@ const Footer = () => {
             <a href="https://flowbite.com/" className="flex items-center">
               <Image
                 src="/assets/images/logos/logo-zoodoo-white-big.png"
-                alt="Zoodoo logo"
+                alt="ZooDoo logo"
                 width={160}
                 height={160}
               />
@@ -96,7 +96,7 @@ const Footer = () => {
             </div>
 
             <div className="col-span-2">
-              <ZoodooMap width="400" height="400" />
+              <ZooDooMap width="400" height="400" />
             </div>
           </div>
         </div>

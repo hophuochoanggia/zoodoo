@@ -1,7 +1,5 @@
-import React from "react";
 import Image from "next/legacy/image";
 
-import MainContainer from "@/components/Containers/MainContainer";
 import CTAButtonTransperent from "@/components/Buttons/CTAButton/CTAButtonTransperent";
 
 import NewsImage1 from "@/../public/assets/images/news/new1.png";
@@ -16,7 +14,7 @@ const NewCard = () => {
           Vườn thú ZooDoo Đà Lạt: Review đường đi, giá vé, chơi gì, ăn gì?
         </div>
         <div className="font-medium text-lg text-text-gray leading-7 py-3">
-          Zoodoo Đà Lạt như một “làn gió mới” cho du lịch Đà Lạt vì là một nơi
+          ZooDoo Đà Lạt như một “làn gió mới” cho du lịch Đà Lạt vì là một nơi
           có thể vừa “thăm thú”, vừa chụp hình check-in, nhâm nhi cafe và tham
           gia nhiều hoạt động trải nghiệm khác.
         </div>

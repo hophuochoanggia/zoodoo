@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import CTAButton from "@/components/Buttons/CTAButton/CTAButton";
 import MainContainer from "@/components/Containers/MainContainer";
-import ZoodooMap from "@/components/Map/ZoodooMap";
+import ZooDooMap from "@/components/Map/ZooDooMap";
 import SectionTitle from "@/components/common/SectionTitle";
 
 import BG1 from "@/../public/assets/backgrounds/den-tham-zoodoo/bg1.png";
@@ -11,6 +11,7 @@ import BG2 from "@/../public/assets/backgrounds/den-tham-zoodoo/bg2.png";
 import BG3 from "@/../public/assets/backgrounds/den-tham-zoodoo/bg3.png";
 import BG4 from "@/../public/assets/backgrounds/den-tham-zoodoo/bg4.png";
 import PriceSection from "@/components/Cards/PriceCards";
+import ZooDooRules from "@/components/common/ZooDooRules";
 
 interface IBusInfoProps {
   title: string;
@@ -83,7 +84,7 @@ const VisitUs = () => {
         />
         <div className="flex flex-col justify-center items-center gap-6 max-w-7xl py-8">
           <div className="rounded-md">
-            <ZoodooMap width="800" height="500" borderRadius="10px" />
+            <ZooDooMap width="800" height="500" borderRadius="10px" />
           </div>
         </div>
       </MainContainer>
@@ -227,16 +228,11 @@ const VisitUs = () => {
           title={"NỘI QUY VƯỜN THÚ"}
           description="Để ZooDoo phục vụ quý khách tốt nhất, cũng như bảo vệ môi trường lành mạnh và an toàn cho động vật và quý khách tham quan, ZooDoo có các quy định sau:"
         />
+
         <div className="flex flex-col items-center justify-center">
-          <Image
-            src="/assets/images/zoo-rules.png"
-            alt="Zoodoo rules"
-            width={900}
-            height={64}
-            className="xl:p-0 px-8"
-          />
+          <ZooDooRules />
           <div className="lg:w-[900px] px-8 xl:px-0 py-8">
-            <p className="text-center font-medium text-lg">
+            <p className="text-center font-medium text-lg leading-9 lg:text-2xl text-[#4B5563]">
               ZooDoo là vườn thú thân thiện, nếu quý khách tuân thủ các quy định
               trên thì chúng ta sẽ cùng có một trải nghiệm tuyệt vời. ZooDoo
               chân thành cảm ơn sự hợp tác của quý khách và mong rằng ứng xử văn

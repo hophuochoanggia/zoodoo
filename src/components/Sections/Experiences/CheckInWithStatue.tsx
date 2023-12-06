@@ -9,7 +9,10 @@ import Icon7 from "@/../public/assets/images/section-icons/icon7.png";
 
 const CheckInWithStatue = () => {
   return (
-    <MainContainer background={BgImage4.src} className="-mt-36">
+    <MainContainer
+      background={BgImage4.src}
+      className="-mt-52 md: mt:-44 lg:-mt-48"
+    >
       <div className="lg:grid lg:grid-cols-2 lg:relative flex flex-col">
         <div className="pt-10">
           <SectionTitle

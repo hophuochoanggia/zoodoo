@@ -24,7 +24,7 @@ const SectionTitle: FC<ISectionTitleProps> = ({
     >
       {icon && (
         <div className="flex items-center">
-          <Image src={icon} alt="Zoodoo logo" width={80} height={80} />
+          <Image src={icon} alt="ZooDoo logo" width={80} height={80} />
         </div>
       )}
       <div

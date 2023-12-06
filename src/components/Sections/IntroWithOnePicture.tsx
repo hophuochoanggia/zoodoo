@@ -22,7 +22,7 @@ const IntroWithOnePicture: FC<IIntroWithOnePictureProps> = ({
       <div className="w-full h-[300px] md:h-[500px] relative">
         <Image
           src={picture}
-          alt="Zoodoo logo"
+          alt="ZooDoo logo"
           fill
           style={{
             objectFit: "contain",

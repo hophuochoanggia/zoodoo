@@ -55,21 +55,21 @@ export const NavMobile = () => {
             {isOpen ? (
               <Image
                 src="/assets/images/logos/logo-zoodoo-white.png"
-                alt="Zoodoo logo"
+                alt="ZooDoo logo"
                 width={100}
                 height={100}
               />
             ) : shouldShowTransparent ? (
               <Image
                 src="/assets/images/logos/logo-zoodoo-white.png"
-                alt="Zoodoo logo"
+                alt="ZooDoo logo"
                 width={100}
                 height={100}
               />
             ) : (
               <Image
                 src="/assets/images/logos/logo-zoodoo-green.png"
-                alt="Zoodoo logo"
+                alt="ZooDoo logo"
                 width={100}
                 height={100}
               />

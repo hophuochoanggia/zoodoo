@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 
 import BackButton from "@/components/Buttons/BackButton";
@@ -18,7 +17,7 @@ const NewBanner = () => {
               <BackButton />
             </div>
             <div className="text-5xl text-white font-bold leading-[72px]">
-              Tất tần tật về vườn thú &quot;siêu cấp&quot; đáng yêu Zoodoo Đà
+              Tất tần tật về vườn thú &quot;siêu cấp&quot; đáng yêu ZooDoo Đà
               Lạt
             </div>
             <div className="block lg:hidden py-4 text-white text-base text-end font-medium">

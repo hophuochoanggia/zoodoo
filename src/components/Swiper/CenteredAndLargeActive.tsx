@@ -1,23 +1,20 @@
-import React from "react";
+import React, { FC } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/navigation";
-import useWindowSize from "@/hooks/useWindowSize";
 
 interface ICenteredAndLargeActiveProps {
   slides: {
     image: string;
-    description: string;
+    description?: string;
   }[];
 }
 
-const slides = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-const CenteredAndLargeActive = () => {
-  const { width } = useWindowSize();
+const CenteredAndLargeActive: FC<ICenteredAndLargeActiveProps> = ({
+  slides,
+}) => {
   return (
     <div className=" w-screen">
       <Swiper
@@ -62,16 +59,19 @@ const CenteredAndLargeActive = () => {
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
-            <figure>
-              <img
-                src="https://picsum.photos/id/623/1600/900"
-                style={{
-                  borderRadius: "10px",
-                }}
+            <figure className="h-full w-full">
+              <Image
+                width={1000}
+                height={500}
+                src={slide.image}
+                alt="slide"
+                className="rounded-[10px]"
               />
-              <figcaption className="text-center py-4">
-                Your caption here
-              </figcaption>
+              {slide?.description && (
+                <figcaption className="text-center text-xl font-medium py-4">
+                  {slide.description}
+                </figcaption>
+              )}
             </figure>
           </SwiperSlide>
         ))}

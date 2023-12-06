@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 import AddressSvg from "../../../public/assets/icons/address.svg";
 import OpenHourseSvg from "../../../public/assets/icons/open-hours.svg";
@@ -21,7 +20,7 @@ const AddressAndOpenTime = () => {
         <Image
           priority
           src={AddressSvg}
-          alt="Zoodoo address"
+          alt="ZooDoo address"
           className="pl-4"
         />
         <div className="ml-4">
@@ -36,7 +35,7 @@ const AddressAndOpenTime = () => {
         <Image
           priority
           src={OpenHourseSvg}
-          alt="Zoodoo address"
+          alt="ZooDoo address"
           className="pl-4"
         />
         <div className="ml-4">
@@ -48,7 +47,7 @@ const AddressAndOpenTime = () => {
           </p>
           <p className="text-2xl text-gray-500">9 giờ sáng - 6 giờ chiều</p>
           <p className="text-2xl text-gray-500">
-            Giờ nhận khách cuối: 4h chiều
+            Giờ nhận khách cuối: 4 giờ chiều
           </p>
         </div>
       </div>

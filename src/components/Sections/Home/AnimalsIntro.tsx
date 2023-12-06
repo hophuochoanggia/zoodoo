@@ -20,7 +20,7 @@ const AnimalsIntro = () => {
       <div className="flex items-center">
         <Image
           src="/assets/images/section-icons/icon5.png"
-          alt="Zoodoo logo"
+          alt="ZooDoo logo"
           width={60}
           height={60}
         />
@@ -29,7 +29,7 @@ const AnimalsIntro = () => {
         Các loài động vật tại ZooDoo
       </div>
       <div className="w-4/5 text-start py-4 text-lg lg:text-xl text-text-default leading-loose">
-        Tại Zoodoo Dalat, bạn sẽ có cơ hội khám phá và tương tác với một loạt
+        Tại ZooDoo Dalat, bạn sẽ có cơ hội khám phá và tương tác với một loạt
         các loài động vật phong phú. Hãy đắm mình trong không gian xanh mát và
         gần gũi với thiên nhiên, và chiêm ngưỡng sự đa dạng của thế giới động
         vật

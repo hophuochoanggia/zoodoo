@@ -1,26 +1,26 @@
 const data = [
   {
-    title: "Tất tần tật về vườn thú siêu cấp đáng yêu Zoodoo Đà Lạt",
+    title: "Tất tần tật về vườn thú siêu cấp đáng yêu ZooDoo Đà Lạt",
     description: "Đây là tin tức 1",
     link: "/tin-tuc-va-hoat-dong/1",
   },
   {
-    title: "Tất tần tật về vườn thú siêu cấp đáng yêu Zoodoo Đà Lạt",
+    title: "Tất tần tật về vườn thú siêu cấp đáng yêu ZooDoo Đà Lạt",
     description: "Đây là tin tức 2",
     link: "/tin-tuc-va-hoat-dong/1",
   },
   {
-    title: "Tất tần tật về vườn thú siêu cấp đáng yêu Zoodoo Đà Lạt",
+    title: "Tất tần tật về vườn thú siêu cấp đáng yêu ZooDoo Đà Lạt",
     description: "Đây là tin tức 3",
     link: "/tin-tuc-va-hoat-dong/1",
   },
   {
-    title: "Tất tần tật về vườn thú siêu cấp đáng yêu Zoodoo Đà Lạt",
+    title: "Tất tần tật về vườn thú siêu cấp đáng yêu ZooDoo Đà Lạt",
     description: "Đây là tin tức 4",
     link: "/tin-tuc-va-hoat-dong/1",
   },
   {
-    title: "Tất tần tật về vườn thú siêu cấp đáng yêu Zoodoo Đà Lạt",
+    title: "Tất tần tật về vườn thú siêu cấp đáng yêu ZooDoo Đà Lạt",
     description: "Đây là tin tức 5",
     link: "/tin-tuc-va-hoat-dong/1",
   },

@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 import MainContainer from "@/components/Containers/MainContainer";
-import ZoodooMap from "@/components/Map/ZoodooMap";
+import ZooDooMap from "@/components/Map/ZooDooMap";
 import Hiring from "@/components/Sections/AboutUs/Hiring";
 import FollowUs from "@/components/common/FollowUs";
 import SectionTitle from "@/components/common/SectionTitle";
@@ -60,7 +60,7 @@ const AboutUs = () => {
         <div className="w-full h-[300px] md:h-[500px] relative">
           <Image
             src={Animal1Image.src}
-            alt="Zoodoo logo"
+            alt="ZooDoo logo"
             fill
             style={{
               objectFit: "contain",
@@ -83,26 +83,26 @@ const AboutUs = () => {
             </div>
 
             <p className="text-center lg:text-start font-medium text-lg  px-10 lg:px-0">
-              Một trải nghiệm đặc biệt tại Zoodoo là bạn có thể tham gia vào
+              Một trải nghiệm đặc biệt tại ZooDoo là bạn có thể tham gia vào
               hoạt động cho các bạn thú ăn. Điều này cho phép bạn tham gia trực
               tiếp vào quá trình chuẩn bị và cung cấp thức ăn cho các loài động
               vật.
             </p>
             <p className="text-center lg:text-start font-medium text-lg  px-10 lg:px-0">
-              Một trải nghiệm đặc biệt tại Zoodoo là bạn có thể tham gia vào
+              Một trải nghiệm đặc biệt tại ZooDoo là bạn có thể tham gia vào
               hoạt động cho các bạn thú ăn. Điều này cho phép bạn tham gia trực
               tiếp vào quá trình chuẩn bị và cung cấp thức ăn cho các loài động
-              vật.Một trải nghiệm đặc biệt tại Zoodoo là bạn có thể tham gia vào
+              vật.Một trải nghiệm đặc biệt tại ZooDoo là bạn có thể tham gia vào
               hoạt động cho các bạn thú ăn. Điều này cho phép bạn tham gia trực
               tiếp vào quá trình chuẩn bị và cung cấp thức ăn cho các loài động
-              vật. Một trải nghiệm đặc biệt tại Zoodoo.
+              vật. Một trải nghiệm đặc biệt tại ZooDoo.
             </p>
           </div>
 
           <div className="">
             <Image
               src={Animal2Image.src}
-              alt="Zoodoo logo"
+              alt="ZooDoo logo"
               width={600}
               height={600}
             />
@@ -169,7 +169,7 @@ const AboutUs = () => {
               </div>
             </div>
             <div className="pt-16">
-              <ZoodooMap />
+              <ZooDooMap />
             </div>
           </div>
 
