@@ -35,11 +35,11 @@ const NewCard = () => {
       </div>
       <div className="p-5 flex flex-col">
         <a href="#">
-          <h5 className="mb-3 text-text-default font-bold text-xl text-start">
+          <h5 className="mb-3 text-text-default font-bold text-xl lg:text-3xl text-start">
             Tất tần tật về vườn thú &quot;siêu cấp&quot; đáng yêu ZooDoo Đà Lạt
           </h5>
         </a>
-        <p className=" font-normal text-gray-700 dark:text-gray-400 line-clamp-2 text-start">
+        <p className="text-base lg:text-lg font-normal text-gray-700 dark:text-gray-400 line-clamp-2 text-start">
           ZooDoo Đà Lạt như một “làn gió mới” cho du lịch Đà Lạt vì là một nơi
           có thể vừa “thăm thú”, vừa chụp hình check-in, nhâm nhi cafe và tham
           gia nhiều hoạt động trải nghiệm khác.
@@ -49,7 +49,9 @@ const NewCard = () => {
             "inline-flex items-center justify-start py-3 border border-transparent bg-transparent "
           )}
         >
-          <span className={clsx("pr-2 uppercase  text-2xl text-[#39B33A]")}>
+          <span
+            className={clsx("pr-2 uppercase text-lg lg:text-xl text-[#39B33A]")}
+          >
             Xem thêm
           </span>
           <svg

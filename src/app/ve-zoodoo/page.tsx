@@ -28,14 +28,14 @@ const AboutUs = () => {
       <MainContainer>
         <SectionTitle icon={Icon5.src} title={"Tổng Quan về ZooDoo Đà Lạt"} />
         <div className="flex flex-col justify-center items-center gap-6 max-w-4xl py-8  px-10 lg:px-0">
-          <p className="text-center font-medium text-lg ">
+          <p className="text-center font-medium text-lg lg:text-xl ">
             Thành lập vào năm 2015, ZooDoo Đà Lạt là một công viên động vật nằm
             tại thành phố Đà Lạt, một điểm đến du lịch nổi tiếng ở Việt Nam.
             Được thiết kế theo mô hình thân thiện tiêu chuẩn Úc duy nhất tại
             Việt Nam, công viên mang đến một trải nghiệm thú vị và hấp dẫn cho
             du khách mọi lứa tuổi.
           </p>
-          <p className="text-center font-medium text-lg ">
+          <p className="text-center font-medium text-lg lg:text-xl">
             Với diện tích rộng lớn, ZooDoo Đà Lạt là nơi bảo tồn nhiều loài động
             vật quý hiếm được đưa về từ nước Úc xa xôi như ngựa lùn Pony, chim
             vành khuyên, cừu alpacas, chuột lang nước, và chuột túi (kangaroo)
@@ -43,14 +43,14 @@ const AboutUs = () => {
             phỏng môi trường sống tự nhiên của chúng, mang đến cho du khách một
             cái nhìn gần gũi về cuộc sống động vật.
           </p>
-          <p className="text-center font-medium text-lg ">
+          <p className="text-center font-medium text-lg lg:text-xl">
             Ngoài việc khám phá các khu vực động vật, ZooDoo Đà Lạt còn có một
             quán cafe nhỏ xinh và khu cắm trại giữa đồi thông bạt ngàn đầy thơ
             mộng. Quán cafe ZooDoo Đà Lạt có tầm “view” nhìn ra thung lũng trong
             sương mờ, là nơi lý tưởng để bạn có thể thưởng thức các món ăn nhẹ
             và thư giãn giữa thiên nhiên trong xanh của Đà Lạt.
           </p>
-          <p className="text-center font-medium text-lg ">
+          <p className="text-center font-medium text-lg lg:text-xl">
             Công viên cũng có các tiện ích và dịch vụ khác như nhà hàng, quầy
             thức ăn nhanh và cửa hàng quà lưu niệm. Du khách có thể thưởng thức
             các món ăn ngon và thức uống trong khi thư giãn sau khi khám phá
@@ -136,7 +136,9 @@ const AboutUs = () => {
                       width={30}
                       height={30}
                     />
-                    <span className="ml-2">0979 11 00 07 </span>
+                    <span className="ml-2 text-xl lg:text-2xl">
+                      0979 11 00 07
+                    </span>
                   </div>
                   <a
                     className="flex flex-row justify-start items-center"
@@ -148,7 +150,9 @@ const AboutUs = () => {
                       width={30}
                       height={30}
                     />
-                    <span className="ml-2">hello@zoodoodalat.com </span>
+                    <span className="ml-2 text-xl lg:text-2xl">
+                      hello@zoodoodalat.com{" "}
+                    </span>
                   </a>
                   <div className="flex flex-row justify-start items-center">
                     <Image
@@ -157,7 +161,7 @@ const AboutUs = () => {
                       width={30}
                       height={30}
                     />
-                    <span className="ml-2">
+                    <span className="ml-2 text-xl lg:text-2xl">
                       Quốc lộ 27C, tiểu khu 94A, Đạ Nhim, Lạc Dương, Lâm Đồng
                     </span>
                   </div>

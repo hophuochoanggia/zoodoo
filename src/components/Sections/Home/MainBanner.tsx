@@ -24,7 +24,7 @@ const MainBanner = () => {
             <p className="text-5xl 2xl:text-[64px] 2xl:leading-relaxed font-bold w-9/12 xl:w-7/12  leading-normal lg:leading-relaxed">
               VƯỜN THÚ THÂN THIỆN CHUẨN ÚC ĐẦU TIÊN
             </p>
-            <p className="text-5xl 2xl:text-6xl 2xl:leading-relaxed  font-bold leading-normal lg:leading-relaxed">
+            <p className="text-5xl 2xl:text-[64px] 2xl:leading-relaxed  font-bold leading-normal lg:leading-relaxed">
               TẠI VIỆT NAM
             </p>
 

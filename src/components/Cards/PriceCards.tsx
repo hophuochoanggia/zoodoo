@@ -10,8 +10,8 @@ const PriceCard120 = () => {
           Chiều cao từ 120cm trở lên
         </p>
         <div className="flex flex-row items-end justify-center py-6 pt-8">
-          <p className="text-2xl font-bold pr-2">150 000</p>
-          <p className="text-lg ">VND/Người</p>
+          <p className="text-2xl lg:text-4xl font-bold pr-2">150 000</p>
+          <p className="text-base lg:text-xl ">VND/Người</p>
         </div>
 
         <div className="flex flex-row items-end justify-center pb-6">
@@ -41,8 +41,8 @@ const PriceCard90 = () => {
           Chiều cao từ 90cm - 120cm
         </p>
         <div className="flex flex-row items-end justify-center py-6 pt-8">
-          <p className="text-2xl font-bold pr-2">75 000</p>
-          <p className="text-lg ">VND/Người</p>
+          <p className="text-2xl lg:text-4xl font-bold pr-2">75 000</p>
+          <p className="text-base lg:text-xl ">VND/Người</p>
         </div>
 
         <div className="flex flex-row items-end justify-center pb-6">
@@ -69,7 +69,7 @@ const PriceCardUnder90 = () => {
           Chiều cao dưới 90cm
         </p>
         <div className="flex flex-row items-end justify-center py-4 pt-8">
-          <p className="text-2xl font-bold ">Miễn Phí</p>
+          <p className="text-2xl lg:text-4xl font-bold">Miễn Phí</p>
         </div>
 
         <div className="flex flex-col items-end justify-center gap-2">
@@ -204,13 +204,6 @@ export const PriceSection = () => {
             <p className="text-lg text-[#4B5563] font-medium leading-[27px]">
               Để có trải nghiệm an toàn, khách phải tham gia và đi theo nhóm mọi
               lúc.
-            </p>
-          </li>
-          <li className="flex flex-row justify-start items-center">
-            <p className="text-3xl px-2">•</p>
-            <p className="text-lg text-[#4B5563] font-medium leading-[27px]">
-              Vì đây là một trải nghiệm ngoài trời, chúng tôi khuyên bạn nên mặc
-              quần áo thoải mái và đi giày đầy đủ.
             </p>
           </li>
           <li className="flex flex-row justify-start items-center">

@@ -20,42 +20,29 @@ const slides = [
       "Tuyệtttt vờiiiii! Một trải nghiệm thực sự rất thú vị & xứng đáng! Nên đi nhe mọi người ơi, vui lắm. Mình được các bạn hỗ trợ giờ giấc tham quan rất oke luôn, vì đi lần đầu nên không rành đường, lại có mưa nên trễ giờ (Zoo có xe đưa đón tại mình thích đi xe máy á). Được tương tác với mấy ẻm nên cảm giác rất gần gũi & mới lạ.",
   },
   {
-    user: "Hồ Thị Khả Ngân",
+    user: "Phạm Yun",
     description:
-      "Tuyệtttt vờiiiii! Một trải nghiệm thực sự rất thú vị & xứng đáng! Nên đi nhe mọi người ơi, vui lắm. Mình được các bạn hỗ trợ giờ giấc tham quan rất oke luôn, vì đi lần đầu nên không rành đường, lại có mưa nên trễ giờ (Zoo có xe đưa đón tại mình thích đi xe máy á). Được tương tác với mấy ẻm nên cảm giác rất gần gũi & mới lạ.",
+      "Điểm đến cực kỳ lý tưởng cho những ai yêu động vật. Thú được chăm sóc tốt, sạch sẽ, thân thiện với con người.Nhóm mình đã có một trải nghiệm tuyệt vời ở Zoodoo, có bạn dẫn đoàn tên Hoàng rất nhiệt tình và hiểu biết về các bé thú. Nhất định sẽ quay lại.",
   },
   {
-    user: "Hồ Thị Khả Ngân",
+    user: "Cao Thị Thanh Thảo",
     description:
-      "Tuyệtttt vờiiiii! Một trải nghiệm thực sự rất thú vị & xứng đáng! Nên đi nhe mọi người ơi, vui lắm. Mình được các bạn hỗ trợ giờ giấc tham quan rất oke luôn, vì đi lần đầu nên không rành đường, lại có mưa nên trễ giờ (Zoo có xe đưa đón tại mình thích đi xe máy á). Được tương tác với mấy ẻm nên cảm giác rất gần gũi & mới lạ.",
+      "Các bé thú dễ thương và thân thiện. Bạn tour guide tên Hoàng nhiệt tình và chu đáo, hiểu biết rộng về các bé thú. Đoàn mình đi có nhiều con nít nhưng bạn tour guide rất đáng yêu khi tương tác nói chuyện với các bé.",
   },
   {
-    user: "Hồ Thị Khả Ngân",
+    user: "Sơn Nguyễn",
     description:
-      "Tuyệtttt vờiiiii! Một trải nghiệm thực sự rất thú vị & xứng đáng! Nên đi nhe mọi người ơi, vui lắm. Mình được các bạn hỗ trợ giờ giấc tham quan rất oke luôn, vì đi lần đầu nên không rành đường, lại có mưa nên trễ giờ (Zoo có xe đưa đón tại mình thích đi xe máy á). Được tương tác với mấy ẻm nên cảm giác rất gần gũi & mới lạ.",
+      "Điểm đến cực kỳ lý tưởng cho những ai yêu động vật. Thú được chăm sóc tốt, sạch sẽ, thân thiện với con người. Nhóm mình đã có một trải nghiệm tuyệt vời ở Zoodoo.",
   },
-  {
-    user: "Hồ Thị Khả Ngân",
-    description:
-      "Tuyệtttt vờiiiii! Một trải nghiệm thực sự rất thú vị & xứng đáng! Nên đi nhe mọi người ơi, vui lắm. Mình được các bạn hỗ trợ giờ giấc tham quan rất oke luôn, vì đi lần đầu nên không rành đường, lại có mưa nên trễ giờ (Zoo có xe đưa đón tại mình thích đi xe máy á). Được tương tác với mấy ẻm nên cảm giác rất gần gũi & mới lạ.",
-  },
-  {
-    user: "Hồ Thị Khả Ngân",
-    description:
-      "Tuyệtttt vờiiiii! Một trải nghiệm thực sự rất thú vị & xứng đáng! Nên đi nhe mọi người ơi, vui lắm. Mình được các bạn hỗ trợ giờ giấc tham quan rất oke luôn, vì đi lần đầu nên không rành đường, lại có mưa nên trễ giờ (Zoo có xe đưa đón tại mình thích đi xe máy á). Được tương tác với mấy ẻm nên cảm giác rất gần gũi & mới lạ.",
-  },
-  {
-    user: "Hồ Thị Khả Ngân",
-    description:
-      "Tuyệtttt vờiiiii! Một trải nghiệm thực sự rất thú vị & xứng đáng! Nên đi nhe mọi người ơi, vui lắm. Mình được các bạn hỗ trợ giờ giấc tham quan rất oke luôn, vì đi lần đầu nên không rành đường, lại có mưa nên trễ giờ (Zoo có xe đưa đón tại mình thích đi xe máy á). Được tương tác với mấy ẻm nên cảm giác rất gần gũi & mới lạ.",
-  },
+  ,
 ];
 
 const getColumns = (width: number | undefined) => {
   if (width === undefined) return 3;
-  if (width > 1496) return 3;
+  if (width > 1920) return 3.5;
+  if (width > 1496) return 2.4;
   if (width > 1024) return 2;
-  return 1;
+  return 1.1;
 };
 
 const CustomerReviews = () => {
@@ -84,7 +71,7 @@ const CustomerReviews = () => {
         >
           {slides.map((slide, index) => (
             <SwiperSlide key={index}>
-              <ReviewCard />
+              <ReviewCard review={slide} />
             </SwiperSlide>
           ))}
         </Swiper>

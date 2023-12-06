@@ -46,6 +46,7 @@ const AnimalsIntro = () => {
           onClick={() => {}}
           bgColor="green"
           className="px-12"
+          uppercase={false}
         />
       </div>
     </div>

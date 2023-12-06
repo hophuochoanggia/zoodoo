@@ -29,7 +29,7 @@ const BusInfo = ({
       <p className="font-semibold text-lg lg:text-2xl text-[#4B5563]">
         {title}
       </p>
-      <p className="font-semibold text-lg lg:text-2xl">{time}</p>
+      <p className="font-semibold text-2xl lg:text-4xl">{time}</p>
       <p className="font-semibold text-lg lg:text-2xl text-[#6B7280] text-center">
         {place}
       </p>
@@ -79,9 +79,11 @@ const VisitUs = () => {
         <SectionTitle
           icon={"/assets/images/section-icons/icon3.png"}
           title={"ĐẾN ZOODOO DALAT"}
-          description="ZooDoo Đà Lạt nằm trên quốc lộ 27C, cách trung tâm Đà Lạt 35km về
-          phía Nha Trang."
         />
+        <div className="text-lg lg:text-2xl text-black w-[750px] leading-loose text-center mx-24">
+          ZooDoo Đà Lạt nằm trên quốc lộ 27C, cách trung tâm Đà Lạt 35km về phía
+          Nha Trang.
+        </div>
         <div className="flex flex-col justify-center items-center gap-6 max-w-7xl py-8">
           <div className="rounded-md">
             <ZoodooMap width="800" height="500" borderRadius="10px" />
@@ -98,7 +100,9 @@ const VisitUs = () => {
           <p className="text-center font-medium text-lg lg:text-2xl -mt-10">
             Mở cửa các ngày trong tuần
           </p>
-          <p className="text-center text-4xl ">9 giờ sáng - 6 giờ chiều</p>
+          <p className="text-center text-3xl lg:text-5xl">
+            9 giờ sáng - 6 giờ chiều
+          </p>
           <div className="py-8">
             <CTAButton
               bgColor="orange"
@@ -114,7 +118,7 @@ const VisitUs = () => {
           <p className="font-bold text-lg lg:text-2xl text-[#4B5563]">
             Hình thức tham quan
           </p>
-          <p className="text-center text-lg lg:text-2xl leading-8 text-[#4B5563]">
+          <p className="text-center text-base lg:text-xl leading-8 text-[#4B5563]">
             Tham quan vườn thú sẽ được thực hiện bằng cách đi bộ và có sự hướng
             dẫn từ zookeeper. Thời gian trung bình mỗi chuyến tham quan là từ 90
             đến 105 phút. Quý khách theo dõi hướng dẫn của zookeeper và tuân thủ
@@ -124,7 +128,7 @@ const VisitUs = () => {
           <p className="font-bold text-lg lg:text-2xl text-[#4B5563]">
             Đặt vé trước
           </p>
-          <p className="text-center text-lg lg:text-2xl leading-8 text-[#4B5563]">
+          <p className="text-center text-base lg:text-xl leading-8 text-[#4B5563]">
             Để đảm bảo chỗ tham quan, quý khách nên đặt vé trước khi đến vườn
             thú. Việc này giúp đảm bảo rằng số lượng khách tham quan trong mỗi
             chuyến được kiểm soát và giới hạn.
@@ -132,7 +136,7 @@ const VisitUs = () => {
           <p className="font-bold text-lg lg:text-2xl text-[#4B5563]">
             Không mang thú cưng
           </p>
-          <p className="text-center text-lg lg:text-2xl leading-8 text-[#4B5563]">
+          <p className="text-center text-base lg:text-xl leading-8 text-[#4B5563]">
             Vì lý do an toàn và y tế, vui lòng không mang thú cưng vào khu vực
             ZooDoo. Điều này nhằm đảm bảo an toàn cho cả động vật trong vườn thú
             và các thú cưng của khách hàng. Nếu bạn có thú cưng, hãy xem xét các
@@ -205,7 +209,7 @@ const VisitUs = () => {
               <BusInfo
                 title="Chuyến về"
                 time="13h00"
-                place="Từ BigC Đà Lạt , Cổng Hồ Thị Mậu"
+                place="Từ ZooDoo Đà Lạt"
               />
             </div>
           </div>
@@ -226,13 +230,18 @@ const VisitUs = () => {
         <SectionTitle
           icon={"/assets/images/section-icons/icon3.png"}
           title={"NỘI QUY VƯỜN THÚ"}
-          description="Để ZooDoo phục vụ quý khách tốt nhất, cũng như bảo vệ môi trường lành mạnh và an toàn cho động vật và quý khách tham quan, ZooDoo có các quy định sau:"
         />
+
+        <div className="text-xl lg:text-2xl text-black w-[700px] lg:w-[850px] leading-relaxed text-center mx-24">
+          Để ZooDoo phục vụ quý khách tốt nhất, cũng như bảo vệ môi trường lành
+          mạnh và an toàn cho động vật và quý khách tham quan, ZooDoo có các quy
+          định sau:
+        </div>
 
         <div className="flex flex-col items-center justify-center">
           <ZooDooRules />
           <div className="lg:w-[900px] px-8 xl:px-0 py-8">
-            <p className="text-center font-medium text-lg leading-9 lg:text-2xl text-[#4B5563]">
+            <p className="text-center font-medium text-xl leading-9 lg:text-2xl text-[#4B5563]">
               ZooDoo là vườn thú thân thiện, nếu quý khách tuân thủ các quy định
               trên thì chúng ta sẽ cùng có một trải nghiệm tuyệt vời. ZooDoo
               chân thành cảm ơn sự hợp tác của quý khách và mong rằng ứng xử văn

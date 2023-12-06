@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <footer className="bg-green-default hidden lg:block">
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
-        <div className="grid grid-cols-6 pt-8">
+        <div className="grid grid-cols-8 pt-8">
           <div className="col-span-2 m-6">
             <a href="https://flowbite.com/" className="flex items-center">
               <Image
@@ -19,7 +19,7 @@ const Footer = () => {
               />
             </a>
           </div>
-          <div className="col-span-4 grid grid-cols-4 gap-6 m-6">
+          <div className="col-span-6 grid grid-cols-4 gap-6 my-6">
             <div className="col-span-2 flex flex-col ">
               <div className="w-full grid grid-cols-2 ">
                 <div className="col-span-1">
@@ -48,7 +48,7 @@ const Footer = () => {
                         href="/tin-tuc-va-hoat-dong"
                         className="text-[#F0FDF4] text-base lg:text-lg"
                       >
-                        Trãi nghiệm ZooDoo
+                        Trải nghiệm ZooDoo
                       </Link>
                     </li>
                     <li className="mb-4">
@@ -96,7 +96,7 @@ const Footer = () => {
             </div>
 
             <div className="col-span-2">
-              <ZoodooMap width="400" height="400" />
+              <ZoodooMap width="460" height="460" />
             </div>
           </div>
         </div>

@@ -34,8 +34,12 @@ const SharingCard: React.FC<ISharingCard> = ({
           imageSide === "right" ? "md:justify-start" : "md:justify-end"
         )}
       >
-        <p className="text-lg font-normal leading-loose">{description}</p>
-        <p className="text-xl font-semibold mt-4">{author} - Zookeeper</p>
+        <p className="text-lg lg:text-xl font-normal leading-loose">
+          {description}
+        </p>
+        <p className="text-xl lg:text-2xl font-semibold mt-4">
+          {author} - Zookeeper
+        </p>
       </div>
     </div>
   );
@@ -57,6 +61,7 @@ const data: ISharingCard[] = [
     imageSide: "left",
   },
 ];
+
 const ZooKeeperSharing = () => {
   return (
     <MainContainer background={BgImage2.src}>

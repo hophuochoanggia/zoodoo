@@ -66,9 +66,10 @@ const PricesAndNotice = () => {
       ))}
       <div className="py-2">
         <CTAButton
-          text="Đặt vé ngay"
+          text="Đặt vé"
           onClick={() => console.log("Đặt vé")}
           bgColor="orange"
+          className="px-16"
         />
       </div>
       <p className="text-text-default font-semibold text-lg">Lưu ý:</p>

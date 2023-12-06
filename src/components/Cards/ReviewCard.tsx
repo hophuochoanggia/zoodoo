@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 
 import Image from "next/image";
 
@@ -6,8 +6,10 @@ import CardBG from "../../../public/assets/backgrounds/review-bg.png";
 import StarPng from "../../../public/assets/icons/star.png";
 
 interface IReviewCardProps {
-  user: string;
-  description: string;
+  review: {
+    user: string;
+    description: string;
+  } & any;
 }
 
 const FiveStarsReview = () => {
@@ -23,10 +25,12 @@ const FiveStarsReview = () => {
   );
 };
 
-const ReviewCard = () => {
+const ReviewCard: FC<IReviewCardProps> = ({
+  review: { user, description },
+}) => {
   return (
     <div
-      className="w-[650px] bg-contain p-10 bg-no-repeat bg-center h-auto flex flex-col justify-center items-start "
+      className="w-[500px] lg:w-[650px] bg-contain p-10 bg-no-repeat bg-center h-[400px] flex flex-col justify-center items-start "
       style={{
         backgroundImage: `url(${CardBG.src})`,
       }}
@@ -34,13 +38,9 @@ const ReviewCard = () => {
       <FiveStarsReview />
       <div className="ml-1">
         <p className="mb-4 text-base lg:text-xl text-[#374151] font-medium">
-          Tuyệtttt vờiiiii! Một trải nghiệm thực sự rất thú vị & xứng đáng! Nên
-          đi nhe mọi người ơi, vui lắm. Mình được các bạn hỗ trợ giờ giấc tham
-          quan rất oke luôn, vì đi lần đầu nên không rành đường, lại có mưa nên
-          trễ giờ (Zoo có xe đưa đón tại mình thích đi xe máy á). Được tương tác
-          với mấy ẻm nên cảm giác rất gần gũi & mới lạ.
+          {description}
         </p>
-        <p className=" text-xl font-bold"> Hồ Thị Khả Ngân</p>
+        <p className=" text-xl font-bold">{user}</p>
       </div>
     </div>
   );
