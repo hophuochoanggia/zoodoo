@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import CTAButton from "@/components/Buttons/CTAButton/CTAButton";
 import MainContainer from "@/components/Containers/MainContainer";
-import ZooDooMap from "@/components/Map/ZooDooMap";
+import ZoodooMap from "@/components/Map/ZoodooMap";
 import SectionTitle from "@/components/common/SectionTitle";
 
 import BG1 from "@/../public/assets/backgrounds/den-tham-zoodoo/bg1.png";
@@ -84,7 +84,7 @@ const VisitUs = () => {
         />
         <div className="flex flex-col justify-center items-center gap-6 max-w-7xl py-8">
           <div className="rounded-md">
-            <ZooDooMap width="800" height="500" borderRadius="10px" />
+            <ZoodooMap width="800" height="500" borderRadius="10px" />
           </div>
         </div>
       </MainContainer>

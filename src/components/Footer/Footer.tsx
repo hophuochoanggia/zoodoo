@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import FollowUs from "@/components/common/FollowUs";
-import ZooDooMap from "@/components/Map/ZooDooMap";
+import ZoodooMap from "@/components/Map/ZoodooMap";
 
 const Footer = () => {
   return (
@@ -96,7 +96,7 @@ const Footer = () => {
             </div>
 
             <div className="col-span-2">
-              <ZooDooMap width="400" height="400" />
+              <ZoodooMap width="400" height="400" />
             </div>
           </div>
         </div>

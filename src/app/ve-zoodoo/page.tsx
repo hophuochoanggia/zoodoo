@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 import MainContainer from "@/components/Containers/MainContainer";
-import ZooDooMap from "@/components/Map/ZooDooMap";
+import ZoodooMap from "@/components/Map/ZoodooMap";
 import Hiring from "@/components/Sections/AboutUs/Hiring";
 import FollowUs from "@/components/common/FollowUs";
 import SectionTitle from "@/components/common/SectionTitle";
@@ -169,7 +169,7 @@ const AboutUs = () => {
               </div>
             </div>
             <div className="pt-16">
-              <ZooDooMap />
+              <ZoodooMap />
             </div>
           </div>
 
