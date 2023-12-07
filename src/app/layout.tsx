@@ -3,13 +3,12 @@ import { Asap } from "next/font/google";
 
 import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
+import MessengerChat from "@/components/Facebook/MessengerChat";
 
 import FooterMobile from "@/components/Footer/FooterMobile";
 import "./globals.css";
 
 const asap = Asap({ subsets: ["vietnamese"] });
-
-// TODO: check server side rendering for each component
 
 export const metadata: Metadata = {
   title: "ZooDoo - VƯỜN THÚ THÂN THIỆN CHUẨN ÚC ĐẦU TIÊN TẠI VIỆT NAM",
@@ -63,6 +62,7 @@ export default function RootLayout({
         className={`${asap.className} flex flex-col w-screen bg-[#FFF9E9] justify-between min-h-screen`}
       >
         <Header />
+        <MessengerChat />
         {children}
         <Footer />
         <FooterMobile />
