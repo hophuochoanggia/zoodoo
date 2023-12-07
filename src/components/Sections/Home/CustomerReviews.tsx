@@ -63,7 +63,7 @@ const CustomerReviews = () => {
           slidesPerView={getColumns(width)}
           navigation={true}
           modules={[Navigation]}
-          className="mySwiper"
+          className="swiper-with-nav"
           spaceBetween={100}
           slidesPerGroup={1}
           loop={true}

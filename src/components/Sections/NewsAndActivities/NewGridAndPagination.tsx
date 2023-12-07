@@ -63,7 +63,7 @@ const NewGridAndPagination: FC = () => {
   return (
     <div className="flex flex-col items-center justify-center">
       <div className="flex flex-row items-center justify-start w-full pb-8">
-        <p className="font-bold text-2xl lg:text-4xl">TIN TỨC MỚI NHẤT</p>
+        <p className="font-bold text-3xl lg:text-5xl">TIN TỨC MỚI NHẤT</p>
       </div>
       <div className="w-full grid grid-cols-2 lg:grid-cols-3 gap-8">
         {blogItems.map((item) => (

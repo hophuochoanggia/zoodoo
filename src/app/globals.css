@@ -417,8 +417,9 @@ ion-icon {
   .custom-swiper .swiper-button-prev {
     left: calc((100% - var(--swiper-mobile-width)) / 2);
   }
-}
+} 
 
+/* Contentful container */
 .contentful-container p {
   margin: 10px 0 !important;
   /* Adjust the margin value as needed */
