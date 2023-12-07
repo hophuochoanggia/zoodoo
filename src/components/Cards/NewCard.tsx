@@ -1,34 +1,34 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-
-import NewImage from "@/../public/assets/images/news/new1.png";
 import clsx from "clsx";
 
+import { INewsSkeleton } from "@/types/contentful";
+
+import NewImage from "@/../public/assets/images/news/new1.png";
+import { FC } from "react";
+
+import { checkHttpContentfulPrefix } from "@/utils/checkHttpPrefix";
+
 interface INewCardProps {
-  id: number;
-  title: string;
-  date: string;
-  description: string;
-  image: {
-    url: string;
-    alt: string;
-  };
+  item: any;
 }
 
-const NewCard = () => {
+const NewCard: FC<INewCardProps> = ({ item }) => {
   const router = useRouter();
+
+  const { slug, title, content, coverImage } = item.fields;
 
   return (
     <button
       className="bg-gray-light border-none rounded-lg shadow hover:opacity-80"
       onClick={() => {
-        router.push(`/tin-tuc-va-hoat-dong/${1}`);
+        router.push(`/tin-tuc-va-hoat-dong/${slug}`);
       }}
     >
       <div className="relative pb-80 overflow-hidden rounded-t-lg">
         <Image
           className="absolute inset-0 object-cover w-full h-full"
-          src={NewImage.src}
+          src={checkHttpContentfulPrefix(coverImage.fields.file.url)}
           alt="Article"
           layout="fill"
         />
@@ -36,13 +36,11 @@ const NewCard = () => {
       <div className="p-5 flex flex-col">
         <a href="#">
           <h5 className="mb-3 text-text-default font-bold text-xl lg:text-3xl text-start">
-            Tất tần tật về vườn thú &quot;siêu cấp&quot; đáng yêu ZooDoo Đà Lạt
+            {title}
           </h5>
         </a>
         <p className="text-base lg:text-lg font-normal text-gray-700 dark:text-gray-400 line-clamp-2 text-start">
-          ZooDoo Đà Lạt như một “làn gió mới” cho du lịch Đà Lạt vì là một nơi
-          có thể vừa “thăm thú”, vừa chụp hình check-in, nhâm nhi cafe và tham
-          gia nhiều hoạt động trải nghiệm khác.
+          {content?.content[0]?.content[0]?.value}
         </p>
         <div
           className={clsx(

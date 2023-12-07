@@ -131,7 +131,9 @@ ion-icon {
   vertical-align: middle;
 }
 
-.rc-pagination-item {
+.rc-pagination-item,
+.skip-to-start,
+.skip-to-end {
   display: inline-block;
   min-width: var(--pagination-item-size);
   height: var(--pagination-item-size);
@@ -151,7 +153,7 @@ ion-icon {
 
 .rc-pagination-item a {
   display: block;
-  padding: 0 6px;
+  padding: 0 4px;
   color: rgba(0, 0, 0, 0.85);
   transition: none;
 }
@@ -200,17 +202,14 @@ ion-icon {
   content: '•••';
 }
 
-.rc-pagination-prev,
-.rc-pagination-jump-prev,
-.rc-pagination-jump-next {
-  margin-right: 8px;
-}
+
 
 .rc-pagination-prev,
 .rc-pagination-next,
 .rc-pagination-jump-prev,
 .rc-pagination-jump-next {
   display: inline-block;
+  margin-right: 8px;
   min-width: var(--pagination-item-size);
   height: var(--pagination-item-size);
   color: rgba(0, 0, 0, 0.85);
@@ -276,6 +275,24 @@ ion-icon {
   display: block;
   height: 10px;
   background: url('./../../public/assets/icons/chevron_right.svg') no-repeat center;
+  background-size: contain;
+  /* Ensure the SVG is scaled appropriately */
+}
+
+.skip-to-start:after {
+  content: '';
+  display: block;
+  height: 10px;
+  background: url('./../../public/assets/icons/chevron_double_arrow_left.svg') no-repeat center;
+  background-size: contain;
+  /* Ensure the SVG is scaled appropriately */
+}
+
+.skip-to-end:after {
+  content: '';
+  display: block;
+  height: 10px;
+  background: url('./../../public/assets/icons/chevron_double_arrow_right.svg') no-repeat center;
   background-size: contain;
   /* Ensure the SVG is scaled appropriately */
 }
@@ -400,4 +417,21 @@ ion-icon {
   .custom-swiper .swiper-button-prev {
     left: calc((100% - var(--swiper-mobile-width)) / 2);
   }
+}
+
+.contentful-container p {
+  margin: 10px 0 !important;
+  /* Adjust the margin value as needed */
+}
+
+.contentful-container :is(h1, h2, h3, h4, h5, h6, img) {
+  margin: 20px 0 !important;
+  /* Adjust the margin value as needed */
+}
+
+
+:is(h1, h2, h3, h4, h5, h6) b {
+  font-weight: bold;
+  font-size: inherit;
+  /* Set the font size to inherit from the parent */
 }

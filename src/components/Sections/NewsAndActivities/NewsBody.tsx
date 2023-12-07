@@ -1,33 +1,13 @@
 import Image from "next/image";
-import Markdown from "react-markdown";
-import remarkGfm from "remark-gfm";
+import { FC, ReactNode } from "react";
+import { BLOCKS, INLINES } from "@contentful/rich-text-types";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
-import BackButton from "@/components/Buttons/BackButton";
+import { INewsItem } from "@/types/contentful";
+import { Block, Inline } from "@contentful/rich-text-types";
+
 import NewestPost from "./NewestPost";
-
-const markdownData = ` 
-Here's our logo (hover to see the title text): ất tần tật về vườn thú siêu cấp đáng yêu ZooDoo Đà Lạtất tần tật về vườn thú siêu cấp đáng yêu ZooDoo Đà Lạt ất tần tật về vườn thú siêu cấp đáng yêu ZooDoo Đà Lạt ất tần tật về vườn thú siêu cấp đáng yêu ZooDoo Đà Lạt
-
-Inline-style:
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
-
-Reference-style:
-![alt text][logo]
-
-[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
-
-![Minion](https://octodex.github.com/images/minion.png)
-![Stormtroopocat](https://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")
-
-Like links, Images also have a footnote style syntax
-
-![Alt text][id]
-
-With a reference later in the document defining the URL location:
-
-[id]: https://octodex.github.com/images/dojocat.jpg  "The Dojocat"
-
-`;
+import BackButton from "@/components/Buttons/BackButton";
 
 const NewFooter = () => {
   return (
@@ -54,11 +34,58 @@ const NewFooter = () => {
   );
 };
 
-const NewsBody = () => {
+interface INewBodyProps {
+  content: INewsItem;
+}
+
+const renderOptions = {
+  renderNode: {
+    [BLOCKS.HEADING_1]: (
+      node: Block | Inline,
+      children: ReactNode
+    ): ReactNode => {
+      return <h3 className="text-2xl font-bold text-black">{children}</h3>;
+    },
+    [BLOCKS.EMBEDDED_ASSET]: (
+      node: Block | Inline,
+      children: ReactNode
+    ): ReactNode => {
+      // render the EMBEDDED_ASSET as you need
+      return (
+        <div className="w-full flex justify-center items-center">
+          <Image
+            src={`https:${node.data.target.fields.file.url}`}
+            height={node.data.target.fields.file.details.image.height}
+            width={node.data.target.fields.file.details.image.width}
+            alt={node.data.target.fields.description}
+            className="rounded-lg"
+          />
+        </div>
+      );
+    },
+  },
+};
+
+const NewsBody: FC<INewBodyProps> = ({
+  content: {
+    fields: { coverImage, title, content, date, slug },
+  },
+}) => {
   return (
     <div className="flex flex-col lg:grid lg:grid-cols-4 ">
       <div className="col-span-3 flex flex-col items-start pr-16">
-        <Markdown remarkPlugins={[remarkGfm]}>{markdownData}</Markdown>
+        {/* <Markdown remarkPlugins={[remarkGfm]}>{markdownData}</Markdown> */}
+        <div className=" contentful-container">
+          {documentToReactComponents(content, renderOptions)}
+        </div>
+        <p className="mb-6 text-slate-400 ">
+          Đăng ngày{" "}
+          {new Date(date).toLocaleDateString("vi-VN", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          })}
+        </p>
         <NewFooter />
       </div>
       <div className="col-span-1 flex flex-col items-start pt-16 lg:pt-0">

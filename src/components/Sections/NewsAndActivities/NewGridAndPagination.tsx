@@ -1,89 +1,64 @@
+"use client";
 import Pagination from "rc-pagination";
-import { useState } from "react";
+import { useState, FC, useEffect } from "react";
 
 import NewCard from "../../Cards/NewCard";
+import { createClient } from "contentful";
+import { INewsSkeleton, INewItems } from "@/types/contentful";
 
-const data = [
-  {
-    id: 1,
-    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-    date: "2021-07-20",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget nisl nec urna aliquam ultricies. Donec vitae nisl et augue ultricies aliquet. Integer nec quam vitae justo placerat varius. Donec vitae nisl et augue ultricies aliquet. Integer nec quam vitae justo placerat varius.",
-    image: {
-      url: "/assets/news/1.png",
-      alt: "Image",
-    },
-  },
-  {
-    id: 2,
-    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-    date: "2021-07-20",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget nisl nec urna aliquam ultricies. Donec vitae nisl et augue ultricies aliquet. Integer nec quam vitae justo placerat varius. Donec vitae nisl et augue ultricies aliquet. Integer nec quam vitae justo placerat varius.",
-    image: {
-      url: "/assets/news/2.png",
-      alt: "Image",
-    },
-  },
-  {
-    id: 3,
-    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-    date: "2021-07-20",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget nisl nec urna aliquam ultricies. Donec vitae nisl et augue ultricies aliquet. Integer nec quam vitae justo placerat varius. Donec vitae nisl et augue ultricies aliquet. Integer nec quam vitae justo placerat varius.",
-    image: {
-      url: "/assets/news/3.png",
-      alt: "Image",
-    },
-  },
-  {
-    id: 4,
-    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-    date: "2021-07-20",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget nisl nec urna aliquam ultricies. Donec vitae nisl et augue ultricies aliquet. Integer nec quam vitae justo placerat varius. Donec vitae nisl et augue ultricies aliquet. Integer nec quam vitae justo placerat varius.",
-    image: {
-      url: "/assets/news/4.png",
-      alt: "Image",
-    },
-  },
-  {
-    id: 5,
-    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-    date: "2021-07-20",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget nisl nec urna aliquam ultricies. Donec vitae nisl et augue ultricies aliquet. Integer nec quam vitae justo placerat varius. Donec vitae nisl et augue ultricies aliquet. Integer nec quam vitae justo placerat varius.",
-    image: {
-      url: "/assets/news/5.png",
-      alt: "Image",
-    },
-  },
-  {
-    id: 6,
-    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-    date: "2021-07-20",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget nisl nec urna aliquam ultricies. Donec vitae nisl et augue ultricies aliquet. Integer nec quam vitae justo placerat varius. Donec vitae nisl et augue ultricies aliquet. Integer nec quam vitae justo placerat varius.",
-    image: {
-      url: "/assets/news/6.png",
-      alt: "Image",
-    },
-  },
-  {
-    id: 7,
-    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-    date: "2021-07-20",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget nisl nec urna aliquam ultricies. Donec vitae nisl et augue ultricies aliquet. Integer nec quam vitae justo placerat varius. Donec vitae nisl et augue ultricies aliquet. Integer nec quam vitae justo placerat varius.",
-  },
-];
+const POST_PER_PAGE = 1;
 
-const NewGridAndPagination = () => {
-  const [current, setCurrent] = useState<number>(1);
-  const onChange = (page: number) => {
-    setCurrent(page);
+const client = createClient({
+  space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACEID ?? "",
+  accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESSTOKEN ?? "",
+});
+
+const getBlogEntries = async (page: number, limit: number) => {
+  const response = await client.getEntries<INewsSkeleton>({
+    content_type: "news",
+    // sort latest first
+    order: ["-sys.createdAt"],
+    skip: (page - 1) * limit,
+    limit: limit,
+  });
+
+  const totalEntries = response.total;
+  const totalPages = Math.ceil(totalEntries / limit);
+
+  return {
+    entries: response.items,
+    totalPages: totalPages,
   };
+};
+
+const NewGridAndPagination: FC = () => {
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [totalPages, setTotalPages] = useState<number>(1);
+  const [blogItems, setBlogItems] = useState<INewItems>([]);
+
+  const onChange = (page: number) => {
+    setCurrentPage(page);
+  };
+
+  const skipToEnd = () => {
+    setCurrentPage(totalPages);
+  };
+
+  const skipToStart = () => {
+    setCurrentPage(1);
+  };
+
+  useEffect(() => {
+    const fetchBlogEntries = async () => {
+      const { entries, totalPages } = await getBlogEntries(
+        currentPage,
+        POST_PER_PAGE
+      );
+      setBlogItems(entries);
+      setTotalPages(totalPages);
+    };
+    fetchBlogEntries();
+  }, [currentPage]);
 
   return (
     <div className="flex flex-col items-center justify-center">
@@ -91,19 +66,21 @@ const NewGridAndPagination = () => {
         <p className="font-bold text-2xl lg:text-4xl">TIN TỨC MỚI NHẤT</p>
       </div>
       <div className="w-full grid grid-cols-2 lg:grid-cols-3 gap-8">
-        {data.map((item) => (
-          <NewCard key={item.id} {...item} />
+        {blogItems.map((item) => (
+          <NewCard key={item?.fields?.slug} item={item} />
         ))}
       </div>
-      <div className="py-8">
+      <div className="py-8 flex flex-row">
+        <button onClick={skipToStart} className="skip-to-start"></button>
         <Pagination
           onChange={onChange}
-          current={current}
+          current={currentPage}
           defaultCurrent={1}
-          defaultPageSize={3}
-          total={350}
+          defaultPageSize={POST_PER_PAGE}
+          total={totalPages}
           showLessItems
         />
+        <button onClick={skipToEnd} className="skip-to-end"></button>
       </div>
     </div>
   );

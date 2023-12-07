@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/legacy/image";
 
 import CTAButtonTransperent from "@/components/Buttons/CTAButton/CTAButtonTransperent";

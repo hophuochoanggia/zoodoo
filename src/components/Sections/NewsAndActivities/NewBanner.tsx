@@ -1,13 +1,14 @@
+import { FC } from "react";
 import Image from "next/image";
 
 import BackButton from "@/components/Buttons/BackButton";
+import { INewsItem } from "@/types/contentful";
 
 interface INewBannerProps {
-  title: string;
-  date: string;
+  content: INewsItem;
 }
 
-const NewBanner = () => {
+const NewBanner: FC<INewBannerProps> = () => {
   return (
     <div className="pt-32 lg:pt-44">
       <div className="flex flex-col lg:grid lg:grid-cols-5">
