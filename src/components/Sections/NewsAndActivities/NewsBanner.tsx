@@ -8,8 +8,6 @@ import { INewsFields, INewsSkeleton } from "@/types/contentful";
 
 import CTAButtonTransperent from "@/components/Buttons/CTAButton/CTAButtonTransperent";
 
-import NewsImage1 from "@/../public/assets/images/news/new1.png";
-
 interface INewsBannerProps {
   post: {
     fields: INewsFields;

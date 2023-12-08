@@ -31,13 +31,19 @@ const NewsAndActivitiesPage: FC<INewsAndActivitiesPageProps> = async ({
     limit: POSTS_PER_PAGE,
   });
 
+  const newestPost = await initContentfulClient.getEntries<INewsSkeleton>({
+    content_type: "news",
+    order: ["-sys.createdAt"],
+    limit: 1,
+  });
+
   const totalPosts = results.total;
   const totalPages = Math.ceil((totalPosts || 0) / POSTS_PER_PAGE);
 
   return (
     <div className="flex flex-col">
       <MainContainer background={BannerImage.src}>
-        <NewsBanner post={results.items[0]} />
+        <NewsBanner post={newestPost.items[0]} />
       </MainContainer>
 
       <MainContainer background={BG2.src}>
