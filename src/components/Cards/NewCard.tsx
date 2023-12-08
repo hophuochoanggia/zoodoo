@@ -1,12 +1,8 @@
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 import clsx from "clsx";
 
 import { INewsSkeleton } from "@/types/contentful";
-
-import NewImage from "@/../public/assets/images/news/new1.png";
 import { FC } from "react";
-
 import { checkHttpContentfulPrefix } from "@/utils/checkHttpPrefix";
 
 interface INewCardProps {
@@ -14,18 +10,13 @@ interface INewCardProps {
 }
 
 const NewCard: FC<INewCardProps> = ({ item }) => {
-  const router = useRouter();
-
   const { slug, title, content, coverImage } = item.fields;
-
   return (
-    <button
+    <a
       className="bg-gray-light border-none rounded-lg shadow hover:opacity-80"
-      onClick={() => {
-        router.push(`/tin-tuc-va-hoat-dong/${slug}`);
-      }}
+      href={`/tin-tuc-va-hoat-dong/${slug}`}
     >
-      <div className="relative pb-80 overflow-hidden rounded-t-lg">
+      <div className="relative pb-56 lg:pb-80 overflow-hidden rounded-t-lg">
         <Image
           className="absolute inset-0 object-cover w-full h-full"
           src={checkHttpContentfulPrefix(coverImage.fields.file.url)}
@@ -34,11 +25,9 @@ const NewCard: FC<INewCardProps> = ({ item }) => {
         />
       </div>
       <div className="p-5 flex flex-col">
-        <a href="#">
-          <h5 className="mb-3 text-text-default font-bold text-xl lg:text-3xl text-start">
-            {title}
-          </h5>
-        </a>
+        <h5 className="mb-3 text-text-default font-bold text-xl lg:text-3xl text-start">
+          {title}
+        </h5>
         <p className="text-base lg:text-lg font-normal text-gray-700 dark:text-gray-400 line-clamp-2 text-start">
           {content?.content[0]?.content[0]?.value}
         </p>
@@ -66,7 +55,7 @@ const NewCard: FC<INewCardProps> = ({ item }) => {
           </svg>
         </div>
       </div>
-    </button>
+    </a>
   );
 };
 

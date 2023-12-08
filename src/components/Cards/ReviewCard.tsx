@@ -19,7 +19,12 @@ const FiveStarsReview = () => {
       {Array(5)
         .fill(0)
         .map((_, i) => (
-          <Image key={i} src={StarPng} alt="star" className="w-8 h-8 m-1" />
+          <Image
+            key={i}
+            src={StarPng}
+            alt="star"
+            className="w-6 h-6 lg:w-8 lg:h-8 m-1"
+          />
         ))}
     </div>
   );
@@ -29,18 +34,34 @@ const ReviewCard: FC<IReviewCardProps> = ({
   review: { user, description },
 }) => {
   return (
-    <div
-      className="w-[500px] lg:w-[650px] bg-contain p-10 bg-no-repeat bg-center h-[400px] flex flex-col justify-center items-start "
-      style={{
-        backgroundImage: `url(${CardBG.src})`,
-      }}
-    >
-      <FiveStarsReview />
-      <div className="ml-1">
-        <p className="mb-4 text-base lg:text-xl text-[#374151] font-medium">
-          {description}
-        </p>
-        <p className=" text-xl font-bold">{user}</p>
+    <div>
+      <div
+        className="w-[500px] lg:w-[650px] bg-contain p-10 bg-no-repeat bg-center h-[400px] hidden md:flex flex-col justify-center items-start "
+        style={{
+          backgroundImage: `url(${CardBG.src})`,
+        }}
+      >
+        <div className="pl-4">
+          <FiveStarsReview />
+          <div className="ml-1">
+            <p className="lg:mb-4 text-base lg:text-xl text-[#374151] font-medium ">
+              {description}
+            </p>
+            <p className=" text-xl font-bold">{user}</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="flex md:hidden h-full flex-col justify-center items-start ">
+        <div className="pl-8">
+          <FiveStarsReview />
+          <div className="ml-1">
+            <p className="lg:mb-4 text-base lg:text-xl text-[#374151] font-medium w-[330px] sm:w-[380px] ">
+              {description}
+            </p>
+            <p className=" text-xl font-bold">{user}</p>
+          </div>
+        </div>
       </div>
     </div>
   );

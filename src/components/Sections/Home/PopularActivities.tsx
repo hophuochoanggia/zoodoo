@@ -39,10 +39,10 @@ const PopularActivities = () => {
           height={60}
         />
       </div>
-      <div className="font-bold text-4xl lg:text-[48px] text-text-default py-6 uppercase">
+      <div className="font-bold text-3xl lg:text-4xl lg:text-[48px] text-text-default py-6 uppercase">
         Hoạt động nổi bật
       </div>
-      <div className="grid grid-cols-3 gap-4 w-full max-w-7xl pt-4 pb-16">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 space-y-6 lg:space-y-0 w-full max-w-7xl pt-4 pb-16">
         {data.map((item, index) => (
           <ActivityCard
             key={index}

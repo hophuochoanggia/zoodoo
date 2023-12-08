@@ -34,9 +34,9 @@ const PricesAndNotice = () => {
   const renderPrice = (height: string, price: string) => {
     return (
       <div className="flex flex-row pt-4">
-        <div className="w-10 h-6 bg-orange-200 rounded-[4px] mr-4 mt-2.5" />
+        <div className="w-10 h-6 bg-orange-200 rounded-[4px] mr-4 mt-1 lg:mt-2.5" />
         <div className="flex flex-col items-start justify-start space-y-4 w-full">
-          <p className="text-text-default font-normal uppercase text-[30px]">
+          <p className="text-text-default font-normal uppercase text-lg lg:text-[30px]">
             {height}
           </p>
           {price === "0" ? (
@@ -90,7 +90,7 @@ const PriceSection = () => {
   return (
     <MainContainer background={BG2.src}>
       <div className="flex flex-col items-center justify-center max-w-7xl space-y-20 pb-28 pt-10">
-        <div className="flex flex-col items-start justify-center space-y-6 w-full">
+        <div className="flex flex-col items-center lg:items-start justify-center space-y-6 w-full">
           <div className="flex items-center">
             <Image
               src="/assets/images/section-icons/icon3.png"
@@ -99,10 +99,10 @@ const PriceSection = () => {
               height={60}
             />
           </div>
-          <div className="font-bold text-4xl lg:text-[48px] text-text-default uppercase">
+          <div className="font-bold text-3xl lg:text-4xl lg:text-[48px] text-text-default uppercase">
             Giá vé tham quan
           </div>
-          <div className="w-4/5 text-text-default text-start py-4 font-semibold text-lg leading-[27px]">
+          <div className="w-full lg:w-4/5 text-text-default text-center lg:text-start py-4 font-semibold text-lg leading-[27px]">
             Các hoạt động tham quan vườn thú mang đến cho bạn một trải nghiệm
             thú vị và gần gũi với thế giới động vật. Bạn sẽ được tương tác với
             các sinh vật đáng yêu, mà còn có thể biết thêm nhiều kiến thức mới
@@ -110,7 +110,7 @@ const PriceSection = () => {
             vừa cho ăn và chụp ảnh với các bạn thú đáng yêu khi đến đây tham
             quan.
           </div>
-          <div className="grid grid-cols-2 gap-2 w-full">
+          <div className="flex flex-col space-y-10 lg:grid lg:grid-cols-2 lg:gap-2 w-full">
             <PricesAndNotice />
             <div className="w-full aspect-square relative">
               <Image

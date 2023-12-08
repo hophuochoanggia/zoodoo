@@ -37,7 +37,7 @@ const NewsAndActivitiesPage = async ({
       <MainContainer background={BannerImage.src}>
         <NewBanner content={article} />
       </MainContainer>
-      <MainContainer>
+      <MainContainer className="pt-6 lg:pt-20">
         <NewsBody content={article} />
       </MainContainer>
       {/* <MainContainer>

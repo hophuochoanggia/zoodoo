@@ -18,7 +18,7 @@ const SectionTitle: FC<ISectionTitleProps> = ({
   return (
     <div
       className={clsx(
-        "flex flex-col justify-center space-y-6 w-full",
+        "flex flex-col justify-center space-y-4 lg:space-y-6 w-full",
         align === "center" ? "items-center" : "items-start"
       )}
     >
@@ -29,7 +29,7 @@ const SectionTitle: FC<ISectionTitleProps> = ({
       )}
       <div
         className={clsx(
-          "font-bold text-4xl lg:text-[48px] text-text-default w-[730px] uppercase py-2 leading-snug",
+          "font-bold text-3xl lg:text-4xl lg:text-[48px] text-text-default w-[380px] sm:w-[450px] md:w-[550px] lg:w-[730px] uppercase py-2 leading-snug",
           align === "center" ? "text-center" : " text-start"
         )}
       >
@@ -38,8 +38,8 @@ const SectionTitle: FC<ISectionTitleProps> = ({
       {description && (
         <div
           className={clsx(
-            "text-lg lg:text-xl text-black w-[750px] leading-loose",
-            align === "center" ? "text-center mx-24" : " text-start"
+            "text-lg lg:text-xl text-black lg:w-[750px] leading-loose",
+            align === "center" ? "text-center mx-8 lg:mx-24" : " text-start"
           )}
         >
           {description}

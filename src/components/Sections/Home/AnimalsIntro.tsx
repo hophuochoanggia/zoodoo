@@ -16,7 +16,7 @@ interface IAnimalsIntroProps {
 
 const AnimalsIntro = () => {
   return (
-    <div className="flex flex-col items-start justify-center space-y-6 w-full">
+    <div className="flex flex-col items-center lg:items-start justify-center space-y-6 w-full">
       <div className="flex items-center">
         <Image
           src="/assets/images/section-icons/icon5.png"
@@ -25,10 +25,10 @@ const AnimalsIntro = () => {
           height={60}
         />
       </div>
-      <div className="font-bold text-4xl lg:text-[48px] text-text-default uppercase">
+      <div className="font-bold  text-3xl lg:text-4xl lg:text-[48px] text-text-default uppercase lg:text-start text-center">
         Các loài động vật tại ZooDoo
       </div>
-      <div className="w-4/5 text-start py-4 text-lg lg:text-xl text-text-default leading-loose">
+      <div className="w-full lg:w-4/5 py-4 text-lg lg:text-xl text-text-default leading-loose lg:text-start text-center">
         Tại ZooDoo Dalat, bạn sẽ có cơ hội khám phá và tương tác với một loạt
         các loài động vật phong phú. Hãy đắm mình trong không gian xanh mát và
         gần gũi với thiên nhiên, và chiêm ngưỡng sự đa dạng của thế giới động

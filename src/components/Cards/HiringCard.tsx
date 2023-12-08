@@ -25,7 +25,7 @@ const HiringCard = () => {
         router.push(`/tin-tuc-va-hoat-dong/${1}`);
       }}
     >
-      <div className="relative pb-80 overflow-hidden rounded-t-lg">
+      <div className="relative pb-64 lg:pb-80 overflow-hidden rounded-t-lg">
         <Image
           className="absolute inset-0 object-cover w-full h-full"
           src={NewImage.src}

@@ -59,7 +59,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body
-        className={`${asap.className} flex flex-col w-screen bg-[#FFF9E9] justify-between min-h-screen`}
+        className={`${asap.className} flex flex-col w-screen bg-white justify-between min-h-screen lg:pl-0 overflow-x-hidden`}
       >
         <Header />
         <MessengerChat />

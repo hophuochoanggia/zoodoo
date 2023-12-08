@@ -68,7 +68,7 @@ const CenteredAndLargeActive: FC<ICenteredAndLargeActiveProps> = ({
                 className="rounded-[10px]"
               />
               {slide?.description && (
-                <figcaption className="text-center text-xl font-medium py-4">
+                <figcaption className="text-center text-sm lg:text-xl font-medium px-4 lg:px-0 py-4">
                   {slide.description}
                 </figcaption>
               )}

@@ -17,7 +17,7 @@ const NewBanner: FC<INewBannerProps> = () => {
             <div className="pb-8">
               <BackButton />
             </div>
-            <div className="text-5xl text-white font-bold leading-[72px]">
+            <div className="text-3xl lg:text-5xl text-white font-bold leading-[72px]">
               Tất tần tật về vườn thú &quot;siêu cấp&quot; đáng yêu ZooDoo Đà
               Lạt
             </div>

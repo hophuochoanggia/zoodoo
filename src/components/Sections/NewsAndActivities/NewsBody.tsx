@@ -11,25 +11,27 @@ import BackButton from "@/components/Buttons/BackButton";
 
 const NewFooter = () => {
   return (
-    <div className="flex flex-row w-full justify-between items-center pt-10">
-      <BackButton color="#000000" />
-      <div className="flex flex-row space-x-6">
-        <div className="flex items-end text-black font-normal text-base">
-          Share
+    <div className="flex flex-col pt-10 w-full">
+      <div className="flex w-full flex-row items-end justify-end ">
+        <div className="flex flex-row space-x-6">
+          <div className="flex items-end text-black font-normal text-base">
+            Share
+          </div>
+          <Image
+            src="/assets/socials/facebook.png"
+            width={40}
+            height={40}
+            alt="facebook"
+          />
+          <Image
+            src="/assets/socials/insta.png"
+            width={40}
+            height={40}
+            alt="instagram"
+          />
         </div>
-        <Image
-          src="/assets/socials/facebook.png"
-          width={40}
-          height={40}
-          alt="facebook"
-        />
-        <Image
-          src="/assets/socials/insta.png"
-          width={40}
-          height={40}
-          alt="instagram"
-        />
       </div>
+      <BackButton color="#000000" />
     </div>
   );
 };
@@ -73,8 +75,7 @@ const NewsBody: FC<INewBodyProps> = ({
 }) => {
   return (
     <div className="flex flex-col lg:grid lg:grid-cols-4 ">
-      <div className="col-span-3 flex flex-col items-start pr-16">
-        {/* <Markdown remarkPlugins={[remarkGfm]}>{markdownData}</Markdown> */}
+      <div className="col-span-3 flex flex-col items-start pr-0 lg:pr-16">
         <div className=" contentful-container">
           {documentToReactComponents(content, renderOptions)}
         </div>

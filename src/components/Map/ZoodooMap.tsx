@@ -9,7 +9,7 @@ interface IZoodooMapProps {
 const ZoodooMap: FC<IZoodooMapProps> = ({
   width = "600",
   height = "450",
-  borderRadius = "0px",
+  borderRadius = "8px",
 }) => {
   return (
     <iframe

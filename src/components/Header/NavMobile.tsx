@@ -51,7 +51,7 @@ export const NavMobile = () => {
     >
       <div className="flex flex-row px-6 justify-between items-center w-full">
         <div className="flex items-center justify-center z-50">
-          <Link href="/" onClick={handleClose}>
+          <Link href="/" onClick={handleClose} className="">
             {isOpen ? (
               <Image
                 src="/assets/images/logos/logo-zoodoo-white.png"
@@ -96,7 +96,7 @@ export const NavMobile = () => {
             transition={{ duration: 0.2 }}
             className="fixed left-0 right-0 top-0 py-5 pt-0 bg-[#14532D] border-b border-b-white/20 h-full"
           >
-            <nav className="mt-52 flex w-full flex-col justify-center items-center ">
+            <nav className="mt-44 flex w-full flex-col justify-center items-center ">
               <ul className="w-full">
                 <li className="py-6 ">
                   <Link
@@ -122,7 +122,7 @@ export const NavMobile = () => {
                 </li>
                 <li className="py-6 ">
                   <Link
-                    href="/tin-tuc-va-hoat-dong"
+                    href="/trai-nghiem-zoodoo"
                     className="w-full h-full"
                     onClick={handleClose}
                   >

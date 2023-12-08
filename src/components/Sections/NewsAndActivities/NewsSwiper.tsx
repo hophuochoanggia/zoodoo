@@ -8,10 +8,12 @@ import NewsImage1 from "@/../public/assets/images/news/new1.png";
 const NewCard = () => {
   // gid 5 col, 2 and 3 col
   return (
-    <div className="grid grid-cols-5">
-      <div className="col-span-2 flex flex-col">
-        <div className="text-base text-text-title">HOẠT ĐỘNG NỔI BẬT</div>
-        <div className="text-5xl text-text-title font-bold leading-[72px]">
+    <div className="flex flex-col lg:grid lg:grid-cols-5">
+      <div className="lg:col-span-2 flex flex-col">
+        <div className=" text-text-title text-2xl lg:text-4xl">
+          HOẠT ĐỘNG NỔI BẬT
+        </div>
+        <div className="text-3xl lg:text-5xl text-text-title font-bold leading-normal lg:leading-[72px]">
           Vườn thú ZooDoo Đà Lạt: Review đường đi, giá vé, chơi gì, ăn gì?
         </div>
         <div className="font-medium text-lg text-text-gray leading-7 py-3">
@@ -23,7 +25,7 @@ const NewCard = () => {
           <CTAButtonTransperent text="Xem thêm" onClick={() => {}} />
         </div>
       </div>
-      <div className="col-span-3 pl-16 ml-16">
+      <div className="lg:col-span-3 lg:pl-16 lg:ml-16 ">
         <Image
           src={NewsImage1.src}
           alt="Banner"

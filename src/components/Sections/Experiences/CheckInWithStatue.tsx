@@ -11,9 +11,8 @@ const CheckInWithStatue = () => {
   return (
     <MainContainer
       background={BgImage4.src}
-      className="-mt-52 md: mt:-44 lg:-mt-48"
     >
-      <div className="lg:grid lg:grid-cols-2 lg:relative flex flex-col">
+      <div className="lg:grid lg:grid-cols-2 lg:relative flex flex-col ">
         <div className="pt-10">
           <SectionTitle
             icon={Icon7.src}

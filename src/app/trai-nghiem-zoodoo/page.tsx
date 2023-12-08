@@ -17,7 +17,7 @@ import CheckInWithStatue from "@/components/Sections/Experiences/CheckInWithStat
 
 const Experiences = () => {
   return (
-    <div className="flex flex-col pt-36">
+    <div className="flex flex-col pt-32 overflow-x-hidden">
       <MainContainer background={BannerImage.src}>
         <SectionTitle
           icon={Icon5.src}
@@ -26,7 +26,7 @@ const Experiences = () => {
             "ZooDoo Đà Lạt sở hữu các loài động vật rất hiếm thấy tại Việt Nam. Những loài vật này hiện đang được bảo tồn trong môi trường sống tự nhiên, phù hợp với tập tính và nếp sống của chúng. Đây là những loài vật chủ yếu sống ở môi trường ôn đới. Do đó, Đà Lạt với khí hậu thiên nhiên ôn hòa, đã trở thành ngôi nhà lý tưởng cho những loài vật đáng yêu này."
           }
         />
-        <div className="h-full w-full flex flex-col space-y-3">
+        <div className="h-full w-full flex flex-col space-y-3 max-w-lg md:max-w-3xl lg:max-w-7xl">
           <ImageGrid13
             image1="/assets/images/animals/alpacawhite.png"
             image2="/assets/images/animals/racoon.png"
@@ -56,7 +56,10 @@ const Experiences = () => {
 
       <AnimalInteraction />
       <ZooKeeperSharing />
-      <CheckInWithStatue />
+
+      <div className="-mt-64 lg:-mt-48">
+        <CheckInWithStatue />
+      </div>
       <EatingAndShopping />
     </div>
   );

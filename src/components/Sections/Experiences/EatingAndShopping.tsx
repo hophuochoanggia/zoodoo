@@ -22,10 +22,10 @@ const data = [
 
 const EatingAndShopping = () => {
   return (
-    <MainContainer background={BgImage5.src}>
+    <MainContainer background={BgImage5.src} className="pt-10">
       <SectionTitle icon={Icon3.src} title={"KHU ĂN UỐNG VÀ MUA SẮM"} />
 
-      <div className="text-lg lg:text-2xl text-black w-[800px] lg:w-[900px] leading-loose text-center mx-24">
+      <div className="text-lg lg:text-2xl text-black w-[380px] sm:w-[450px] md:w-[550px] lg:w-[730px] leading-loose text-center mx-24">
         Đến ZooDoo bạn sẽ tìm thấy một loạt lựa chọn đa dạng về món ăn và đồ
         uống. Có các quầy thức ăn nhanh với các món ăn đường phố hấp dẫn như
         bánh tráng nướng, bánh mì nóng hổi, hay các món ăn truyền thống đậm đà

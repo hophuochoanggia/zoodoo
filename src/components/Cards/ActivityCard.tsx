@@ -25,7 +25,10 @@ const ActivityCard: FC<IActivityCardProps> = ({
           }}
         />
       </div>
-      <div className="flex flex-col items-start justify-center w-full pl-3">
+      <div
+        className="flex flex-col item-center
+       lg:items-start justify-center lg:w-full pl-3"
+      >
         <h1 className="text-2xl font-bold text-text-title">{title}</h1>
         <div className="w-1/3 border my-2 border-[#14532D]" />
         <p className="text-xl text-text-description">{description}</p>

@@ -172,23 +172,30 @@ const AboutUs = () => {
                 />
               </div>
             </div>
-            <div className="pt-16">
-              <ZoodooMap />
+            <div className="lg:pt-16">
+              <div className="hidden lg:block">
+                <ZoodooMap />
+              </div>
+              <div className="block lg:hidden mt-[-20px]">
+                <ZoodooMap width="330" height="330" />
+              </div>
             </div>
           </div>
 
-          <div
-            className="w-full h-64 bg-cover bg-center flex flex-col items-center  justify-center rounded-lg"
-            style={{
-              backgroundImage: `url(${BG2.src})`,
-            }}
-          >
-            <CTAButton
-              text="LIÊN HỆ HỢP TÁC"
-              bgColor="green"
-              onClick={() => router.push("/lien-he-zoodoo")}
-              withIcon={false}
-            />
+          <div className="px-3 lg:px-0">
+            <div
+              className="w-full h-44 lg:h-64 bg-cover bg-center flex flex-col items-center  justify-center rounded-lg"
+              style={{
+                backgroundImage: `url(${BG2.src})`,
+              }}
+            >
+              <CTAButton
+                text="LIÊN HỆ HỢP TÁC"
+                bgColor="green"
+                onClick={() => router.push("/lien-he-zoodoo")}
+                withIcon={false}
+              />
+            </div>
           </div>
         </div>
       </MainContainer>

@@ -23,11 +23,16 @@ const SharingCard: React.FC<ISharingCard> = ({
 }) => {
   return (
     <div
-      className={`flex flex-col gap-10 md:flex-row md:justify-between ${
+      className={`flex flex-col gap-10 md:flex-row md:justify-between px-4 lg:px-0 ${
         imageSide === "right" ? "md:flex-row-reverse" : ""
       }`}
     >
-      <Image src={image} alt="sharing card image" width={400} height={200} />
+      <div className="hidden lg:block">
+        <Image src={image} alt="sharing card image" width={400} height={200} />
+      </div>
+      <div className="flex lg:hidden flex-col items-center justify-center">
+        <Image src={image} alt="sharing card image" width={300} height={200} />
+      </div>
       <div
         className={clsx(
           "w-full md:w-1/2 flex flex-col justify-start",

@@ -15,8 +15,8 @@ const data = [
 
 const AddressAndOpenTime = () => {
   return (
-    <div className="flex flex-row items-center justify-center divide-x-2 divide-gray-default">
-      <div className="flex flex-row items-center pr-12">
+    <div className="flex flex-col items-start lg:flex-row lg:items-center justify-center gap-y-2 lg:gap-y-0 lg:divide-x-2 divide-gray-default ">
+      <div className="flex flex-row items-center lg:pr-12">
         <Image
           priority
           src={AddressSvg}
@@ -24,11 +24,15 @@ const AddressAndOpenTime = () => {
           className="pl-4"
         />
         <div className="ml-4">
-          <h3 className="text-2xl font-semibold text-gray-700">Địa chỉ</h3>
-          <p className="text-2xl text-gray-500">
+          <h3 className="text-xl lg:text-2xl font-semibold text-gray-700">
+            Địa chỉ
+          </h3>
+          <p className="text-xl lg:text-2xl text-gray-500">
             Quốc lộ 27C, tiểu khu 94A, Đạ Nhim
           </p>
-          <p className="text-2xl text-gray-500">Lạc Dương, Lâm Đồng</p>
+          <p className="text-xl lg:text-2xl text-gray-500">
+            Lạc Dương, Lâm Đồng
+          </p>
         </div>
       </div>
       <div className="flex flex-row items-center">
@@ -39,14 +43,16 @@ const AddressAndOpenTime = () => {
           className="pl-4"
         />
         <div className="ml-4">
-          <h3 className="text-2xl font-semibold text-gray-700">
+          <h3 className="text-xl lg:text-2xl font-semibold text-gray-700">
             Giờ hoạt động
           </h3>
-          <p className="text-2xl text-gray-500">
+          <p className="text-xl lg:text-2xl text-gray-500">
             Mở cửa tất cả các ngày trong tuần
           </p>
-          <p className="text-2xl text-gray-500">9 giờ sáng - 6 giờ chiều</p>
-          <p className="text-2xl text-gray-500">
+          <p className="text-xl lg:text-2xl text-gray-500">
+            9 giờ sáng - 6 giờ chiều
+          </p>
+          <p className="text-xl lg:text-2xl text-gray-500">
             Giờ nhận khách cuối: 4 giờ chiều
           </p>
         </div>

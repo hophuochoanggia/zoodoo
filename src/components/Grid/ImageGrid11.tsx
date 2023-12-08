@@ -8,7 +8,7 @@ interface ImageGrid11Props {
 
 const ImageGrid11: FC<ImageGrid11Props> = ({ image1, image2 }) => {
   return (
-    <div className="grid grid-cols-2 gap-2 w-full px-10 lg:px-0 h-48 lg:h-56">
+    <div className="grid grid-cols-2 gap-2 w-full h-32 md:h-40 lg:h-56">
       <div className="w-full relative h-full">
         <Image
           src={image1}

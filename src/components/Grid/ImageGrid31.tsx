@@ -15,7 +15,7 @@ const ImageGrid31: FC<ImageGrid13Props> = ({
   image4,
 }) => {
   return (
-    <div className="grid grid-cols-2 gap-2 w-full px-10 lg:px-0">
+    <div className="grid grid-cols-2 gap-2 w-full ">
       <div className="w-full aspect-square relative grid grid-rows-2 gap-2">
         <div className="relative h-full">
           <Image

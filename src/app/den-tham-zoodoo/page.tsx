@@ -26,11 +26,11 @@ const BusInfo = ({
 }) => {
   return (
     <div className="flex flex-col justify-center items-center gap-2">
-      <p className="font-semibold text-lg lg:text-2xl text-[#4B5563]">
+      <p className="font-semibold text-xl lg:text-2xl text-[#4B5563]">
         {title}
       </p>
       <p className="font-semibold text-2xl lg:text-4xl">{time}</p>
-      <p className="font-semibold text-lg lg:text-2xl text-[#6B7280] text-center">
+      <p className="font-semibold text-xl lg:text-2xl text-[#6B7280] text-center">
         {place}
       </p>
     </div>
@@ -40,31 +40,31 @@ const BusInfo = ({
 const PricingInfo = () => {
   return (
     <div className="w-full bg-[#F9FAFB] my-8 rounded-2xl">
-      <div className="w-full  grid grid-cols-3 divide-x m-8">
-        <div className="flex flex-col items-center justify-center col-span-1 gap-y-4">
-          <p className="text-center font-normal text-lg lg:text-2xl">
+      <div className="w-full flex flex-col  divide-y lg:divide-y-0  lg:grid lg:grid-cols-3 lg:divide-x lg:m-8">
+        <div className="flex flex-col items-center justify-center py-4 lg:py-0  lg:col-span-1 lg:gap-y-4">
+          <p className="text-center font-normal text-xl lg:text-2xl">
             Chiều cao từ 120cm trở lên
           </p>
-          <div className="text-center flex flex-row items-center justify-center">
-            <p className="font-bold text-lg lg:text-2xl pr-2">40 000</p>
-            <p className="font-medium text-lg lg:text-2xl ">VND/ 1 Chiều</p>
+          <div className="text-center flex flex-col lg:flex-row items-center justify-center">
+            <p className="font-bold text-xl lg:text-2xl pr-2">40 000</p>
+            <p className="font-medium text-xl lg:text-2xl ">VND/ 1 Chiều</p>
           </div>
         </div>
-        <div className="flex flex-col items-center justify-center col-span-1 gap-y-4">
-          <p className="text-center font-normal text-lg lg:text-2xl">
+        <div className="flex flex-col items-center justify-center py-4 lg:py-0  lg:col-span-1 lg:gap-y-4">
+          <p className="text-center font-normal text-xl lg:text-2xl">
             Chiều cao từ 90cm - 120cm
           </p>
-          <div className="text-center flex flex-row items-center justify-center">
-            <p className="font-bold text-lg lg:text-2xl pr-2">10 000</p>
-            <p className="font-medium text-lg lg:text-2xl ">VND/ 1 Chiều</p>
+          <div className="text-center flex flex-col lg:flex-row items-center justify-center">
+            <p className="font-bold text-xl lg:text-2xl pr-2">10 000</p>
+            <p className="font-medium text-xl lg:text-2xl ">VND/ 1 Chiều</p>
           </div>
         </div>
-        <div className="flex flex-col items-center justify-center col-span-1 gap-y-4">
-          <p className="text-center font-normal text-lg lg:text-2xl">
+        <div className="flex flex-col items-center justify-center py-4 lg:py-0 lg:col-span-1 lg:gap-y-4">
+          <p className="text-center font-normal text-xl lg:text-2xl">
             Chiều cao dưới 90cm
           </p>
           <div className="text-center flex flex-row items-center justify-center">
-            <p className="font-bold text-lg lg:text-2xl pr-2">Miễn Phí</p>
+            <p className="font-bold text-xl lg:text-2xl pr-2">Miễn Phí</p>
           </div>
         </div>
       </div>
@@ -80,13 +80,16 @@ const VisitUs = () => {
           icon={"/assets/images/section-icons/icon3.png"}
           title={"ĐẾN ZOODOO DALAT"}
         />
-        <div className="text-lg lg:text-2xl text-black w-[750px] leading-loose text-center mx-24">
+        <div className="text-xl lg:text-2xl text-black lg:w-[750px] leading-loose text-center mx-12 lg:mx-24">
           ZooDoo Đà Lạt nằm trên quốc lộ 27C, cách trung tâm Đà Lạt 35km về phía
           Nha Trang.
         </div>
         <div className="flex flex-col justify-center items-center gap-6 max-w-7xl py-8">
-          <div className="rounded-md">
+          <div className="hidden lg:block rounded-md">
             <ZoodooMap width="800" height="500" borderRadius="10px" />
+          </div>
+          <div className="block lg:hidden rounded-md">
+            <ZoodooMap width="330" height="330" borderRadius="10px" />
           </div>
         </div>
       </MainContainer>
@@ -96,8 +99,8 @@ const VisitUs = () => {
           icon={"/assets/images/section-icons/icon9.png"}
           title={"Giờ hoạt động"}
         />
-        <div className="flex flex-col justify-center items-center gap-6 max-w-7xl py-8 pt-0">
-          <p className="text-center font-medium text-lg lg:text-2xl -mt-10">
+        <div className="flex flex-col justify-center items-center gap-6 px-4 lg:px-0 max-w-lg lg:max-w-7xl py-8 pt-0">
+          <p className="text-center font-medium text-xl lg:text-2xl -mt-10">
             Mở cửa các ngày trong tuần
           </p>
           <p className="text-center text-3xl lg:text-5xl">
@@ -115,7 +118,7 @@ const VisitUs = () => {
           <p className="font-bold text:2xl lg:text-4xl text-[#1F2937]">
             Khi tham gia vườn thú, hãy lưu ý các thông tin sau:
           </p>
-          <p className="font-bold text-lg lg:text-2xl text-[#4B5563]">
+          <p className="font-bold text-xl lg:text-2xl text-[#4B5563]">
             Hình thức tham quan
           </p>
           <p className="text-center text-base lg:text-xl leading-8 text-[#4B5563]">
@@ -125,7 +128,7 @@ const VisitUs = () => {
             nội quy và các quy tắc an toàn được thông báo.
           </p>
 
-          <p className="font-bold text-lg lg:text-2xl text-[#4B5563]">
+          <p className="font-bold text-xl lg:text-2xl text-[#4B5563]">
             Đặt vé trước
           </p>
           <p className="text-center text-base lg:text-xl leading-8 text-[#4B5563]">
@@ -133,7 +136,7 @@ const VisitUs = () => {
             thú. Việc này giúp đảm bảo rằng số lượng khách tham quan trong mỗi
             chuyến được kiểm soát và giới hạn.
           </p>
-          <p className="font-bold text-lg lg:text-2xl text-[#4B5563]">
+          <p className="font-bold text-xl lg:text-2xl text-[#4B5563]">
             Không mang thú cưng
           </p>
           <p className="text-center text-base lg:text-xl leading-8 text-[#4B5563]">
@@ -150,7 +153,7 @@ const VisitUs = () => {
           icon={"/assets/images/section-icons/icon1.png"}
           title={"Hướng dẫn di chuyển"}
         />
-        <div className="flex flex-col justify-center items-center max-w-7xl">
+        <div className="flex flex-col justify-center items-center px-4 lg:px-0 max-w-lg lg:max-w-7xl">
           <Image
             src="/assets/images/section-icons/icon10.png"
             width={64}
@@ -160,16 +163,16 @@ const VisitUs = () => {
           <p className="font-bold text:2xl lg:text-4xl text-[#1F2937] text-center py-8">
             Phương tiện cá nhân
           </p>
-          <p className="text-center leading-8 text-[#4B5563] text-lg lg:text-2xl">
+          <p className="text-center leading-8 text-[#4B5563] text-xl lg:text-2xl">
             Để đến ZooDoo, từ Đà lạt đi theo quốc lộ 27C tới xã Đạ Nhim, huyện
             Lạc Dương, tỉnh Lâm Đồng.
           </p>
-          <p className="text-center leading-8 text-[#4B5563] text-lg lg:text-2xl">
+          <p className="text-center leading-8 text-[#4B5563] text-xl lg:text-2xl">
             Tiếp tục đi thẳng trên quốc lộ 27C khoảng 1,5 km, nhìn bên tay phải
             bạn sẽ đến ZooDoo.
           </p>
         </div>
-        <div className="flex flex-col justify-center items-center max-w-7xl ">
+        <div className="flex flex-col justify-center items-center px-4 lg:px-0 max-w-lg lg:max-w-7xl">
           <Image
             src="/assets/images/section-icons/icon11.png"
             width={64}
@@ -180,11 +183,11 @@ const VisitUs = () => {
             <p className="font-bold text:2xl lg:text-4xl text-[#1F2937] text-center py-8">
               Di chuyển bằng xe bus ZooDoo
             </p>
-            <p className="text-center leading-8 text-[#4B5563] text-lg lg:text-2xl">
+            <p className="text-center leading-8 text-[#4B5563] text-xl lg:text-2xl">
               ZooDoo cung cấp chuyến shuttle bus hằng ngày, giúp thuận tiện hơn
               để đến ZooDoo tham quan.
             </p>
-            <p className="text-center leading-8 text-[#4B5563] py-4 text-lg lg:text-2xl">
+            <p className="text-center leading-8 text-[#4B5563] py-4 text-xl lg:text-2xl">
               Để đặt chỗ, vui lòng liên hệ số điện thoại:
               <a href="tel:0905333261"> 0905333261</a>
             </p>
@@ -232,7 +235,7 @@ const VisitUs = () => {
           title={"NỘI QUY VƯỜN THÚ"}
         />
 
-        <div className="text-xl lg:text-2xl text-black w-[700px] lg:w-[850px] leading-relaxed text-center mx-24">
+        <div className="text-xl lg:text-2xl text-black md:w-[700px] lg:w-[850px] leading-relaxed text-center mx-12 lg:mx-24">
           Để ZooDoo phục vụ quý khách tốt nhất, cũng như bảo vệ môi trường lành
           mạnh và an toàn cho động vật và quý khách tham quan, ZooDoo có các quy
           định sau:

@@ -6,9 +6,9 @@ import FollowUs from "@/components/common/FollowUs";
 const FooterMobile = () => {
   return (
     <footer className="bg-green-default block lg:hidden">
-      <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+      <div className="mx-auto w-full max-w-screen-xl py-6 lg:py-8">
         <div className="flex flex-col pt-8">
-          <div className="m-6 w-full flex items-center justify-center">
+          <div className=" w-full flex items-center justify-center">
             <a href="https://flowbite.com/" className="flex items-center">
               <Image
                 src="/assets/images/logos/logo-zoodoo-white-big.png"
@@ -88,8 +88,8 @@ const FooterMobile = () => {
         </div>
 
         <hr className="my-6 border-gray-500 sm:mx-auto  lg:my-8" />
-        <div className="flex items-end justify-end ">
-          <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+        <div className="flex items-center justify-center ">
+          <span className="text-sm text-gray-500 text-center ">
             © 2023 ZooDoo . All Rights Reserved.
           </span>
         </div>

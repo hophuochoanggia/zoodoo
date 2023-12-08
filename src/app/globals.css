@@ -4,8 +4,8 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-start-rgb: #FFFFFF;
+  --background-end-rgb: #14532D;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,23 +17,11 @@
 }
 
 body {
-  color: "#000000";
   overflow-x: hidden;
   background: linear-gradient(to bottom,
       transparent,
       rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
-
-ion-icon {
-  font-size: 1000px;
-}
-
-/* .swiper-button-next,
-.swiper-button-prev {
-  right: 10px;
-  margin: 30px 100px;
-} */
-
 
 /* fix arrows position */
 .swiper-button-next {
@@ -44,14 +32,23 @@ ion-icon {
   left: 20% !important;
 }
 
+.swiper-button-next:active,
+.swiper-button-prev:active,
+.swiper-button-next:focus,
+.swiper-button-prev:focus,
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: transparent !important;
+}
+
 /* target mobile */
 @media (max-width: 768px) {
   .swiper-button-next {
-    right: 5% !important;
+    right: 1% !important;
   }
 
   .swiper-button-prev {
-    left: 5% !important;
+    left: 1% !important;
   }
 }
 
@@ -97,7 +94,7 @@ ion-icon {
   /* makes the other slide smaller */
   /* responsive settings */
   --swiper-mobile-width: 90%;
-  --swiper-mobile-inactive-scale: .95;
+  --swiper-mobile-inactive-scale: .8;
 }
 
 /* Styles */
@@ -417,7 +414,7 @@ ion-icon {
   .custom-swiper .swiper-button-prev {
     left: calc((100% - var(--swiper-mobile-width)) / 2);
   }
-} 
+}
 
 /* Contentful container */
 .contentful-container p {

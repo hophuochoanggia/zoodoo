@@ -9,7 +9,7 @@ const PriceCard120 = () => {
         <p className="text-lg lg:text-2xl font-bold text-start">
           Chiều cao từ 120cm trở lên
         </p>
-        <div className="flex flex-row items-end justify-center py-6 pt-8">
+        <div className="flex flex-row items-end justify-center py-2 pt-4 lg:py-6 lg:pt-8">
           <p className="text-2xl lg:text-4xl font-bold pr-2">150 000</p>
           <p className="text-base lg:text-xl ">VND/Người</p>
         </div>
@@ -40,7 +40,7 @@ const PriceCard90 = () => {
         <p className="text-lg lg:text-2xl font-bold text-start">
           Chiều cao từ 90cm - 120cm
         </p>
-        <div className="flex flex-row items-end justify-center py-6 pt-8">
+        <div className="flex flex-row items-end justify-center py-2 pt-4 lg:py-6 lg:pt-8">
           <p className="text-2xl lg:text-4xl font-bold pr-2">75 000</p>
           <p className="text-base lg:text-xl ">VND/Người</p>
         </div>
@@ -68,16 +68,16 @@ const PriceCardUnder90 = () => {
         <p className="text-lg lg:text-2xl font-bold text-start">
           Chiều cao dưới 90cm
         </p>
-        <div className="flex flex-row items-end justify-center py-4 pt-8">
+        <div className="flex flex-row items-end justify-center py-2 pt-4 lg:py-6 lg:pt-8">
           <p className="text-2xl lg:text-4xl font-bold">Miễn Phí</p>
         </div>
 
-        <div className="flex flex-col items-end justify-center gap-2">
-          <p className="text-md lg:text-lg text-[#4B5563]">
+        <div className="flex flex-col lg:items-end justify-center gap-2">
+          <p className="text-md lg:text-lg text-[#4B5563] text-start">
             Trẻ em phải được đi kèm với cha mẹ hoặc người giám hộ trưởng thành
             mọi lúc.
           </p>
-          <p className="text-md lg:text-lg text-[#4B5563]">
+          <p className="text-md lg:text-lg text-[#4B5563] text-start">
             Người lớn chịu trách nhiệm cho các tương tác động vật của con trẻ.
           </p>
         </div>
@@ -167,20 +167,20 @@ const PrivateBenefitCard = () => {
 
 export const PriceSection = () => {
   return (
-    <div className="flex flex-col justify-center items-start gap-6 max-w-7xl py-8 pt-0">
-      <div className="w-full grid grid-cols-3 gap-6 ">
-        <div className="col-span-1">
+    <div className="flex flex-col justify-center items-start gap-6 max-w-lg md:max-w-xl lg:max-w-7xl lg:py-8 pt-0">
+      <div className="w-full flex flex-col lg:grid lg:grid-cols-3 gap-y-4 lg:gap-6 ">
+        <div className="lg:col-span-1">
           <PriceCard120 />
         </div>
-        <div className="col-span-1">
+        <div className="lg:col-span-1">
           <PriceCard90 />
         </div>
-        <div className="col-span-1">
+        <div className="lg:col-span-1">
           <PriceCardUnder90 />
         </div>
       </div>
 
-      <div className="w-full grid grid-cols-3 gap-6	">
+      <div className="w-full flex flex-col lg:grid lg:grid-cols-3 gap-y-4 lg:gap-6 ">
         <div className="col-span-1">
           <PrivatePriceCard />
         </div>

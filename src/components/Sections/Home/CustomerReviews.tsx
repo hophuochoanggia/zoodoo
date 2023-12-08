@@ -42,7 +42,8 @@ const getColumns = (width: number | undefined) => {
   if (width > 1920) return 3.5;
   if (width > 1496) return 2.4;
   if (width > 1024) return 2;
-  return 1.1;
+  if (width > 768) return 1.5;
+  return 1;
 };
 
 const CustomerReviews = () => {
