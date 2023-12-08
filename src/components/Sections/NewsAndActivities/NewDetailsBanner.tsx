@@ -1,32 +1,39 @@
-import { FC } from "react";
 import Image from "next/image";
+import { FC } from "react";
 
 import BackButton from "@/components/Buttons/BackButton";
-import { INewsItem } from "@/types/contentful";
+import { INewsFields } from "@/types/contentful";
 
-interface INewBannerProps {
-  content: INewsItem;
+interface INewDetailsBannerProps {
+  post: {
+    fields: INewsFields;
+  };
 }
 
-const NewBanner: FC<INewBannerProps> = () => {
+const NewDetailsBanner: FC<INewDetailsBannerProps> = ({ post }) => {
+  const { title, slug, description, date } = post.fields;
+
   return (
     <div className="pt-32 lg:pt-44">
-      <div className="flex flex-col lg:grid lg:grid-cols-5">
-        <div className="lg:col-span-2 flex flex-col justify-between">
+      <div className="flex flex-col lg:grid lg:grid-cols-2">
+        <div className="lg:col-span-1  lg:mr-16 flex flex-col justify-between">
           <div>
             <div className="pb-8">
               <BackButton />
             </div>
             <div className="text-3xl lg:text-5xl text-white font-bold leading-[72px]">
-              Tất tần tật về vườn thú &quot;siêu cấp&quot; đáng yêu ZooDoo Đà
-              Lạt
+              {title}
             </div>
-            <div className="block lg:hidden py-4 text-white text-base text-end font-medium">
-              12/12/2021
-            </div>
+            <div className="block lg:hidden py-4 text-white text-base text-end font-medium"></div>
           </div>
           <div className="hidden lg:flex lg:flex-col space-y-4">
-            <div className="text-white text-base font-medium">12/12/2021</div>
+            <div className="text-white text-base font-medium">
+              {new Date(date).toLocaleDateString("vi-VN", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+            </div>
             <div className="flex flex-row space-x-6">
               <div className="flex items-end text-white font-normal text-base">
                 Share
@@ -52,13 +59,15 @@ const NewBanner: FC<INewBannerProps> = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-row justify-center items-center lg:col-span-3 lg:ml-16">
+        <div className="flex flex-row justify-center items-center lg:col-span-1">
           <Image
-            src={"/assets/images/news/new1.png"}
-            alt="Banner"
+            src={`https:${post?.fields?.coverImage?.fields?.file?.url}`}
             layout="responsive"
-            width={500}
-            height={500}
+            width={400}
+            height={400}
+            className="rounded-lg"
+            alt={title}
+            priority
           />
         </div>
         <div className="flex flex-col lg:hidden py-8">
@@ -91,4 +100,4 @@ const NewBanner: FC<INewBannerProps> = () => {
   );
 };
 
-export default NewBanner;
+export default NewDetailsBanner;

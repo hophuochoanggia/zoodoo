@@ -1,20 +1,17 @@
 "use client";
-import Pagination from "rc-pagination";
-import { useState, FC, useEffect } from "react";
+import { FC, useEffect, useState } from "react";
+
+import CustomPagination from "../../common/Pagination";
+
+import { initContentfulClient } from "@/lib/contentful";
+import { INewItems, INewsSkeleton } from "@/types/contentful";
 
 import NewCard from "../../Cards/NewCard";
-import { createClient } from "contentful";
-import { INewsSkeleton, INewItems } from "@/types/contentful";
 
-const POST_PER_PAGE = 1;
-
-const client = createClient({
-  space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACEID ?? "",
-  accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESSTOKEN ?? "",
-});
+export const POSTS_PER_PAGE = 1;  
 
 const getBlogEntries = async (page: number, limit: number) => {
-  const response = await client.getEntries<INewsSkeleton>({
+  const response = await initContentfulClient.getEntries<INewsSkeleton>({
     content_type: "news",
     // sort latest first
     order: ["-sys.createdAt"],
@@ -52,7 +49,7 @@ const NewGridAndPagination: FC = () => {
     const fetchBlogEntries = async () => {
       const { entries, totalPages } = await getBlogEntries(
         currentPage,
-        POST_PER_PAGE
+        POSTS_PER_PAGE
       );
       setBlogItems(entries);
       setTotalPages(totalPages);
@@ -70,18 +67,11 @@ const NewGridAndPagination: FC = () => {
           <NewCard key={item?.fields?.slug} item={item} />
         ))}
       </div>
-      <div className="py-8 flex flex-row">
-        <button onClick={skipToStart} className="skip-to-start"></button>
-        <Pagination
-          onChange={onChange}
-          current={currentPage}
-          defaultCurrent={1}
-          defaultPageSize={POST_PER_PAGE}
-          total={totalPages}
-          showLessItems
-        />
-        <button onClick={skipToEnd} className="skip-to-end"></button>
-      </div>
+      <CustomPagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        postsPerPage={POSTS_PER_PAGE}
+      />
     </div>
   );
 };

@@ -1,5 +1,5 @@
-import React, { FC } from "react";
 import Image from "next/image";
+import { FC } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
@@ -30,7 +30,7 @@ const CenteredAndLargeActive: FC<ICenteredAndLargeActiveProps> = ({
         defaultValue={2}
         parallax={true}
         loop={true}
-        className="custom-swiper"
+        className="review-swiper"
         spaceBetween={0}
         slidesPerGroup={1}
         centeredSlides={true}

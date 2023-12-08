@@ -1,14 +1,11 @@
-import React from "react";
-
 import MainContainer from "@/components/Containers/MainContainer";
+import NewDetailsBanner from "@/components/Sections/NewsAndActivities/NewDetailsBanner";
 import NewsBody from "@/components/Sections/NewsAndActivities/NewsBody";
-import NewBanner from "@/components/Sections/NewsAndActivities/NewBanner";
-import SimilarNews from "@/components/Sections/NewsAndActivities/SimilarNews";
 
 import BannerImage from "@/../public/assets/backgrounds/news/bg3.png";
 
-import { createClient } from "contentful";
 import { INewsItem, INewsSkeleton } from "@/types/contentful";
+import { createClient } from "contentful";
 
 const client = createClient({
   space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACEID ?? "",
@@ -35,10 +32,10 @@ const NewsAndActivitiesPage = async ({
   return (
     <div className="flex flex-col">
       <MainContainer background={BannerImage.src}>
-        <NewBanner content={article} />
+        <NewDetailsBanner post={article} />
       </MainContainer>
       <MainContainer className="pt-6 lg:pt-20">
-        <NewsBody content={article} />
+        <NewsBody post={article} />
       </MainContainer>
       {/* <MainContainer>
         <SimilarNews />

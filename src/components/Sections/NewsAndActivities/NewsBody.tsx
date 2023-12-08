@@ -37,7 +37,7 @@ const NewFooter = () => {
 };
 
 interface INewBodyProps {
-  content: INewsItem;
+  post: INewsItem;
 }
 
 const renderOptions = {
@@ -69,7 +69,7 @@ const renderOptions = {
 };
 
 const NewsBody: FC<INewBodyProps> = ({
-  content: {
+  post: {
     fields: { coverImage, title, content, date, slug },
   },
 }) => {
