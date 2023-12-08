@@ -36,9 +36,7 @@ const CTAButton: FC<ICTAButtonProps> = ({
       <span className={clsx("text-white pr-2", uppercase && "uppercase")}>
         {text}
       </span>
-      {withIcon && (
-        <Image priority src={RightChevron} alt="Follow us on Twitter" />
-      )}
+      {withIcon && <Image priority src={RightChevron} alt="next svg" />}
     </button>
   );
 };

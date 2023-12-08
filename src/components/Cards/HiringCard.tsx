@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
@@ -22,7 +23,7 @@ const HiringCard = () => {
     <button
       className="bg-gray-light border-none rounded-lg shadow hover:opacity-80 w-full"
       onClick={() => {
-        router.push(`/tin-tuc-va-hoat-dong/${1}`);
+        router.push(`/tuyen-dung`);
       }}
     >
       <div className="relative pb-64 lg:pb-80 overflow-hidden rounded-t-lg">
@@ -47,7 +48,7 @@ const HiringCard = () => {
             30/11/2023
           </p>
         </div>
-        <div className="flex">
+        <div className="flex flex-wrap text-md lg:text-lg space-x-2">
           <p className="text-lg font-[700] text-gray-700  line-clamp-2 text-start w-24">
             Yêu cầu:
           </p>

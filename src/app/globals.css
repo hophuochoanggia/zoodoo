@@ -37,6 +37,16 @@ body {
       rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
+ul.list {
+  list-style-type: circle;
+}
+
+.list li::marker {
+  color: #000;
+  content: "\2022";
+}
+
+
 /* fix arrows position */
 .swiper-button-next {
   right: 20% !important;
