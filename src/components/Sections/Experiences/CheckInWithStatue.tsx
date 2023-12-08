@@ -28,7 +28,7 @@ const CheckInWithStatue = () => {
         <div className="hidden lg:absolute lg:top-[-370px] lg:right-0 pt-20 lg:flex flex-row items-center justify-center">
           <Image src={KangarooImage} alt="kangaroo" width={550} height={700} />
         </div>
-        <div className="flex lg:absolute lg:top-[-370px] lg:right-0 pt-20 lg:hidden flex-row items-center justify-center">
+        <div className="flex lg:hidden flex-row items-center justify-center">
           <Image src={KangarooImage} alt="kangaroo" width={400} height={400} />
         </div>
       </div>

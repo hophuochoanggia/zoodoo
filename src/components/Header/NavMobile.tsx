@@ -96,9 +96,9 @@ export const NavMobile = () => {
             transition={{ duration: 0.2 }}
             className="fixed left-0 right-0 top-0 py-5 pt-0 bg-[#14532D] border-b border-b-white/20 h-full"
           >
-            <nav className="mt-44 flex w-full flex-col justify-center items-center ">
+            <nav className="mt-32 flex w-full flex-col justify-center items-center ">
               <ul className="w-full">
-                <li className="py-6 ">
+                <li className="py-2 ">
                   <Link
                     href="/ve-zoodoo"
                     className="w-full h-full"
@@ -109,7 +109,7 @@ export const NavMobile = () => {
                     </p>
                   </Link>
                 </li>
-                <li className="py-6 ">
+                <li className="py-2 ">
                   <Link
                     href="/den-tham-zoodoo"
                     className="w-full h-full"
@@ -120,7 +120,7 @@ export const NavMobile = () => {
                     </p>
                   </Link>
                 </li>
-                <li className="py-6 ">
+                <li className="py-2 ">
                   <Link
                     href="/trai-nghiem-zoodoo"
                     className="w-full h-full"
@@ -131,7 +131,7 @@ export const NavMobile = () => {
                     </p>
                   </Link>
                 </li>
-                <li className="py-6 ">
+                <li className="py-2 ">
                   <Link
                     href="/tin-tuc-va-hoat-dong"
                     className="w-full h-full"
