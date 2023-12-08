@@ -1,12 +1,17 @@
+import { FC } from "react";
 import Image from "next/image";
+import { EntryCollection } from "contentful";
+import { INewsSkeleton } from "@/types/contentful";
 
-import NewCard from "../../Cards/NewCard";
+import NewCard from "@/components/Cards/NewCard";
 
-const data = [];
+interface ISimilarNewsProps {
+  similarNews: EntryCollection<INewsSkeleton, undefined, string>;
+}
 
-const SimilarNews = () => {
+const SimilarNews: FC<ISimilarNewsProps> = ({ similarNews }) => {
   return (
-    <div className="flex flex-col -mt-[100px]">
+    <div className="flex flex-col -mt-[100px] w-full">
       <div className="flex flex-row items-center justify-start py-10">
         <div className="flex items-center">
           <Image
@@ -20,11 +25,17 @@ const SimilarNews = () => {
           Bài viết tương tự
         </p>
       </div>
-      {/* <div className="w-full grid grid-cols-2 lg:grid-cols-3 gap-8">
-        <NewCard />
-        <NewCard />
-        <NewCard />
-      </div> */}
+      <div className="w-full grid grid-cols-2 lg:grid-cols-3 gap-8">
+        {similarNews.items.map((item, index) => (
+          <NewCard
+            key={index}
+            coverImage={item.fields.coverImage}
+            title={item.fields.title}
+            description={item.fields.description}
+            link={`/tin-tuc-va-hoat-dong/${item.fields.slug}`}
+          />
+        ))}
+      </div>
     </div>
   );
 };

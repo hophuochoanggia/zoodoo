@@ -1,23 +1,26 @@
+import { notFound } from "next/navigation";
+
 import MainContainer from "@/components/Containers/MainContainer";
-import NewDetailsBanner from "@/components/Sections/NewsAndActivities/NewDetailsBanner";
 import NewsBody from "@/components/Sections/NewsAndActivities/NewsBody";
+import SimilarNews from "@/components/Sections/NewsAndActivities/SimilarNews";
+import NewDetailsBanner from "@/components/Sections/NewsAndActivities/NewDetailsBanner";
 
 import BannerImage from "@/../public/assets/backgrounds/news/bg3.png";
 
 import { INewsItem, INewsSkeleton } from "@/types/contentful";
-import { createClient } from "contentful";
-
-const client = createClient({
-  space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACEID ?? "",
-  accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESSTOKEN ?? "",
-});
+import {
+  getBlogPostsByCreatedAtService,
+  initContentfulClient,
+} from "@/lib/contentful";
 
 const fetchBlogPost = async (slug: string): Promise<INewsItem> => {
   const queryOptions = {
     content_type: "news" as "news",
     "fields.slug[match]": slug,
   };
-  const queryResult = await client.getEntries<INewsSkeleton>(queryOptions);
+  const queryResult = await initContentfulClient.getEntries<INewsSkeleton>(
+    queryOptions
+  );
   return queryResult.items[0];
 };
 
@@ -29,17 +32,23 @@ const NewsAndActivitiesPage = async ({
   };
 }) => {
   const article = await fetchBlogPost(slug);
+  // get 5 newest posts
+  const newestPosts = await getBlogPostsByCreatedAtService(0, 5);
+
+  if (!article) {
+    return notFound();
+  }
   return (
     <div className="flex flex-col">
       <MainContainer background={BannerImage.src}>
         <NewDetailsBanner post={article} />
       </MainContainer>
       <MainContainer className="pt-6 lg:pt-20">
-        <NewsBody post={article} />
+        <NewsBody post={article} newestPosts={newestPosts} />
       </MainContainer>
-      {/* <MainContainer>
-        <SimilarNews />
-      </MainContainer> */}
+      <MainContainer>
+        <SimilarNews similarNews={newestPosts} />
+      </MainContainer>
     </div>
   );
 };
@@ -51,7 +60,7 @@ export async function generateStaticParams() {
     content_type: "news",
     select: "fields.slug",
   };
-  const articles = await client.getEntries(queryOptions);
+  const articles = await initContentfulClient.getEntries(queryOptions);
   return articles.items.map((article) => ({
     slug: article.fields.slug,
   }));

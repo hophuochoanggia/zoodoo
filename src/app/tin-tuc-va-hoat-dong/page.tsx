@@ -3,7 +3,10 @@ import { FC } from "react";
 import { INewsSkeleton } from "@/types/contentful";
 import { POSTS_PER_PAGE } from "@/constants/contentful";
 
-import { initContentfulClient } from "@/lib/contentful";
+import {
+  getBlogPostsByCreatedAtService,
+  initContentfulClient,
+} from "@/lib/contentful";
 
 import NewCard from "@/components/Cards/NewCard";
 import CustomPagination from "@/components/common/Pagination";
@@ -24,12 +27,10 @@ const NewsAndActivitiesPage: FC<INewsAndActivitiesPageProps> = async ({
 }) => {
   const currentPage = Number(searchParams?.page || "1");
 
-  const results = await initContentfulClient.getEntries<INewsSkeleton>({
-    content_type: "news",
-    order: ["-sys.createdAt"],
-    skip: (currentPage - 1) * POSTS_PER_PAGE,
-    limit: POSTS_PER_PAGE,
-  });
+  const results = await getBlogPostsByCreatedAtService(
+    currentPage,
+    POSTS_PER_PAGE
+  );
 
   const newestPost = await initContentfulClient.getEntries<INewsSkeleton>({
     content_type: "news",
@@ -52,8 +53,14 @@ const NewsAndActivitiesPage: FC<INewsAndActivitiesPageProps> = async ({
             <p className="font-bold text-3xl lg:text-5xl">TIN TỨC MỚI NHẤT</p>
           </div>
           <div className="w-full flex flex-col lg:grid lg:grid-cols-3 gap-8">
-            {results.items.map((item) => (
-              <NewCard key={item?.fields?.slug} item={item} />
+            {results.items.map((item, index) => (
+              <NewCard
+                key={index}
+                title={item?.fields?.title}
+                description={item?.fields?.description}
+                link={`/tin-tuc-va-hoat-dong/${item?.fields?.slug}`}
+                coverImage={item?.fields?.coverImage}
+              />
             ))}
           </div>
           <CustomPagination

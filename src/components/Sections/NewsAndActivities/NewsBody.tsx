@@ -3,11 +3,12 @@ import { FC, ReactNode } from "react";
 import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
-import { INewsItem } from "@/types/contentful";
+import { INewsItem, INewsSkeleton } from "@/types/contentful";
 import { Block, Inline } from "@contentful/rich-text-types";
 
 import NewestPost from "./NewestPost";
 import BackButton from "@/components/Buttons/BackButton";
+import { EntryCollection } from "contentful";
 
 const NewFooter = () => {
   return (
@@ -38,6 +39,7 @@ const NewFooter = () => {
 
 interface INewBodyProps {
   post: INewsItem;
+  newestPosts: EntryCollection<INewsSkeleton, undefined, string>;
 }
 
 const renderOptions = {
@@ -72,6 +74,7 @@ const NewsBody: FC<INewBodyProps> = ({
   post: {
     fields: { coverImage, title, content, date, slug },
   },
+  newestPosts,
 }) => {
   return (
     <div className="flex flex-col lg:grid lg:grid-cols-4 ">
@@ -90,7 +93,7 @@ const NewsBody: FC<INewBodyProps> = ({
         <NewFooter />
       </div>
       <div className="col-span-1 flex flex-col items-start pt-16 lg:pt-0">
-        <NewestPost />
+        <NewestPost newestPosts={newestPosts} />
       </div>
     </div>
   );

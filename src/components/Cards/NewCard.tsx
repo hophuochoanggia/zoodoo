@@ -1,25 +1,35 @@
 import Image from "next/image";
 import clsx from "clsx";
 
-import { INewsSkeleton } from "@/types/contentful";
 import { FC } from "react";
 import { checkHttpContentfulPrefix } from "@/utils/checkHttpPrefix";
+import { Asset, EntryFields } from "contentful";
+import { Text } from "@contentful/rich-text-types";
 
 interface INewCardProps {
-  item: any;
+  key: any;
+  title: string;
+  description: EntryFields.RichText;
+  link: string;
+  coverImage: Asset;
 }
 
-const NewCard: FC<INewCardProps> = ({ item }) => {
-  const { slug, title, content, coverImage } = item.fields;
+const NewCard: FC<INewCardProps> = ({
+  title,
+  description,
+  link,
+  coverImage,
+}) => {
+  const coverImageUrl = coverImage?.fields?.file?.url;
   return (
     <a
       className="bg-gray-light border-none rounded-lg shadow hover:opacity-80"
-      href={`/tin-tuc-va-hoat-dong/${slug}`}
+      href={link}
     >
       <div className="relative pb-56 lg:pb-80 overflow-hidden rounded-t-lg">
         <Image
           className="absolute inset-0 object-cover w-full h-full"
-          src={checkHttpContentfulPrefix(coverImage.fields.file.url)}
+          src={checkHttpContentfulPrefix(coverImageUrl as string)}
           alt="Article"
           layout="fill"
         />
@@ -29,7 +39,7 @@ const NewCard: FC<INewCardProps> = ({ item }) => {
           {title}
         </h5>
         <p className="text-base lg:text-lg font-normal text-gray-700 dark:text-gray-400 line-clamp-2 text-start">
-          {content?.content[0]?.content[0]?.value}
+          {(description?.content[0].content[0] as Text).value}
         </p>
         <div
           className={clsx(

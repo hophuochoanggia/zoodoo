@@ -19,7 +19,7 @@ const IntroWithOnePicture: FC<IIntroWithOnePictureProps> = ({
   return (
     <div className="flex flex-col items-center justify-center space-y-6">
       <SectionTitle icon={icon} title={title} description={description} />
-      <div className="w-full md:max-w-md h-[300px] md:h-[500px] relative">
+      <div className="w-full md:max-w-xl lg:max-w-3xl xl:max-w-4xl h-[300px] md:h-[500px] xl:h-[700px] relative">
         <Image
           src={picture}
           alt="ZooDoo logo"

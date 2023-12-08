@@ -1,43 +1,27 @@
-const data = [
-  {
-    title: "Tất tần tật về vườn thú siêu cấp đáng yêu ZooDoo Đà Lạt",
-    description: "Đây là tin tức 1",
-    link: "/tin-tuc-va-hoat-dong/1",
-  },
-  {
-    title: "Tất tần tật về vườn thú siêu cấp đáng yêu ZooDoo Đà Lạt",
-    description: "Đây là tin tức 2",
-    link: "/tin-tuc-va-hoat-dong/1",
-  },
-  {
-    title: "Tất tần tật về vườn thú siêu cấp đáng yêu ZooDoo Đà Lạt",
-    description: "Đây là tin tức 3",
-    link: "/tin-tuc-va-hoat-dong/1",
-  },
-  {
-    title: "Tất tần tật về vườn thú siêu cấp đáng yêu ZooDoo Đà Lạt",
-    description: "Đây là tin tức 4",
-    link: "/tin-tuc-va-hoat-dong/1",
-  },
-  {
-    title: "Tất tần tật về vườn thú siêu cấp đáng yêu ZooDoo Đà Lạt",
-    description: "Đây là tin tức 5",
-    link: "/tin-tuc-va-hoat-dong/1",
-  },
-];
+import { INewsItem, INewsSkeleton } from "@/types/contentful";
+import { EntryCollection } from "contentful";
+import { FC } from "react";
 
-const NewestPost = () => {
+interface INewestPostProps {
+  newestPosts: EntryCollection<INewsSkeleton, undefined, string>;
+}
+
+const NewestPost: FC<INewestPostProps> = ({ newestPosts }) => {
+  if (!newestPosts) {
+    return null;
+  }
   return (
     <div className="flex flex-col">
       <div className="font-bold text-xl  pb-3">BÀI VIẾT MỚI NHẤT</div>
       <div className="flex flex-col space-y-3">
-        {data.map((item, index) => (
-          <button
+        {newestPosts.items.map((item, index) => (
+          <a
             key={index}
             className="font-normal text-lg text-start hover:opacity-80"
+            href={`/tin-tuc-va-hoat-dong/${item.fields.slug}`}
           >
-            {item.title}
-          </button>
+            {item.fields.title}
+          </a>
         ))}
       </div>
     </div>

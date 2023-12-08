@@ -1,7 +1,5 @@
 import clsx from "clsx";
-import React, { FC, Suspense, useRef } from "react";
-
-import { motion, useScroll, useTransform } from "framer-motion";
+import React, { FC, Suspense } from "react";
 
 interface IAnimalsIntroProps {
   background?: string;
