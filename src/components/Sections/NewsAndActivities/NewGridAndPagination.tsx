@@ -1,14 +1,14 @@
 "use client";
 import { FC, useEffect, useState } from "react";
 
-import CustomPagination from "../../common/Pagination";
-
 import { initContentfulClient } from "@/lib/contentful";
 import { INewItems, INewsSkeleton } from "@/types/contentful";
 
-import NewCard from "../../Cards/NewCard";
+import { POSTS_PER_PAGE } from "@/constants/contentful";
 
-export const POSTS_PER_PAGE = 1;  
+import CustomPagination from "../../common/Pagination";
+
+import NewCard from "../../Cards/NewCard";
 
 const getBlogEntries = async (page: number, limit: number) => {
   const response = await initContentfulClient.getEntries<INewsSkeleton>({

@@ -1,6 +1,7 @@
 import { FC } from "react";
 
 import { INewsSkeleton } from "@/types/contentful";
+import { POSTS_PER_PAGE } from "@/constants/contentful";
 
 import { initContentfulClient } from "@/lib/contentful";
 
@@ -8,7 +9,6 @@ import NewCard from "@/components/Cards/NewCard";
 import CustomPagination from "@/components/common/Pagination";
 import MainContainer from "@/components/Containers/MainContainer";
 import NewsBanner from "@/components/Sections/NewsAndActivities/NewsBanner";
-import { POSTS_PER_PAGE } from "@/components/Sections/NewsAndActivities/NewGridAndPagination";
 
 import BannerImage from "@/../public/assets/backgrounds/news/bg1.png";
 import BG2 from "@/../public/assets/backgrounds/news/bg2.png";
