@@ -4,7 +4,7 @@ import { useEffect } from "react";
 // import Script from "next/script";
 export function init() {
   let chatbox = document.getElementById("fb-customer-chat");
-  chatbox.setAttribute("page_id", "100502559076541");
+  chatbox.setAttribute("page_id", "914399745304515");
   chatbox.setAttribute("attribution", "biz_inbox");
   window.fbAsyncInit = function () {
     FB.init({
@@ -33,7 +33,6 @@ export function cleanup() {
 }
 export const MessengerChat = () => {
   useEffect(() => {
-    console.log("Facebook1");
     init();
     return () => {
       cleanup();
