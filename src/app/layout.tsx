@@ -7,6 +7,7 @@ import MessengerChat from "@/components/Facebook/MessengerChat";
 
 import FooterMobile from "@/components/Footer/FooterMobile";
 import "./globals.css";
+import GoogleAnalytics from "@/components/Analytic/GoogleAnalytics";
 
 const asap = Asap({ subsets: ["vietnamese"] });
 
@@ -57,9 +58,10 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
+        <GoogleAnalytics />
       </head>
       <body
-        className={`${asap.className} flex flex-col w-screen bg-white justify-between min-h-screen lg:pl-0 overflow-x-hidden`}
+        className={`${asap.className} flex flex-col w-screen bg-[#FFF9E9] justify-between min-h-screen lg:pl-0 overflow-x-hidden`}
       >
         <Header />
         <MessengerChat />
