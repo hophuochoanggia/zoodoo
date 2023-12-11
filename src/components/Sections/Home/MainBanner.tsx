@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import CTAButton from "@/components/Buttons/CTAButton/CTAButton";
 
 import BannerImage from "../../../../public/assets/images/banner.jpg";
+import CallNumberButton from "@/components/Buttons/CallNumberButton/CallNumberButton";
 
 const MainBanner = () => {
   return (
@@ -29,11 +30,7 @@ const MainBanner = () => {
             </p>
 
             <div className="py-8">
-              <CTAButton
-                text="ĐẶT CHỖ NGAY"
-                bgColor="orange"
-                onClick={() => {}}
-              />
+              <CallNumberButton text="ĐẶT CHỖ NGAY" bgColor="orange" />
             </div>
           </div>
         </motion.div>

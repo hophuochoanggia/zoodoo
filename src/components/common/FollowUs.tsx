@@ -22,24 +22,42 @@ const FollowUs: FC<IFollowUsProps> = ({
         {title}
       </h2>
       <div className="flex flex-row space-x-6 items-center justify-center md:justify-start">
-        <Image
-          src="/assets/socials/facebook.png"
-          width={40}
-          height={40}
-          alt="facebook"
-        />
-        <Image
-          src="/assets/socials/insta.png"
-          width={40}
-          height={40}
-          alt="instagram"
-        />
-        <Image
-          src="/assets/socials/tiktok.png"
-          width={40}
-          height={40}
-          alt="tiktok"
-        />
+        <a
+          href="https://www.facebook.com/zoodoo.dalat?locale=vi_VN"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Image
+            src="/assets/socials/facebook.png"
+            width={40}
+            height={40}
+            alt="facebook"
+          />
+        </a>
+        <a
+          href="https://www.instagram.com/zoodoodalat"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Image
+            src="/assets/socials/insta.png"
+            width={40}
+            height={40}
+            alt="instagram"
+          />
+        </a>
+        <a
+          href="https://www.tiktok.com/@zoodoodalat"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Image
+            src="/assets/socials/tiktok.png"
+            width={40}
+            height={40}
+            alt="tiktok"
+          />
+        </a>
       </div>
     </div>
   );

@@ -1,8 +1,11 @@
 import Image from "next/image";
 import { FC } from "react";
 
-import BackButton from "@/components/Buttons/BackButton";
 import { INewsFields } from "@/types/contentful";
+
+import BackButton from "@/components/Buttons/BackButton";
+
+import FacebookButton from "@/components/SocialShare/Facebook";
 
 interface INewDetailsBannerProps {
   post: {
@@ -38,23 +41,8 @@ const NewDetailsBanner: FC<INewDetailsBannerProps> = ({ post }) => {
               <div className="flex items-end text-white font-normal text-base">
                 Share
               </div>
-              <Image
-                src="/assets/socials/facebook.png"
-                width={40}
-                height={40}
-                alt="facebook"
-              />
-              <Image
-                src="/assets/socials/insta.png"
-                width={40}
-                height={40}
-                alt="instagram"
-              />
-              <Image
-                src="/assets/socials/tiktok.png"
-                width={40}
-                height={40}
-                alt="tiktok"
+              <FacebookButton
+                url={`https://zoodoo.vn/tin-tuc-va-hoat-dong/${slug}`}
               />
             </div>
           </div>
