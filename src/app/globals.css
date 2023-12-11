@@ -47,56 +47,6 @@ ul.list {
 }
 
 
-/* fix arrows position */
-.swiper-button-next {
-  right: 20% !important;
-}
-
-.swiper-button-prev {
-  left: 20% !important;
-}
-
-.swiper-button-next:active,
-.swiper-button-prev:active,
-.swiper-button-next:focus,
-.swiper-button-prev:focus,
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-  background-color: transparent !important;
-}
-
-/* target mobile */
-@media (max-width: 768px) {
-  .swiper-button-next {
-    right: 1% !important;
-  }
-
-  .swiper-button-prev {
-    left: 1% !important;
-  }
-}
-
-.swiper-button-next {
-  background-image: url(../../public/assets/icons/next-icon.png);
-  background-repeat: no-repeat;
-  background-size: 100% auto;
-  background-position: center;
-}
-
-.swiper-button-next::after {
-  display: none;
-}
-
-.swiper-button-prev {
-  background-image: url(../../public/assets/icons/previous-icon.png);
-  background-repeat: no-repeat;
-  background-size: 100% auto;
-  background-position: center;
-}
-
-.swiper-button-prev::after {
-  display: none;
-}
 
 
 /* Styles */
@@ -349,7 +299,7 @@ ul.list {
 
 /* Swiper */
 
-.review-swiper .swiper-slide {
+.center-swiper .swiper-slide {
   position: relative;
   opacity: .8;
   transform: scale(.8);
@@ -358,35 +308,35 @@ ul.list {
   border-radius: 0.4285rem;
 }
 
-.review-swiper .swiper-slide.swiper-slide-active {
+.center-swiper .swiper-slide.swiper-slide-active {
   transform: scale(1) !important;
   opacity: 1 !important;
   overflow: visible;
 }
 
-.review-swiper .swiper-backface-hidden .swiper-slide.swiper-slide-active {
+.center-swiper .swiper-backface-hidden .swiper-slide.swiper-slide-active {
   transform: scale(1) translateZ(0) !important;
   overflow: visible;
 }
 
-.review-swiper .swiper {
+.center-swiper .swiper {
   position: relative;
   width: 100%;
   overflow: hidden;
 }
 
-.review-swiper .swiper-backface-hidden .swiper-slide {
+.center-swiper .swiper-backface-hidden .swiper-slide {
   transform: scale(.84) translateZ(0);
 }
 
 
-.review-swiper .swiper-image {
+.center-swiper .swiper-image {
   position: relative;
   width: 100%;
   display: block;
 }
 
-.review-swiper .swiper-image .image {
+.center-swiper .swiper-image .image {
   position: absolute;
   top: 0;
   left: 0;
@@ -398,22 +348,77 @@ ul.list {
 }
 
 
-@media only screen and (max-width: 768px) {
+/* fix arrows position */
+.custom-swiper-next {
+  height: 50px;
+  width: 30px;
+}
 
-  .review-swiper .swiper-slide {
+.custom-swiper-prev {
+  height: 50px;
+  width: 30px;
+}
+
+.custom-swiper-next:active,
+.custom-swiper-prev:active,
+.custom-swiper-next:focus,
+.custom-swiper-prev:focus,
+.custom-swiper-next:hover,
+.custom-swiper-prev:hover {
+  background-color: transparent !important;
+}
+
+.custom-swiper-next {
+  background-image: url(../../public/assets/icons/next-icon.png);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+}
+
+.custom-swiper-next::after {
+  display: none;
+}
+
+.custom-swiper-prev {
+  background-image: url(../../public/assets/icons/previous-icon.png);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+}
+
+.custom-swiper-prev::after {
+  display: none;
+}
+
+
+/* target mobile */
+@media (max-width: 768px) {
+  .custom-swiper-next {
+    right: 1% !important;
+  }
+
+  .custom-swiper-prev {
+    left: 1% !important;
+  }
+}
+
+
+@media only ≈screen and (max-width: 768px) {
+
+  .center-swiper .swiper-slide {
     width: var(--swiper-mobile-width);
     transform: scale(var(--swiper-mobile-inactive-scale));
   }
 
-  .review-swiper .swiper-backface-hidden .swiper-slide.swiper-slide {
+  .center-swiper .swiper-backface-hidden .swiper-slide.swiper-slide {
     transform: scale(var(--swiper-mobile-inactive-scale)) translateZ(0);
   }
 
-  .review-swiper .swiper-button-next {
+  .center-swiper .custom-swiper-next {
     right: calc((100% - var(--swiper-mobile-width)) / 2);
   }
 
-  .review-swiper .swiper-button-prev {
+  .center-swiper .custom-swiper-prev {
     left: calc((100% - var(--swiper-mobile-width)) / 2);
   }
 }

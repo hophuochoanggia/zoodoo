@@ -41,13 +41,15 @@ const AnimalsIntro = () => {
         image4="/assets/images/animals/capybara-cut.png"
       />{" "}
       <div className="w-full flex flex-row items-center justify-center py-6">
-        <CTAButton
-          text="Xem thêm"
-          onClick={() => {}}
-          bgColor="green"
-          className="px-12"
-          uppercase={false}
-        />
+        <a href="/trai-nghiem-zoodoo">
+          <CTAButton
+            text="Xem thêm"
+            onClick={() => {}}
+            bgColor="green"
+            className="px-12"
+            uppercase={false}
+          />
+        </a>
       </div>
     </div>
   );

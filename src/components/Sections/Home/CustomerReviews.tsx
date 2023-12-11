@@ -12,6 +12,7 @@ import useWindowSize from "@/hooks/useWindowSize";
 
 import "swiper/css";
 import "swiper/css/navigation";
+import { SwiperNavButtons } from "@/components/common/SwiperNavButtons";
 
 const slides = [
   {
@@ -62,9 +63,8 @@ const CustomerReviews = () => {
       <div className="flex flex-row items-center justify-center space-y-20 py-14 w-full ">
         <Swiper
           slidesPerView={getColumns(width)}
-          navigation={true}
           modules={[Navigation]}
-          className="swiper-with-nav"
+          className="review-swiper"
           spaceBetween={100}
           slidesPerGroup={1}
           loop={true}
@@ -75,6 +75,7 @@ const CustomerReviews = () => {
               <ReviewCard review={slide} />
             </SwiperSlide>
           ))}
+          <SwiperNavButtons />
         </Swiper>
       </div>
     </div>
