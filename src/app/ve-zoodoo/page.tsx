@@ -1,6 +1,6 @@
-"use client";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+
+import { getHiringJobs } from "@/lib/contentful";
 
 import MainContainer from "@/components/Containers/MainContainer";
 import ZoodooMap from "@/components/Map/ZoodooMap";
@@ -10,7 +10,6 @@ import SectionTitle from "@/components/common/SectionTitle";
 
 import BG1 from "@/../public/assets/backgrounds/ve-zoodoo/bg1.png";
 import BG2 from "@/../public/assets/backgrounds/ve-zoodoo/bg2.png";
-import Animal1Image from "@/../public/assets/images/animals/animals1.png";
 import Animal2Image from "@/../public/assets/images/animals/animals2.png";
 import Icon3 from "@/../public/assets/images/section-icons/icon3.png";
 import Icon5 from "@/../public/assets/images/section-icons/icon5.png";
@@ -20,9 +19,8 @@ import MapPinIcon from "@/../public/assets/icons/contact/MapPinLine.png";
 import PhoneIcon from "@/../public/assets/icons/contact/PhoneCall.png";
 import CTAButton from "@/components/Buttons/CTAButton/CTAButton";
 
-const AboutUs = () => {
-  const router = useRouter();
-
+const AboutUs = async () => {
+  const hiringJobs = await getHiringJobs();
   return (
     <div className="flex flex-col pt-24">
       <MainContainer>
@@ -59,7 +57,7 @@ const AboutUs = () => {
         </div>
         <div className="w-full h-[300px] md:h-[500px] relative">
           <Image
-            src={Animal1Image.src}
+            src={"/assets/images/zoodoo-intro.png"}
             alt="ZooDoo logo"
             fill
             style={{
@@ -189,19 +187,24 @@ const AboutUs = () => {
                 backgroundImage: `url(${BG2.src})`,
               }}
             >
-              <CTAButton
-                text="LIÊN HỆ HỢP TÁC"
-                bgColor="green"
-                onClick={() => router.push("/lien-he-zoodoo")}
-                withIcon={false}
-              />
+              <a
+                href="/lien-he-zoodoo"
+                target="_self"
+                rel="noopener noreferrer"
+              >
+                <CTAButton
+                  text="LIÊN HỆ HỢP TÁC"
+                  bgColor="green"
+                  withIcon={false}
+                />
+              </a>
             </div>
           </div>
         </div>
       </MainContainer>
 
       <div className="-mt-24">
-        <Hiring />
+        <Hiring hiringJobs={hiringJobs} />
       </div>
     </div>
   );

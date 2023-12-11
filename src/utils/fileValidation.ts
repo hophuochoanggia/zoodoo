@@ -7,7 +7,6 @@ export function checkFileUnder5Mb(file: File): boolean {
       valid = false;
     }
   }
-  console.log("checkFileUnder5Mb", valid);
   return valid;
 }
 

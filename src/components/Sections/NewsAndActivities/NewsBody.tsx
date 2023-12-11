@@ -10,14 +10,12 @@ import NewestPost from "./NewestPost";
 import NewFooter from "./NewFooter";
 import { EntryCollection } from "contentful";
 
-
-
 interface INewBodyProps {
   post: INewsItem;
   newestPosts: EntryCollection<INewsSkeleton, undefined, string>;
 }
 
-const renderOptions = {
+export const renderContenfulOptions = {
   renderNode: {
     [BLOCKS.HEADING_1]: (
       node: Block | Inline,
@@ -55,6 +53,12 @@ const renderOptions = {
     ): ReactNode => {
       return <h6 className="text-xs font-bold text-black">{children}</h6>;
     },
+    [BLOCKS.PARAGRAPH]: (
+      node: Block | Inline,
+      children: ReactNode
+    ): ReactNode => {
+      return <p className="text-gray-600 pl-2 text-lg lg:text-xl flex flex-col space-y-1">{children}</p>;
+    },
     [BLOCKS.EMBEDDED_ASSET]: (
       node: Block | Inline,
       children: ReactNode
@@ -85,7 +89,7 @@ const NewsBody: FC<INewBodyProps> = ({
     <div className="flex flex-col lg:grid lg:grid-cols-4 ">
       <div className="col-span-3 flex flex-col items-start pr-0 lg:pr-16">
         <div className=" contentful-container">
-          {documentToReactComponents(content, renderOptions)}
+          {documentToReactComponents(content, renderContenfulOptions)}
         </div>
         <p className="mb-6 text-slate-400 ">
           Đăng ngày{" "}

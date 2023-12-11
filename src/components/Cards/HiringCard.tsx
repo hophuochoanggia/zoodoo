@@ -1,30 +1,19 @@
 "use client";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 
 import NewImage from "@/../public/assets/images/news/new1.png";
 import clsx from "clsx";
+import { FC } from "react";
 
 interface IHiringCardProps {
-  id: number;
-  title: string;
-  date: string;
-  description: string;
-  image: {
-    url: string;
-    alt: string;
-  };
+  job: any;
 }
 
-const HiringCard = () => {
-  const router = useRouter();
-
+const HiringCard: FC<IHiringCardProps> = ({ job }) => {
   return (
-    <button
+    <a
       className="bg-gray-light border-none rounded-lg shadow hover:opacity-80 w-full"
-      onClick={() => {
-        router.push(`/tuyen-dung`);
-      }}
+      href={`/tuyen-dung/${job.slug}`}
     >
       <div className="relative pb-64 lg:pb-80 overflow-hidden rounded-t-lg">
         <Image
@@ -34,12 +23,12 @@ const HiringCard = () => {
           layout="fill"
         />
       </div>
-      <div className="p-5 flex flex-col">
-        <a href="#">
+      <div className="p-5 flex flex-col bg-gray-light rounded-b-lg">
+        <div>
           <h5 className="mb-3 text-text-default font-bold text-xl lg:text-3xl text-start">
             Tuyển nhân viên Zookeeper
           </h5>
-        </a>
+        </div>
         <div className="flex flex-row gap-x-1">
           <p className="text-lg font-bold text-gray-700  line-clamp-2 text-start">
             Hạn nộp hồ sơ:
@@ -78,7 +67,7 @@ const HiringCard = () => {
           </svg>
         </div>
       </div>
-    </button>
+    </a>
   );
 };
 

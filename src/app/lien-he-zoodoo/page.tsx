@@ -45,10 +45,10 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="flex flex-col pt-28 ">
+    <div className="flex flex-col pt-28 md:pt-0  ">
       <MainContainer background={BG.src} className="2xl:py-44 py-26">
         <SectionTitle title={"LIÊN HỆ HỢP TÁC"} icon={Icon8.src} />
-        <div className=" xl:w-full bg-white p-6 rounded-lg ">
+        <div className=" bg-white p-6 rounded-lg lg:w-[700px]">
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="mb-5">
               <label

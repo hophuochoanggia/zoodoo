@@ -8,7 +8,7 @@ import RightChevron from "../../../../public/assets/icons/chevron-forward-outlin
 interface ICTAButtonProps {
   bgColor: "green" | "orange";
   text: string;
-  onClick: () => void;
+  onClick?: () => void;
   className?: string;
   withIcon?: boolean;
   uppercase?: boolean;

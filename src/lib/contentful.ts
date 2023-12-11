@@ -23,3 +23,27 @@ export const getBlogPostsByCreatedAtService = async (
     throw new Error("Error fetching blog posts");
   }
 };
+
+export const getHiringJobs = async () => {
+  try {
+    const response = await initContentfulClient.getEntries({
+      content_type: "hiring",
+      order: ["-sys.createdAt"],
+    });
+    return response;
+  } catch {
+    throw new Error("Error fetching hiring jobs");
+  }
+};
+
+export const getHiringJobBySlug = async (slug: string) => {
+  try {
+    const response = await initContentfulClient.getEntries({
+      content_type: "hiring",
+      "fields.slug[match]": slug,
+    });
+    return response;
+  } catch {
+    throw new Error("Error fetching blog post");
+  }
+};

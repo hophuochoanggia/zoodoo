@@ -1,6 +1,8 @@
 import clsx from "clsx";
 import React, { FC, Suspense } from "react";
 
+import Loading from "@/components/common/Loading";
+
 interface IAnimalsIntroProps {
   background?: string;
   className?: string;
@@ -13,7 +15,7 @@ const MainContainer: FC<IAnimalsIntroProps> = ({
   className,
 }: IAnimalsIntroProps) => {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<Loading />}>
       {background && (
         <section
           className={clsx(

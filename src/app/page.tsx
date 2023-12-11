@@ -8,7 +8,7 @@ import SectionIntro from "@/components/Sections/IntroWithOnePicture";
 
 import CustomerReviews from "@/components/Sections/Home/CustomerReviews";
 
-import BG1 from "../../public/assets/backgrounds//home/home-bg1.png";
+import BG1 from "../../public/assets/backgrounds/home/home-bg1.png";
 import ZooDoo from "../../public/assets/images/zoodoo-intro.png";
 import Icon1 from "../../public/assets/images/section-icons/icon1.png";
 
