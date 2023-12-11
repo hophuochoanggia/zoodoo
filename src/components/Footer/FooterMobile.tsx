@@ -88,10 +88,16 @@ const FooterMobile = () => {
         </div>
 
         <hr className="my-6 border-gray-500 sm:mx-auto  lg:my-8" />
-        <div className="flex items-center justify-center ">
-          <span className="text-sm text-gray-500 text-center ">
+        <div className="flex flex-col items-center justify-center ">
+          <span className="text-sm text-gray-400 text-center ">
             © 2023 ZooDoo . All Rights Reserved.
           </span>
+          <a
+            href="https://e9.digital/"
+            className="text-sm text-gray-300 text-center "
+          >
+            Proudly built by E9
+          </a>
         </div>
       </div>
     </footer>

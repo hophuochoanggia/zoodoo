@@ -92,13 +92,13 @@ const PrivatePriceCard = () => {
         </div>
 
         <div className="flex flex-col items-start justify-center gap-1 pb-4">
-          <p className="font-bold text-[#4B5563] text-md lg:text-lg">
+          <p className="font-bold text-[#1F2937] text-md lg:text-lg">
             Zookeeper riêng
           </p>
-          <p className="font-bold text-[#4B5563] text-md lg:text-lg">
+          <p className="font-bold text-[#1F2937] text-md lg:text-lg">
             Thời gian tham quan 120 phút
           </p>
-          <p className="font-bold text-[#4B5563] text-md lg:text-lg">
+          <p className="font-bold text-[#1F2937] text-md lg:text-lg">
             Hoạt động Behind-The-Scenes
           </p>
         </div>
@@ -118,7 +118,7 @@ const PrivateBenefitCard = () => {
           Đặc quyền gói private
         </p>
         <div className="flex flex-col items-start justify-center pt-4">
-          <p className="font-bold text-[#4B5563] text-md lg:text-lg">
+          <p className="font-bold text-[#1F2937] text-md lg:text-lg">
             Zookeeper riêng
           </p>
           <p className="text-[#4B5563] text-md lg:text-lg">
@@ -129,7 +129,7 @@ const PrivateBenefitCard = () => {
           </p>
         </div>
         <div className="flex flex-col items-start justify-center pt-4">
-          <p className="font-bold text-[#4B5563] text-md lg:text-lg">
+          <p className="font-bold text-[#1F2937] text-md lg:text-lg">
             Thời gian tham quan 120 phút
           </p>
           <p className="text-[#4B5563] text-md lg:text-lg">
@@ -139,7 +139,7 @@ const PrivateBenefitCard = () => {
           </p>
         </div>
         <div className="flex flex-col items-start justify-center pt-4 ">
-          <p className="font-bold text-[#4B5563] text-md lg:text-lg">
+          <p className="font-bold text-[#1F2937] text-md lg:text-lg">
             Hoạt động Behind-The-Scenes
           </p>
           <p className="text-[#4B5563]text-md lg:text-lg ">

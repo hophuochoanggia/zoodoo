@@ -102,7 +102,13 @@ const Footer = () => {
         </div>
 
         <hr className="my-6 border-gray-500 sm:mx-auto  lg:my-8" />
-        <div className="flex items-end justify-end ">
+        <div className="flex flex-row justify-between ">
+          <a
+            href="https://e9.digital/"
+            className="text-lg text-[#F3EEDF] sm:text-center"
+          >
+            Proudly built by E9
+          </a>
           <span className="text-lg text-[#F3EEDF] sm:text-center">
             Copyright ZooDoo - Zoo&Coffee, All Rights Reserved
           </span>

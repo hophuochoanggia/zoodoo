@@ -8,11 +8,11 @@ export const SwiperNavButtons = () => {
     <div className="swiper-nav-btns w-full flex flex-row justify-center items-center space-x-8">
       <button
         className="custom-swiper-prev"
-        onClick={() => swiper.slideNext()}
+        onClick={() => swiper.slidePrev()}
       />
       <button
         className="custom-swiper-next"
-        onClick={() => swiper.slidePrev()}
+        onClick={() => swiper.slideNext()}
       />
     </div>
   );

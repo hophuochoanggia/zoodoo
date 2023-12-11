@@ -92,7 +92,7 @@ const HiringDetails: FC<IHiringDetailsProps> = (job) => {
             height={424}
           />
           <div className="flex flex-wrap text-md lg:text-lg space-x-2">
-            <p>Hạn nộp hồ sơ:: </p>
+            <p>Hạn nộp hồ sơ: </p>
             <p className="font-bold">{expiredDateFormatted}</p>
           </div>
         </div>
@@ -104,7 +104,7 @@ const HiringDetails: FC<IHiringDetailsProps> = (job) => {
           <div className="  text-2xl font-bold ] leading-9">
             Mô tả công việc
           </div>
-          <div className="list text-gray-600 text-lg lg:text-xl font-medium ] leading-loose">
+          <div className="list text-gray-600 text-lg lg:text-xl font-medium  leading-loose">
             <HiringBody content={jobDescription} />
           </div>
         </div>
@@ -112,11 +112,15 @@ const HiringDetails: FC<IHiringDetailsProps> = (job) => {
           <div className=" text-2xl font-bold  leading-9">
             Yêu cầu công việc
           </div>
-          <HiringBody content={jobRequirement} />
+          <div className="list text-gray-600 text-lg lg:text-xl font-medium  leading-loose">
+            <HiringBody content={jobRequirement} />
+          </div>
         </div>
         <div className="list flex-col justify-start items-start gap-4 flex text-lg lg:text-xl">
           <div className="font-bold text-2xl leading-9">Quyền lợi</div>
-          <HiringBody content={jobBenefit} />
+          <div className="list text-gray-600 text-lg lg:text-xl font-medium  leading-loose">
+            <HiringBody content={jobBenefit} />
+          </div>
         </div>
       </div>
     </div>
