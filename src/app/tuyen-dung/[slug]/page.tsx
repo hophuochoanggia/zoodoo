@@ -1,6 +1,8 @@
-import React from "react";
+import React, { FC } from "react";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+
+import { IHiringJobFields } from "@/types/contentful";
 
 import { getHiringJobs, getHiringJobBySlug } from "@/lib/contentful";
 
@@ -10,7 +12,13 @@ import MainContainer from "@/components/Containers/MainContainer";
 import EmployerInfo from "@/components/Sections/Hiring/EmployerInfo";
 import HiringBody from "@/components/Sections/Hiring/HiringBody";
 
-const HiringDetails = (job) => {
+interface IHiringDetailsProps {
+  job: {
+    fields: IHiringJobFields;
+  };
+}
+
+const HiringDetails: FC<IHiringDetailsProps> = (job) => {
   const {
     jobTitle,
     jobDescription,
@@ -141,7 +149,7 @@ const HiringDetailPage = async ({
                 height={1080}
               />
             </div>
-            <HiringDetails job={hiringJob.items[0]} />
+            <HiringDetails job={hiringJob} />
 
             <div className="py-10">
               <BackButton color="#000" />

@@ -1,5 +1,5 @@
 import { createClient } from "contentful";
-import { INewsSkeleton } from "@/types/contentful";
+import { IHiringJobSkeleton, INewsSkeleton } from "@/types/contentful";
 
 export const initContentfulClient = createClient({
   space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACEID ?? "",
@@ -38,11 +38,15 @@ export const getHiringJobs = async () => {
 
 export const getHiringJobBySlug = async (slug: string) => {
   try {
-    const response = await initContentfulClient.getEntries({
-      content_type: "hiring",
+    const queryOptions = {
+      content_type: "hiring" as "hiring",
       "fields.slug[match]": slug,
-    });
-    return response;
+    };
+    const response = await initContentfulClient.getEntries<IHiringJobSkeleton>(
+      queryOptions
+    );
+    const hiringJob = response.items[0];
+    return hiringJob;
   } catch {
     throw new Error("Error fetching blog post");
   }
