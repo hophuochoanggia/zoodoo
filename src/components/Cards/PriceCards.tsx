@@ -1,5 +1,5 @@
 import React from "react";
-import CallNumberButton from "../Buttons/CallNumberButton/CallNumberButton";
+import BookingButton from "../Buttons/CTAButton/BookingButton";
 
 const PriceCard120 = () => {
   return (
@@ -22,11 +22,7 @@ const PriceCard120 = () => {
             90-120 Phút
           </p>
         </div>
-        <CallNumberButton
-          bgColor="green"
-          text="Đặt vé"
-          className="px-10 py-2"
-        />
+        <BookingButton bgColor="green" text="Đặt vé" className="px-10 py-2" />
       </div>
     </div>
   );
@@ -50,11 +46,7 @@ const PriceCard90 = () => {
             Bạn nhỏ phải có người lớn đi cùng{" "}
           </p>
         </div>
-        <CallNumberButton
-          bgColor="green"
-          text="Đặt vé"
-          className="px-10 py-2"
-        />
+        <BookingButton bgColor="green" text="Đặt vé" className="px-10 py-2" />
       </div>
     </div>
   );
@@ -110,11 +102,7 @@ const PrivatePriceCard = () => {
             Hoạt động Behind-The-Scenes
           </p>
         </div>
-        <CallNumberButton
-          bgColor="green"
-          text="LIÊN HỆ"
-          className="px-10 py-2"
-        />
+        <BookingButton bgColor="green" text="LIÊN HỆ" className="px-10 py-2" />
       </div>
       <div />
     </div>

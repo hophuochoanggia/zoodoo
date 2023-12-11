@@ -46,7 +46,7 @@ const FooterMobile = () => {
                   </Link>
                 </li>
                 <li className="mb-4">
-                  <Link href="/den-tham-zoodoo" className="text-gray-light">
+                  <Link href="/ghe-tham-zoodoo" className="text-gray-light">
                     Ghé thăm ZooDoo
                   </Link>
                 </li>

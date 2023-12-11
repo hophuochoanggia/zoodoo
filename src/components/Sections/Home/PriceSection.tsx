@@ -7,6 +7,7 @@ import MainContainer from "@/components/Containers/MainContainer";
 import BG2 from "../../../../public/assets/backgrounds/home/home-bg2.png";
 
 import AnimalsImage2 from "../../../../public/assets/images/animals/animals2.png";
+import BookingButton from "@/components/Buttons/CTAButton/BookingButton";
 
 interface IPriceSectionProps {
   svg: string;
@@ -65,12 +66,7 @@ const PricesAndNotice = () => {
         <div key={index}>{renderPrice(item.height, item.price)}</div>
       ))}
       <div className="py-2">
-        <CTAButton
-          text="Đặt vé"
-          onClick={() => console.log("Đặt vé")}
-          bgColor="orange"
-          className="px-16"
-        />
+        <BookingButton text="Đặt vé" bgColor="orange" className="px-16" />
       </div>
       <p className="text-text-default font-semibold text-lg">Lưu ý:</p>
       <p className="text-[#4B5563] font-normal">

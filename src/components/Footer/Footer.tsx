@@ -53,7 +53,7 @@ const Footer = () => {
                     </li>
                     <li className="mb-4">
                       <Link
-                        href="/den-tham-zoodoo"
+                        href="/ghe-tham-zoodoo"
                         className="text-[#F0FDF4] text-base lg:text-lg"
                       >
                         Ghé thăm ZooDoo

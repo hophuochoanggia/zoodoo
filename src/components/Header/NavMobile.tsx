@@ -111,7 +111,7 @@ export const NavMobile = () => {
                 </li>
                 <li className="py-2 ">
                   <Link
-                    href="/den-tham-zoodoo"
+                    href="/ghe-tham-zoodoo"
                     className="w-full h-full"
                     onClick={handleClose}
                   >

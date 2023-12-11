@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
-import CallNumberButton from "@/components/Buttons/CallNumberButton/CallNumberButton";
+import BookingButton from "../Buttons/CTAButton/BookingButton";
 import { NavMobile } from "./NavMobile";
 
 const Header = () => {
@@ -71,7 +71,7 @@ const Header = () => {
             </li>
             <li>
               <Link
-                href="/den-tham-zoodoo"
+                href="/ghe-tham-zoodoo"
                 className={clsx(
                   "text-lg",
                   shouldShowTransparent ? "text-white" : "text-green-default"
@@ -103,7 +103,7 @@ const Header = () => {
               </Link>
             </li>
             <li className="pl-6">
-              <CallNumberButton text="ĐẶT VÉ NGAY" bgColor="green" />
+              <BookingButton text="ĐẶT VÉ NGAY" bgColor="green" />
             </li>
           </ul>
         </nav>

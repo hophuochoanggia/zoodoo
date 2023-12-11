@@ -1,5 +1,7 @@
 import { notFound } from "next/navigation";
 
+import { POSTS_PER_PAGE } from "@/constants/contentful";
+
 import MainContainer from "@/components/Containers/MainContainer";
 import NewsBody from "@/components/Sections/NewsAndActivities/NewsBody";
 import SimilarNews from "@/components/Sections/NewsAndActivities/SimilarNews";
@@ -32,8 +34,8 @@ const NewsAndActivitiesPage = async ({
   };
 }) => {
   const article = await fetchBlogPost(slug);
-  // get 5 newest posts
-  const newestPosts = await getBlogPostsByCreatedAtService(0, 5);
+  // get newest posts
+  const newestPosts = await getBlogPostsByCreatedAtService(0, POSTS_PER_PAGE);
 
   if (!article) {
     return notFound();

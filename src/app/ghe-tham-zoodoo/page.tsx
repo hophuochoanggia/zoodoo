@@ -1,17 +1,17 @@
 "use client";
 import Image from "next/image";
 
-import CTAButton from "@/components/Buttons/CTAButton/CTAButton";
 import MainContainer from "@/components/Containers/MainContainer";
 import ZoodooMap from "@/components/Map/ZoodooMap";
 import SectionTitle from "@/components/common/SectionTitle";
 
-import BG1 from "@/../public/assets/backgrounds/den-tham-zoodoo/bg1.png";
-import BG2 from "@/../public/assets/backgrounds/den-tham-zoodoo/bg2.png";
-import BG3 from "@/../public/assets/backgrounds/den-tham-zoodoo/bg3.png";
-import BG4 from "@/../public/assets/backgrounds/den-tham-zoodoo/bg4.png";
+import BG1 from "@/../public/assets/backgrounds/ghe-tham-zoodoo/bg1.png";
+import BG2 from "@/../public/assets/backgrounds/ghe-tham-zoodoo/bg2.png";
+import BG3 from "@/../public/assets/backgrounds/ghe-tham-zoodoo/bg3.png";
+import BG4 from "@/../public/assets/backgrounds/ghe-tham-zoodoo/bg4.png";
 import PriceSection from "@/components/Cards/PriceCards";
 import ZooDooRules from "@/components/common/ZooDooRules";
+import CTAButton from "@/components/Buttons/CTAButton/CTAButton";
 
 interface IBusInfoProps {
   title: string;
@@ -107,12 +107,19 @@ const VisitUs = () => {
             9 giờ sáng - 6 giờ chiều
           </p>
           <div className="py-8">
-            <CTAButton
-              bgColor="orange"
-              text="Gợi ý kế hoạch tham quan"
-              onClick={() => {}}
-              uppercase={false}
-            />
+            <a
+              href="/assets/pdf/zoo-rules.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Download ZooDoo Rules"
+            >
+              <CTAButton
+                bgColor="orange"
+                text="Gợi ý kế hoạch tham quan"
+                onClick={() => {}}
+                uppercase={false}
+              />
+            </a>
           </div>
 
           <p className="font-bold text:2xl lg:text-4xl text-[#1F2937]">
