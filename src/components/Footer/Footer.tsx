@@ -10,7 +10,7 @@ const Footer = () => {
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="grid grid-cols-8 pt-8">
           <div className="col-span-2 m-6">
-            <a href="https://flowbite.com/" className="flex items-center">
+            <a href={"/"} className="flex items-center">
               <Image
                 src="/assets/images/logos/logo-zoodoo-white-big.png"
                 alt="ZooDoo logo"

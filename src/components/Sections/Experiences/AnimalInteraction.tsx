@@ -1,3 +1,4 @@
+"use client";
 import MainContainer from "@/components/Containers/MainContainer";
 import CenteredAndLargeActive from "@/components/Swiper/CenteredAndLargeActive";
 import SectionTitle from "@/components/common/SectionTitle";

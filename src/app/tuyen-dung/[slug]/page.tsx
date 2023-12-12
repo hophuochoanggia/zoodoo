@@ -166,7 +166,7 @@ const HiringDetailPage = async ({
       </MainContainer>
 
       <MainContainer>
-        <div className="flex flex-col -mt-[100px] w-full">
+        <div className="flex flex-col -mt-[140px] lg:-mt-[100px] w-full">
           <div className="flex flex-row items-center justify-start py-10">
             <div className="flex items-center">
               <Image
@@ -180,7 +180,7 @@ const HiringDetailPage = async ({
               Các vị trí khác
             </p>
           </div>
-          <div className="flex flex-col lg:grid lg:grid-cols-3 gap-8 py-16 mx-6 lg:mx-0">
+          <div className="flex flex-col lg:grid lg:grid-cols-3 gap-8 py-4 lg:py-16">
             {hiringJobs.items.map((item: any) => {
               return (
                 <div key={item.fields.slug}>

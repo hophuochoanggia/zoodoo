@@ -25,7 +25,7 @@ const AboutUs = async () => {
     <div className="flex flex-col pt-24">
       <MainContainer>
         <SectionTitle icon={Icon5.src} title={"Tổng Quan về ZooDoo Đà Lạt"} />
-        <div className="flex flex-col justify-center items-center gap-6 max-w-4xl py-8  px-10 lg:px-0">
+        <div className="flex flex-col justify-center items-center gap-6 max-w-4xl py-8 lg:px-0">
           <p className="text-center font-medium text-lg lg:text-xl ">
             Thành lập vào năm 2015, ZooDoo Đà Lạt là một công viên động vật nằm
             tại thành phố Đà Lạt, một điểm đến du lịch nổi tiếng ở Việt Nam.
@@ -80,13 +80,13 @@ const AboutUs = async () => {
               <SectionTitle icon={Icon5.src} title={"TẦM NHÌN VÀ NHIỆM VỤ"} />
             </div>
 
-            <p className="text-center lg:text-start font-medium text-lg  px-10 lg:px-0">
+            <p className="text-center lg:text-start font-medium text-lg  lg:px-0">
               Một trải nghiệm đặc biệt tại ZooDoo là bạn có thể tham gia vào
               hoạt động cho các bạn thú ăn. Điều này cho phép bạn tham gia trực
               tiếp vào quá trình chuẩn bị và cung cấp thức ăn cho các loài động
               vật.
             </p>
-            <p className="text-center lg:text-start font-medium text-lg  px-10 lg:px-0">
+            <p className="text-center lg:text-start font-medium text-lg  lg:px-0">
               Một trải nghiệm đặc biệt tại ZooDoo là bạn có thể tham gia vào
               hoạt động cho các bạn thú ăn. Điều này cho phép bạn tham gia trực
               tiếp vào quá trình chuẩn bị và cung cấp thức ăn cho các loài động

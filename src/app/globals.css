@@ -47,8 +47,6 @@ ul.list {
 }
 
 
-
-
 /* Styles */
 .rc-pagination {
   margin: 0;
@@ -352,6 +350,7 @@ ul.list {
 .custom-swiper-next {
   height: 50px;
   width: 30px;
+  text-decoration: none;
 }
 
 .custom-swiper-prev {
@@ -366,6 +365,7 @@ ul.list {
 .custom-swiper-next:hover,
 .custom-swiper-prev:hover {
   background-color: transparent !important;
+  text-decoration: none;
 }
 
 .custom-swiper-next {
