@@ -9,7 +9,7 @@ const FooterMobile = () => {
       <div className="mx-auto w-full max-w-screen-xl py-6 lg:py-8">
         <div className="flex flex-col pt-8">
           <div className=" w-full flex items-center justify-center">
-            <a href="https://flowbite.com/" className="flex items-center">
+            <a href={"/"} className="flex items-center">
               <Image
                 src="/assets/images/logos/logo-zoodoo-white-big.png"
                 alt="ZooDoo logo"
@@ -58,7 +58,9 @@ const FooterMobile = () => {
               </h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium flex flex-col justify-center items-center">
                 <li className="mb-4">
-                  <p className="text-gray-light">0979 11 00 07 </p>
+                  <a href="tel:0979110007" className="text-gray-light">
+                    0979 11 00 07
+                  </a>
                 </li>
                 <li className="mb-4">
                   <a

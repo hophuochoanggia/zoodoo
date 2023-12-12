@@ -8,18 +8,20 @@ import BG3 from "../../../../public/assets/backgrounds/home/home-bg3.png";
 const data = [
   {
     image: "/assets/images/activity1.png",
-    title: "Thú vui với động vật",
-    description: "Thú vui với động vật",
+    title: "CHO CÁC BẠN THÚ ĂN",
+    description:
+      "Trải nghiệm độc đáo và đáng nhớ với thế giới động vật đa dạng",
   },
   {
-    image: "/assets/images/activity1.png",
-    title: "Thú vui với động vật",
-    description: "Thú vui với động vật",
+    image: "/assets/images/activity2.png",
+    title: "TĂNG THÊM KIẾN THỨC VỀ ĐỘNG VẬT",
+    description: "Truyền cảm hứng và tạo động lực cho cộng đồng",
   },
   {
-    image: "/assets/images/activity1.png",
-    title: "Thú vui với động vật",
-    description: "Thú vui với động vật",
+    image: "/assets/images/activity3.png",
+    title: "TRẢI NGHIỆM TƯƠNG TÁC VỚI THÚ",
+    description:
+      "Xây dựng một thế hệ trẻ yêu thương đối với động vật và nhận thức về bảo tồn môi trường",
   },
 ];
 

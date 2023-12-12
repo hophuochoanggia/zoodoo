@@ -26,14 +26,14 @@ const CTAButton: FC<ICTAButtonProps> = ({
     <button
       onClick={onClick}
       className={clsx(
-        "inline-flex rounded-lg items-center justify-center px-10 py-3 border border-transparent text-lg lg:text-xl fot-medium text-white hover:scale-105",
+        "inline-flex rounded-lg items-center justify-center px-10 py-3 border border-transparent text-lg lg:text-xl fot-medium text-white hover:scale-105 text-overflow",
         bgColor === "green"
           ? "bg-green-light hover:bg-green-500"
           : "bg-orange-default hover:bg-orange-light",
         className
       )}
     >
-      <span className={clsx("text-white pr-2", uppercase && "uppercase")}>
+      <span className={clsx("text-white pr-2 text-overflow", uppercase && "uppercase")}>
         {text}
       </span>
       {withIcon && <Image priority src={RightChevron} alt="next svg" />}

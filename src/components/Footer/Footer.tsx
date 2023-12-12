@@ -10,7 +10,7 @@ const Footer = () => {
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="grid grid-cols-8 pt-8">
           <div className="col-span-2 m-6">
-            <a href="https://flowbite.com/" className="flex items-center">
+            <a href={"/"} className="flex items-center">
               <Image
                 src="/assets/images/logos/logo-zoodoo-white-big.png"
                 alt="ZooDoo logo"
@@ -67,9 +67,12 @@ const Footer = () => {
                   </h2>
                   <ul className="text-gray-500 dark:text-gray-400 font-medium">
                     <li className="mb-4">
-                      <p className="text-[#F0FDF4] text-base lg:text-lg">
+                      <a
+                        className="text-[#F0FDF4] text-base lg:text-lg"
+                        href="tel:0979110007"
+                      >
                         0979 11 00 07
-                      </p>
+                      </a>
                     </li>
                     <li className="mb-4">
                       <a

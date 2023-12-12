@@ -80,7 +80,7 @@ const VisitUs = () => {
           icon={"/assets/images/section-icons/icon3.png"}
           title={"ĐẾN ZOODOO DALAT"}
         />
-        <div className="text-xl lg:text-2xl text-black lg:w-[750px] leading-loose text-center mx-12 lg:mx-24">
+        <div className="text-xl lg:text-2xl text-black lg:w-[750px] leading-loose text-center mx-4 lg:mx-24">
           ZooDoo Đà Lạt nằm trên quốc lộ 27C, cách trung tâm Đà Lạt 35km về phía
           Nha Trang.
         </div>
@@ -99,7 +99,7 @@ const VisitUs = () => {
           icon={"/assets/images/section-icons/icon9.png"}
           title={"Giờ hoạt động"}
         />
-        <div className="flex flex-col justify-center items-center gap-6 px-4 lg:px-0 max-w-lg lg:max-w-7xl py-8 pt-0">
+        <div className="flex flex-col justify-center items-center gap-6  lg:px-0 max-w-lg lg:max-w-7xl py-8 pt-0">
           <p className="text-center font-medium text-xl lg:text-2xl -mt-10">
             Mở cửa các ngày trong tuần
           </p>
@@ -250,7 +250,7 @@ const VisitUs = () => {
 
         <div className="flex flex-col items-center justify-center">
           <ZooDooRules />
-          <div className="lg:w-[900px] px-8 xl:px-0 py-8">
+          <div className="lg:w-[900px] md:px-8 xl:px-0 py-8">
             <p className="text-center font-medium text-xl leading-9 lg:text-2xl text-[#4B5563]">
               ZooDoo là vườn thú thân thiện, nếu quý khách tuân thủ các quy định
               trên thì chúng ta sẽ cùng có một trải nghiệm tuyệt vời. ZooDoo

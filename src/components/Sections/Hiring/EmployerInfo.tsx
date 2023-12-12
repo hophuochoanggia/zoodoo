@@ -12,7 +12,7 @@ const EmployerInfo = () => {
             Gửi hồ sơ ứng tuyển qua email
           </div>
           <div className=" text-white text-lg font-bold ] leading-relaxed">
-            demo@gmail.com
+            hello@zoodoodalat.com
           </div>
         </div>
         <div className="self-stretch flex-col justify-start items-start gap-2.5 flex">
@@ -20,7 +20,7 @@ const EmployerInfo = () => {
             Hoặc liên hệ qua số điện thoại
           </div>
           <div className=" text-white text-lg font-bold ] leading-relaxed">
-            0123456789
+            0979 11 00 07
           </div>
         </div>
       </div>
