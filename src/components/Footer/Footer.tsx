@@ -67,9 +67,12 @@ const Footer = () => {
                   </h2>
                   <ul className="text-gray-500 dark:text-gray-400 font-medium">
                     <li className="mb-4">
-                      <p className="text-[#F0FDF4] text-base lg:text-lg">
+                      <a
+                        className="text-[#F0FDF4] text-base lg:text-lg"
+                        href="tel:0979110007"
+                      >
                         0979 11 00 07
-                      </p>
+                      </a>
                     </li>
                     <li className="mb-4">
                       <a

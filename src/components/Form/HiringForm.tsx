@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 import { checkFileUnder5Mb, checkCVFormat } from "@/utils/fileValidation";
+import { sendMail, sendMailHiring } from "@/lib/sendMail";
 
 const schema = yup.object().shape({
   name: yup.string().required(),
@@ -14,7 +15,7 @@ const schema = yup.object().shape({
   cv: yup.mixed<File>().required(),
 });
 
-interface IFormInputs {
+export interface IFormInputs {
   name: string;
   mobile: string;
   email: string;
@@ -51,8 +52,10 @@ const HiringForm = () => {
   };
 
   const onSubmit = async (data: IFormInputs) => {
-    const fields = { fields: data };
-    console.log(fields);
+    const res = await sendMailHiring({
+      ...data,
+    });
+    console.log(data);
   };
 
   return (
@@ -161,7 +164,7 @@ const HiringForm = () => {
       >
         ỨNG TUYỂN NGAY
         <Image
-          src={"/assets/icons/chevron_right.svg"}
+          src={"/assets/icons/chevron_right_white.svg"}
           alt="summit-icon"
           width={12}
           height={12}

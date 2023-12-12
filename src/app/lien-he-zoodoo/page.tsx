@@ -1,12 +1,13 @@
 "use client";
-import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
 import Image from "next/image";
 import { useForm } from "react-hook-form";
-import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
 
-import MainContainer from "@/components/Containers/MainContainer";
+import { sendMail } from "@/lib/sendMail";
 
 import SectionTitle from "@/components/common/SectionTitle";
+import MainContainer from "@/components/Containers/MainContainer";
 
 import BG from "@/../public/assets/backgrounds/lien-he-zoodoo/bg.png";
 import Icon8 from "@/../public/assets/images/section-icons/icon8.png";
@@ -16,7 +17,7 @@ const schema = yup.object().shape({
   email: yup.string().email().required(),
   mobile: yup.string().required(),
   note: yup.string(),
-  title: yup.string().required(),
+  jobTitle: yup.string().required(),
   company: yup.string().required(),
 });
 
@@ -25,7 +26,7 @@ interface IFormInputs {
   email: string;
   mobile: string;
   note?: string;
-  title: string;
+  jobTitle: string;
   company: string;
 }
 
@@ -41,7 +42,11 @@ const ContactUs = () => {
   });
 
   const onSubmit = async (data: IFormInputs) => {
-    const fields = { fields: data };
+    const res = await sendMail({
+      ...data,
+    });
+
+    //TODO: add toast
   };
 
   return (
@@ -111,7 +116,7 @@ const ContactUs = () => {
 
             <div className="mb-5">
               <label
-                htmlFor="title"
+                htmlFor="jobTitle"
                 className="block mb-2 text-md font-semibold text-gray-900"
               >
                 Công ty / tên doanh nghiệp
@@ -135,11 +140,11 @@ const ContactUs = () => {
               </label>
               <input
                 type="text"
-                id="title"
+                id="jobTitle"
                 className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2.5 focus:ring-1 focus:outline-none focus:ring-gray-500"
                 placeholder="Nhập chức vụ"
                 required
-                {...register("title", { required: true })}
+                {...register("jobTitle", { required: true })}
               />
             </div>
 
@@ -165,7 +170,7 @@ const ContactUs = () => {
             >
               GỬI THÔNG TIN
               <Image
-                src={"/assets/icons/chevron_right.svg"}
+                src={"/assets/icons/chevron_right_white.svg"}
                 alt="summit-icon"
                 width={12}
                 height={12}

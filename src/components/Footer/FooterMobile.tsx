@@ -58,7 +58,9 @@ const FooterMobile = () => {
               </h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium flex flex-col justify-center items-center">
                 <li className="mb-4">
-                  <p className="text-gray-light">0979 11 00 07 </p>
+                  <a href="tel:0979110007" className="text-gray-light">
+                    0979 11 00 07
+                  </a>
                 </li>
                 <li className="mb-4">
                   <a
