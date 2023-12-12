@@ -54,7 +54,7 @@ const ContactUs = () => {
       <MainContainer background={BG.src} className="2xl:py-44 py-26">
         <SectionTitle title={"LIÊN HỆ HỢP TÁC"} icon={Icon8.src} />
         <div className=" bg-white p-6 rounded-lg lg:w-[700px]">
-          <form onSubmit={handleSubmit(onSubmit)}>
+          <form action={"https://submit-form.com/AvQV0XZKx"}>
             <div className="mb-5">
               <label
                 htmlFor="name"

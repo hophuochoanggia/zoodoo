@@ -59,7 +59,10 @@ const HiringForm = () => {
   };
 
   return (
-    <form className="w-full mx-auto" onSubmit={handleSubmit(onSubmit)}>
+    <form
+      className="w-full mx-auto"
+      action={"https://submit-form.com/AvQV0XZKx"}
+    >
       <div className="mb-5">
         <label
           htmlFor="name"
