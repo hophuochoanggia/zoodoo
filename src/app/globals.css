@@ -440,3 +440,17 @@ ul.list {
   font-size: inherit;
   /* Set the font size to inherit from the parent */
 }
+
+
+/* Zalo */
+.zalo-chat-widget {
+  bottom: 100px !important;
+  right: 30px !important;
+}
+
+@media (max-width: 768px) {
+  .zalo-chat-widget {
+    bottom: 80px !important;
+    right: 30px !important;
+  }
+}
