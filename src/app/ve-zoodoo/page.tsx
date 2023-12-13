@@ -19,6 +19,9 @@ import MapPinIcon from "@/../public/assets/icons/contact/MapPinLine.png";
 import PhoneIcon from "@/../public/assets/icons/contact/PhoneCall.png";
 import CTAButton from "@/components/Buttons/CTAButton/CTAButton";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 10;
+
 const AboutUs = async () => {
   const hiringJobs = await getHiringJobs();
   return (
