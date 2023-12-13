@@ -4,6 +4,7 @@ import { EntryCollection } from "contentful";
 import { INewsSkeleton } from "@/types/contentful";
 
 import NewCard from "@/components/Cards/NewCard";
+import SectionTitle from "@/components/common/SectionTitle";
 
 interface ISimilarNewsProps {
   similarNews: EntryCollection<INewsSkeleton, undefined, string>;
@@ -12,16 +13,14 @@ interface ISimilarNewsProps {
 const SimilarNews: FC<ISimilarNewsProps> = ({ similarNews }) => {
   return (
     <div className="flex flex-col -mt-[100px] w-full">
-      <div className="flex flex-row items-center justify-start py-10">
-        <div className="flex items-center">
-          <Image
-            src={"/assets/images/section-icons/icon6.png"}
-            alt="ZooDoo logo"
-            width={50}
-            height={50}
-          />
-        </div>
-        <p className="font-bold text-4xl text-text-default w-[600px] text-start pl-4">
+      <div className="flex flex-col justify-center md:flex-row  md:justify-start space-y-4 lg:space-y-6 w-full items-center pb-8">
+        <Image
+          src={"/assets/images/section-icons/icon6.png"}
+          alt="ZooDoo logo"
+          width={50}
+          height={50}
+        />
+        <p className="font-bold text-4xl text-text-default pl-4 text-center">
           Bài viết tương tự
         </p>
       </div>
