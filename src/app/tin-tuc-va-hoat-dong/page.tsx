@@ -22,6 +22,9 @@ interface INewsAndActivitiesPageProps {
   };
 }
 
+export const dynamic = "force-dynamic";
+export const revalidate = 10;
+
 const NewsAndActivitiesPage: FC<INewsAndActivitiesPageProps> = async ({
   searchParams,
 }) => {

@@ -1,3 +1,4 @@
+import Script from "next/script";
 import type { Metadata } from "next";
 import { Asap } from "next/font/google";
 
@@ -5,9 +6,11 @@ import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
 import MessengerChat from "@/components/Facebook/MessengerChat";
 
+import ZaloChat from "@/components/Zalo/ZaloChat";
 import FooterMobile from "@/components/Footer/FooterMobile";
-import "./globals.css";
 import GoogleAnalytics from "@/components/Analytic/GoogleAnalytics";
+
+import "./globals.css";
 
 const asap = Asap({ subsets: ["vietnamese"] });
 
@@ -59,15 +62,17 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <GoogleAnalytics />
+        <Script src="https://sp.zalo.me/plugins/sdk.js" />
       </head>
       <body
-        className={`${asap.className} flex flex-col w-screen bg-[#FFF9E9] justify-between min-h-screen lg:pl-0 overflow-x-hidden`}
+        className={`${asap.className} flex flex-col w-screen bg-[#FFF9E9] justify-between min-h-screen lg:pl-0 overflow-x-hidden relative`}
       >
         <Header />
         <MessengerChat />
         {children}
         <Footer />
         <FooterMobile />
+        <ZaloChat />
       </body>
     </html>
   );
