@@ -3,7 +3,7 @@ import { initContentfulClient } from "@/lib/contentful";
 import { INewsSkeleton } from "@/types/contentful";
 
 export default async function sitemap() {
-  const SITE_URLL = process.env.SITE_URLL || "www.zoodoodalat.com";
+  const SITE_URLL = process.env.SITE_URLL || "https://www.zoodoodalat.com";
 
   const response = await initContentfulClient.getEntries<INewsSkeleton>({
     content_type: "news",
