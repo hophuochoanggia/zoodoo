@@ -103,10 +103,10 @@ const VisitUs = () => {
           <p className="text-center font-medium text-xl lg:text-2xl -mt-10">
             Mở cửa các ngày trong tuần
           </p>
-          <p className="text-center text-3xl lg:text-5xl">
+          <p className="text-center text-3xl lg:text-5xl pb-6">
             9 giờ sáng - 6 giờ chiều
           </p>
-          <div className="py-8">
+          {/* <div className="py-8">
             <a
               href="/assets/pdf/zoo-rules.pdf"
               target="_blank"
@@ -120,7 +120,7 @@ const VisitUs = () => {
                 uppercase={false}
               />
             </a>
-          </div>
+          </div> */}
 
           <p className="font-bold text:2xl lg:text-4xl text-[#1F2937]">
             Khi tham gia vườn thú, hãy lưu ý các thông tin sau:
