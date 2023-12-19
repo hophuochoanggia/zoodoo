@@ -9,6 +9,7 @@ import MessengerChat from "@/components/Facebook/MessengerChat";
 import ZaloChat from "@/components/Zalo/ZaloChat";
 import FooterMobile from "@/components/Footer/FooterMobile";
 import GoogleAnalytics from "@/components/Analytic/GoogleAnalytics";
+import FacebookAnalytics from "@/components/Analytic/FacebookAnalytics";
 
 import "./globals.css";
 
@@ -49,7 +50,7 @@ export const metadata: Metadata = {
   twitter: {
     site: "@zoodoo",
   },
-  metadataBase: new URL("https://www.zoodoo.vn/"),
+  metadataBase: new URL("https://www.zoodoodalat.com/"),
 };
 
 export default function RootLayout({
@@ -62,6 +63,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <GoogleAnalytics />
+        <FacebookAnalytics />
         <Script src="https://sp.zalo.me/plugins/sdk.js" />
       </head>
       <body
