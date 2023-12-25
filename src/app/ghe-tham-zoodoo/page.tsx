@@ -11,7 +11,8 @@ import BG3 from "@/../public/assets/backgrounds/ghe-tham-zoodoo/bg3.png";
 import BG4 from "@/../public/assets/backgrounds/ghe-tham-zoodoo/bg4.png";
 import PriceSection from "@/components/Cards/PriceCards";
 import ZooDooRules from "@/components/common/ZooDooRules";
-import CTAButton from "@/components/Buttons/CTAButton/CTAButton";
+
+import { ADULT_PRICE, CHILD_PRICE, BABY_PRICE } from "@/constants/price";
 
 interface IBusInfoProps {
   title: string;
@@ -46,7 +47,7 @@ const PricingInfo = () => {
             Chiều cao từ 120cm trở lên
           </p>
           <div className="text-center flex flex-col lg:flex-row items-center justify-center">
-            <p className="font-bold text-xl lg:text-2xl pr-2">40 000</p>
+            <p className="font-bold text-xl lg:text-2xl pr-2">{ADULT_PRICE}</p>
             <p className="font-medium text-xl lg:text-2xl ">VND/ 1 Chiều</p>
           </div>
         </div>
@@ -55,7 +56,7 @@ const PricingInfo = () => {
             Chiều cao từ 90cm - 120cm
           </p>
           <div className="text-center flex flex-col lg:flex-row items-center justify-center">
-            <p className="font-bold text-xl lg:text-2xl pr-2">10 000</p>
+            <p className="font-bold text-xl lg:text-2xl pr-2">{CHILD_PRICE}</p>
             <p className="font-medium text-xl lg:text-2xl ">VND/ 1 Chiều</p>
           </div>
         </div>
@@ -64,7 +65,7 @@ const PricingInfo = () => {
             Chiều cao dưới 90cm
           </p>
           <div className="text-center flex flex-row items-center justify-center">
-            <p className="font-bold text-xl lg:text-2xl pr-2">Miễn Phí</p>
+            <p className="font-bold text-xl lg:text-2xl pr-2">{BABY_PRICE}</p>
           </div>
         </div>
       </div>

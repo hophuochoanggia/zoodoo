@@ -32,23 +32,23 @@ const Experiences = () => {
         </div>
         <div className="h-full w-full flex flex-col space-y-3 max-w-lg md:max-w-3xl lg:max-w-7xl">
           <ImageGrid13
-            image1="/assets/images/animals/alpacawhite.png"
-            image2="/assets/images/animals/racoon.png"
+            image1="/assets/images/animals/alpacas.png"
+            image2="/assets/images/animals/raccoon.png"
             image3="/assets/images/animals/meerkat.png"
-            image4="/assets/images/animals/parrot.png"
+            image4="/assets/images/animals/macaw.png"
           />
           <ImageGrid33
             image1="/assets/images/animals/wallaby.png"
             image2="/assets/images/animals/sheep.png"
-            image3="/assets/images/animals/veilchamleon.png"
-            image4="/assets/images/animals/sadragon.png"
+            image3="/assets/images/animals/veiled-chameleon.png"
+            image4="/assets/images/animals/south-iguana-dragon.png"
             image5="/assets/images/animals/goldendog.png"
-            image6="/assets/images/animals/ponyhorse.png"
+            image6="/assets/images/animals/pony.png"
           />
           <ImageGrid31
             image1="/assets/images/animals/sunconure.png"
             image2="/assets/images/animals/ginger.png"
-            image3="/assets/images/animals/sulcata.png"
+            image3="/assets/images/animals/sulcata-tortoise.png"
             image4="/assets/images/animals/capybara.png"
           />
           <ImageGrid11
