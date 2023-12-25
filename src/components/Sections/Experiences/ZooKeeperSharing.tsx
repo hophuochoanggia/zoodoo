@@ -61,7 +61,7 @@ const data: ISharingCard[] = [
   {
     description:
       "Tôi đã có một trải nghiệm tuyệt vời tại ZooDoo Đà Lạt. Tôi đã được tương tác với các loài vật đáng yêu. Tôi đã được tham gia các hoạt động thú vị và học hỏi rất nhiều điều mới lạ.",
-    author: "Khang",
+    author: "Quang Phát",
     image: "/assets/images/experience/experience2.png",
     imageSide: "left",
   },

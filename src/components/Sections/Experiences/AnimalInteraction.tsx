@@ -14,12 +14,11 @@ const data = [
   },
   {
     image: "/assets/images/experience/experience4.png",
-    description:
-      "Cơ hội để chụp ảnh với những chú chim vành khuyên nhiều màu sắc.",
+    description: "Tận tay cho những chú Đà điểu ăn.",
   },
   {
     image: "/assets/images/experience/experience5.png",
-    description: "Tận tay cho những chú Đà điểu ăn.",
+    description: "Cơ hội để chụp ảnh với những bạn thú đặc biệt nhiều màu sắc.",
   },
 ];
 
