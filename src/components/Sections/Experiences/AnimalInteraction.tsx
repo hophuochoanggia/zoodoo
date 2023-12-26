@@ -20,6 +20,10 @@ const data = [
     image: "/assets/images/experience/experience5.png",
     description: "Cơ hội để chụp ảnh với những bạn thú đặc biệt nhiều màu sắc.",
   },
+  {
+    image: "/assets/images/experience/experience6.png",
+    description: "Chơi đùa với những bạn Capybara vô cùng thân thiện.",
+  },
 ];
 
 const AnimalInteraction = () => {
