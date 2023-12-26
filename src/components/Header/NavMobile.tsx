@@ -34,6 +34,15 @@ export const NavMobile = () => {
   }, []);
 
   useEffect(() => {
+    // prevent scrolling when mobile menu is open
+    if (isOpen) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+  }, [isOpen]);
+
+  useEffect(() => {
     setOpen(false);
   }, [router]);
 
