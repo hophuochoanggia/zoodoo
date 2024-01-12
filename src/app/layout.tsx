@@ -10,6 +10,7 @@ import ZaloChat from "@/components/Zalo/ZaloChat";
 import FooterMobile from "@/components/Footer/FooterMobile";
 import GoogleAnalytics from "@/components/Analytic/GoogleAnalytics";
 import FacebookAnalytics from "@/components/Analytic/FacebookAnalytics";
+import Calcom from "@/components/Calcom";
 
 import "./globals.css";
 
@@ -64,6 +65,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <GoogleAnalytics />
         <FacebookAnalytics />
+        <Calcom />
         <Script src="https://sp.zalo.me/plugins/sdk.js" />
       </head>
       <body
