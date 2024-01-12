@@ -1,10 +1,10 @@
 "use client";
 import { motion } from "framer-motion";
 
-import CTAButton from "@/components/Buttons/CTAButton/CTAButton";
-
 import BannerImage from "../../../../public/assets/images/banner.jpg";
-import CallNumberButton from "@/components/Buttons/CallNumberButton/CallNumberButton";
+// import CallNumberButton from "@/components/Buttons/CallNumberButton/CallNumberButton";
+
+import BookingButton from "@/components/Buttons/CTAButton/BookingButton";
 
 const MainBanner = () => {
   return (
@@ -30,7 +30,11 @@ const MainBanner = () => {
             </p>
 
             <div className="py-8">
-              <CallNumberButton text="ĐẶT CHỖ NGAY" bgColor="orange" />
+              <BookingButton
+                bgColor="orange"
+                text="ĐẶT CHỖ NGAY"
+                className="px-10 py-2"
+              />
             </div>
           </div>
         </motion.div>
