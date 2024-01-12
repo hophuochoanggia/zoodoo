@@ -65,7 +65,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <GoogleAnalytics />
         <FacebookAnalytics />
-        <Calcom />
+
         <Script src="https://sp.zalo.me/plugins/sdk.js" />
       </head>
       <body
@@ -76,6 +76,7 @@ export default function RootLayout({
         {children}
         <Footer />
         <FooterMobile />
+        <Calcom />
         <ZaloChat />
       </body>
     </html>
