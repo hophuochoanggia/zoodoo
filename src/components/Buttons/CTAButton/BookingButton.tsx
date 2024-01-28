@@ -26,7 +26,7 @@ const BookingButton: FC<IBookingButtonProps> = ({
     <button
       data-cal-namespace="tham-quan-vuon-thu-zoodoo"
       data-cal-link="team/zoodoo/tham-quan-vuon-thu-zoodoo"
-      data-cal-origin="https://booking.zoodoodalat.com"
+      data-cal-origin="https://booking-v2.zoodoodalat.com"
       data-cal-config='{"layout":"month_view"}'
       className={clsx(
         "inline-flex rounded-lg items-center justify-center px-10 py-3 border border-transparent text-lg lg:text-xl fot-medium text-white hover:scale-105",
