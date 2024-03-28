@@ -1,5 +1,6 @@
 import React from "react";
 import BookingButton from "../Buttons/CTAButton/BookingButton";
+import Booking from "../Buttons/CTAButton/Booking";
 
 const PriceCard120 = () => {
   return (
@@ -22,7 +23,7 @@ const PriceCard120 = () => {
             90-120 Phút
           </p>
         </div>
-        <BookingButton bgColor="green" text="Đặt vé" className="px-10 py-2" />
+        <Booking text="Đặt vé" />
       </div>
     </div>
   );
@@ -46,7 +47,7 @@ const PriceCard90 = () => {
             Bạn nhỏ phải có người lớn đi cùng{" "}
           </p>
         </div>
-        <BookingButton bgColor="green" text="Đặt vé" className="px-10 py-2" />
+        <Booking text="Đặt vé" />
       </div>
     </div>
   );
@@ -102,7 +103,7 @@ const PrivatePriceCard = () => {
             Hoạt động Behind-The-Scenes
           </p>
         </div>
-        <BookingButton bgColor="green" text="LIÊN HỆ" className="px-10 py-2" />
+        <BookingButton bgColor="green" text="LIÊN HỆ" className="px-10" />
       </div>
       <div />
     </div>

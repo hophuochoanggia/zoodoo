@@ -2,17 +2,17 @@ import Script from "next/script";
 import type { Metadata } from "next";
 import { Asap } from "next/font/google";
 
-import Footer from "@/components/Footer/Footer";
-import Header from "@/components/Header/Header";
-import MessengerChat from "@/components/Facebook/MessengerChat";
+import Footer from "../components/Footer/Footer";
+import Header from "../components/Header/Header";
+import MessengerChat from "../components/Facebook/MessengerChat";
 
-import ZaloChat from "@/components/Zalo/ZaloChat";
-import FooterMobile from "@/components/Footer/FooterMobile";
-import GoogleAnalytics from "@/components/Analytic/GoogleAnalytics";
-import FacebookAnalytics from "@/components/Analytic/FacebookAnalytics";
-import Calcom from "@/components/Calcom";
+import ZaloChat from "../components/Zalo/ZaloChat";
+import FooterMobile from "../components/Footer/FooterMobile";
+import GoogleAnalytics from "../components/Analytic/GoogleAnalytics";
+import FacebookAnalytics from "../components/Analytic/FacebookAnalytics";
 
 import "./globals.css";
+import { Toaster } from "../components/atom/toaster";
 
 const asap = Asap({ subsets: ["vietnamese"] });
 
@@ -76,8 +76,8 @@ export default function RootLayout({
         {children}
         <Footer />
         <FooterMobile />
-        <Calcom />
         <ZaloChat />
+        <Toaster />
       </body>
     </html>
   );

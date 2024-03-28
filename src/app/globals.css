@@ -2,39 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
-
 /* Variable Declarations */
 :root {
+  --background: 0 0% 100%;
+  --foreground: 240 10% 3.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 240 10% 3.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 10% 3.9%;
+  --primary: 142.1 76.2% 36.3%;
+  --primary-foreground: 355.7 100% 97.3%;
+  --secondary: 240 4.8% 95.9%;
+  --secondary-foreground: 240 5.9% 10%;
+  --muted: 240 4.8% 95.9%;
+  --muted-foreground: 240 3.8% 46.1%;
+  --accent: 240 4.8% 95.9%;
+  --accent-foreground: 240 5.9% 10%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 240 5.9% 90%;
+  --input: 240 5.9% 90%;
+  --ring: 142.1 76.2% 36.3%;
+  --radius: 0.5rem;
+
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: #FFFFFF;
-  --background-end-rgb: #14532D;
+  --background-start-rgb: #ffffff;
+  --background-end-rgb: #14532d;
   --pagination-prefix-cls: rc-pagination;
-  --primary-color: #39B33A;
+  --primary-color: #39b33a;
   --pagination-item-bg: #fff;
   --pagination-item-size: 28px;
   --pagination-item-size-sm: 24px;
   --pagination-font-family: Arial;
   --pagination-font-weight-active: 500;
-  --pagination-item-bg-active: #39B33A;
+  --pagination-item-bg-active: #39b33a;
   --pagination-item-link-bg: #fff;
   --pagination-item-disabled-color-active: #fff;
   --pagination-item-disabled-bg-active: darken(hsv(0, 0, 96%), 10%);
   --pagination-item-input-bg: #fff;
 
   /* ratio 16:9 = 56.25% */
-  --swiper-inactive-scale: .85;
+  --swiper-inactive-scale: 0.85;
   /* makes the other slide smaller */
   /* responsive settings */
   --swiper-mobile-width: 90%;
-  --swiper-mobile-inactive-scale: .8;
+  --swiper-mobile-inactive-scale: 0.8;
 }
-
 
 body {
   overflow-x: hidden;
-  background: linear-gradient(to bottom,
+  background: linear-gradient(
+      to bottom,
       transparent,
-      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
 }
 
 ul.list {
@@ -45,7 +67,6 @@ ul.list {
   color: #000;
   content: "\2022";
 }
-
 
 /* Styles */
 .rc-pagination {
@@ -67,7 +88,7 @@ ul.list {
   height: 0;
   overflow: hidden;
   visibility: hidden;
-  content: ' ';
+  content: " ";
 }
 
 .rc-pagination-total-text {
@@ -122,7 +143,7 @@ ul.list {
 
 .rc-pagination-item-active:hover,
 .rc-pagination-item-active:focus {
-  border-color: #39B33A;
+  border-color: #39b33a;
 }
 
 .rc-pagination-item-active:hover a,
@@ -146,10 +167,8 @@ ul.list {
 .rc-pagination-jump-prev button:after,
 .rc-pagination-jump-next button:after {
   display: block;
-  content: '•••';
+  content: "•••";
 }
-
-
 
 .rc-pagination-prev,
 .rc-pagination-next,
@@ -184,7 +203,7 @@ ul.list {
 
 .rc-pagination-prev:hover button,
 .rc-pagination-next:hover button {
-  border-color: #39B33A;
+  border-color: #39b33a;
 }
 
 .rc-pagination-item-link {
@@ -209,37 +228,41 @@ ul.list {
 }
 
 .rc-pagination-prev button:after {
-  content: '';
+  content: "";
   display: block;
   height: 10px;
-  background: url('./../../public/assets/icons/chevron_left.svg') no-repeat center;
+  background: url("./../../public/assets/icons/chevron_left.svg") no-repeat
+    center;
   background-size: contain;
   /* Ensure the SVG is scaled appropriately */
 }
 
 .rc-pagination-next button:after {
-  content: '';
+  content: "";
   display: block;
   height: 10px;
-  background: url('./../../public/assets/icons/chevron_right.svg') no-repeat center;
+  background: url("./../../public/assets/icons/chevron_right.svg") no-repeat
+    center;
   background-size: contain;
   /* Ensure the SVG is scaled appropriately */
 }
 
 .skip-to-start:after {
-  content: '';
+  content: "";
   display: block;
   height: 10px;
-  background: url('./../../public/assets/icons/chevron_double_arrow_left.svg') no-repeat center;
+  background: url("./../../public/assets/icons/chevron_double_arrow_left.svg")
+    no-repeat center;
   background-size: contain;
   /* Ensure the SVG is scaled appropriately */
 }
 
 .skip-to-end:after {
-  content: '';
+  content: "";
   display: block;
   height: 10px;
-  background: url('./../../public/assets/icons/chevron_double_arrow_right.svg') no-repeat center;
+  background: url("./../../public/assets/icons/chevron_double_arrow_right.svg")
+    no-repeat center;
   background-size: contain;
   /* Ensure the SVG is scaled appropriately */
 }
@@ -281,7 +304,6 @@ ul.list {
 
 /* Media Queries */
 @media only screen and (max-width: 992px) {
-
   .rc-pagination-item-after-jump-prev,
   .rc-pagination-item-before-jump-next {
     display: none;
@@ -294,14 +316,13 @@ ul.list {
   }
 }
 
-
 /* Swiper */
 
 .center-swiper .swiper-slide {
   position: relative;
-  opacity: .8;
-  transform: scale(.8);
-  transition: all .3s ease-in-out;
+  opacity: 0.8;
+  transform: scale(0.8);
+  transition: all 0.3s ease-in-out;
   overflow: hidden;
   border-radius: 0.4285rem;
 }
@@ -324,9 +345,8 @@ ul.list {
 }
 
 .center-swiper .swiper-backface-hidden .swiper-slide {
-  transform: scale(.84) translateZ(0);
+  transform: scale(0.84) translateZ(0);
 }
-
 
 .center-swiper .swiper-image {
   position: relative;
@@ -344,7 +364,6 @@ ul.list {
   object-fit: cover;
   display: block;
 }
-
 
 /* fix arrows position */
 .custom-swiper-next {
@@ -390,7 +409,6 @@ ul.list {
   display: none;
 }
 
-
 /* target mobile */
 @media (max-width: 768px) {
   .custom-swiper-next {
@@ -402,9 +420,7 @@ ul.list {
   }
 }
 
-
 @media only ≈screen and (max-width: 768px) {
-
   .center-swiper .swiper-slide {
     width: var(--swiper-mobile-width);
     transform: scale(var(--swiper-mobile-inactive-scale));
@@ -434,13 +450,11 @@ ul.list {
   /* Adjust the margin value as needed */
 }
 
-
 :is(h1, h2, h3, h4, h5, h6) b {
   font-weight: bold;
   font-size: inherit;
   /* Set the font size to inherit from the parent */
 }
-
 
 /* Zalo */
 .zalo-chat-widget {
