@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 
 import BookingButton from "../Buttons/CTAButton/BookingButton";
 import { NavMobile } from "./NavMobile";
+import Booking from "../Buttons/CTAButton/Booking";
 
 const Header = () => {
   const [colorChange, setColorchange] = useState<boolean>(false);
@@ -103,7 +104,7 @@ const Header = () => {
               </Link>
             </li>
             <li className="pl-6">
-              <BookingButton text="ĐẶT VÉ NGAY" bgColor="green" />
+              <Booking text="ĐẶT VÉ NGAY" />
             </li>
           </ul>
         </nav>

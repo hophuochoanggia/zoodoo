@@ -9,7 +9,7 @@ const ZaloChat = () => {
       data-autopopup="0"
       data-width=""
       data-height=""
-    ></div>
+    />
   );
 };
 
