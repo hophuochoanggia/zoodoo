@@ -7,6 +7,10 @@ import {
   ChevronRightIcon,
 } from "@radix-ui/react-icons";
 import dayjs from "dayjs";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useForm } from "react-hook-form";
+
 import { Button } from "./atom/button";
 import {
   Dialog,
@@ -49,6 +53,15 @@ type TSlot = {
   start: string;
   start_time: string;
 };
+
+const schema = yup.object().shape({
+  name: yup.string().required("Cần nhập"),
+  email: yup.string().email().required("Cần nhập"),
+  phone: yup.string().required("Cần nhập"),
+  note: yup.string(),
+  adults: yup.number().default(1),
+  kids: yup.number().default(0),
+});
 
 function generateCalendarDay(
   first_of_month: dayjs.Dayjs,
@@ -218,26 +231,15 @@ export const BookingWidget: FC<TBookingWidget> = ({
   });
 
   const [selectedSlot, setSelectedSlot] = useState<string | undefined>();
-  const [form, setForm] = useState<{
-    name: string | undefined;
-    email: string | undefined;
-    note: string | undefined;
-    phone: string | undefined;
-    adults: string | undefined;
-    kids: string | undefined;
-  }>({
-    name: undefined,
-    email: undefined,
-    note: undefined,
-    phone: undefined,
-    adults: undefined,
-    kids: undefined,
-    // name: "Gia Ho",
-    // email: "gia@e9.digital",
-    // phone: "0906955300",
-    // note: "",
-    // adults: "1",
-    // kids: "0",
+  const {
+    register,
+    handleSubmit,
+    // watch,
+    getValues,
+    formState: { errors },
+  } = useForm({
+    mode: "onChange",
+    resolver: yupResolver(schema),
   });
 
   const [open, setOpen] = useState(false);
@@ -268,8 +270,8 @@ export const BookingWidget: FC<TBookingWidget> = ({
       <DialogContent
         className={
           !selectedSlot
-            ? "sm:max-w-[425px] md:max-w-[768px] lg:max-w-[1040px] md:h-[462px] border-4 bg-white"
-            : "sm:max-w-[425px] md:max-w-[568px] lg:max-w-[750px] md:h-[462px] border-4 bg-white"
+            ? "sm:max-w-[425px] md:max-w-[768px] lg:max-w-[1040px] border-4 bg-white"
+            : "sm:max-w-[425px] md:max-w-[568px] lg:max-w-[750px]  border-4 bg-white"
         }
       >
         <div
@@ -318,44 +320,43 @@ export const BookingWidget: FC<TBookingWidget> = ({
                 <Input
                   type="text"
                   placeholder="name"
-                  value={form.name}
-                  onChange={(e) =>
-                    setForm((prev) => ({ ...prev, name: e.target.value }))
-                  }
+                  required
+                  {...register("name")}
                 />
+                {errors.name && (
+                  <p className="text-red-500">{errors.name.message}</p>
+                )}
               </div>
               <div className="grid w-full gap-1.5">
                 <Label htmlFor="picture">Email</Label>
                 <Input
                   type="email"
                   placeholder="Email"
-                  value={form.email}
-                  onChange={(e) =>
-                    setForm((prev) => ({ ...prev, email: e.target.value }))
-                  }
+                  required
+                  {...register("email")}
                 />
+                {errors.email && (
+                  <p className="text-red-500">{errors.email.message}</p>
+                )}
               </div>
               <div className="grid w-full gap-1.5">
                 <Label htmlFor="picture">Số điện thoại</Label>
                 <Input
                   type="text"
                   placeholder="phone"
-                  value={form.phone}
-                  onChange={(e) =>
-                    setForm((prev) => ({ ...prev, phone: e.target.value }))
-                  }
+                  required
+                  {...register("phone")}
                 />
+                {errors.phone && (
+                  <p className="text-red-500">{errors.phone.message}</p>
+                )}
               </div>
               <div className="grid w-full gap-1.5">
                 <Label htmlFor="picture">Ghi chú</Label>
-                <Input
-                  type="text"
-                  placeholder="note"
-                  value={form.note || ""}
-                  onChange={(e) =>
-                    setForm((prev) => ({ ...prev, note: e.target.value }))
-                  }
-                />
+                <Input type="text" placeholder="note" {...register("note")} />
+                {errors.note && (
+                  <p className="text-red-500">{errors.note.message}</p>
+                )}
               </div>
               <div className="grid grid-cols-2 gap-2">
                 <div className="grid w-full max-w-sm gap-1.5">
@@ -363,13 +364,8 @@ export const BookingWidget: FC<TBookingWidget> = ({
                   <Input
                     type="number"
                     placeholder="adults"
-                    value={form.adults}
-                    onChange={(e) =>
-                      setForm((prev) => ({
-                        ...prev,
-                        email: e.target.value,
-                      }))
-                    }
+                    required
+                    {...register("adults")}
                   />
                 </div>
                 <div className="grid w-full max-w-sm gap-1.5">
@@ -377,13 +373,8 @@ export const BookingWidget: FC<TBookingWidget> = ({
                   <Input
                     type="number"
                     placeholder="kids"
-                    value={form.adults}
-                    onChange={(e) =>
-                      setForm((prev) => ({
-                        ...prev,
-                        kids: e.target.value,
-                      }))
-                    }
+                    required
+                    {...register("kids")}
                   />
                 </div>
               </div>
@@ -397,13 +388,13 @@ export const BookingWidget: FC<TBookingWidget> = ({
                 </Button>
                 <Button
                   disabled={isSubmitting}
-                  onClick={async () => {
+                  onClick={handleSubmit(async () => {
                     setIsSubmitting(true);
 
                     return await createBooking({
-                      ...form,
-                      adults: Number(form.adults),
-                      kids: Number(form.kids),
+                      ...getValues(),
+                      adults: Number(getValues("adults")),
+                      kids: Number(getValues("kids")),
                       start_time:
                         dayjs(selectedSlot).format("YYYY-MM-DD HH:mm"),
                       end_time: dayjs(selectedSlot)
@@ -415,7 +406,7 @@ export const BookingWidget: FC<TBookingWidget> = ({
                         setIsSubmitting(false);
                         setOpen(false);
                         toast({
-                          title: `Booking: ${form.name}`,
+                          title: `Booking: ${getValues("name")}`,
                           description: dayjs(selectedSlot).format(
                             "ddd DD-MM-YYYY HH:mm"
                           ),
@@ -426,10 +417,11 @@ export const BookingWidget: FC<TBookingWidget> = ({
                           ),
                         });
                       })
-                      .catch(() => {
+                      .catch((e) => {
+                        console.log(e);
                         setIsSubmitting(false);
                       });
-                  }}
+                  })}
                 >
                   {isSubmitting ? <Spinner /> : "Xác nhận"}
                 </Button>
