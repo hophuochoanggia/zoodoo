@@ -129,13 +129,13 @@ const Calendar: FC<TCalendar> = ({ selectedDate, setSelectedDate }) => {
         </button>
       </div>
       <div className="mt-10 grid grid-cols-7 text-center text-md font-bold leading-6 text-green-default">
-        <div>CN</div>
         <div>T2</div>
         <div>T3</div>
         <div>T4</div>
         <div>T5</div>
         <div>T6</div>
         <div>T7</div>
+        <div>CN</div>
       </div>
       <div className="mt-2 grid grid-cols-7 text-sm">
         {days.map((day, dayIdx) => (
