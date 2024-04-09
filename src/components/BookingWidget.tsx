@@ -223,7 +223,7 @@ export const BookingWidget: FC<TBookingWidget> = ({
   address,
   trigger,
 }) => {
-  const [selectedDate, setSelectedDate] = useState(dayjs().toDate());
+  const [selectedDate, setSelectedDate] = useState(dayjs().add(1, 'day').toDate());
 
   const [slots, setSlots] = useState({
     isLoading: true,
