@@ -1,22 +1,5 @@
 import { IFormInputs } from "@/components/Form/HiringForm";
 
-interface ContactMailData {
-  name: string;
-  email: string;
-  mobile: string;
-  note?: string;
-  jobTitle: string;
-  company: string;
-}
-
-interface JobApplicationMailData {
-  name: string;
-  email: string;
-  mobile: string;
-  position: string;
-  cv: string;
-}
-
 export function sendMail(data: any) {
   const apiEndpoint = "/api/contact";
 

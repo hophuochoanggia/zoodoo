@@ -4,7 +4,7 @@ import Image from "next/legacy/image";
 import { useRouter } from "next/navigation";
 
 import { Text } from "@contentful/rich-text-types";
-import { INewsFields, INewsSkeleton } from "@/types/contentful";
+import { INewsFields } from "@/types/contentful";
 
 import CTAButtonTransperent from "@/components/Buttons/CTAButton/CTAButtonTransperent";
 

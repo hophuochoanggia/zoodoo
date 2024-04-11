@@ -7,8 +7,8 @@ import {
   ChevronRightIcon,
 } from "@radix-ui/react-icons";
 import dayjs from "dayjs";
-import * as yup from "yup";
-import { yupResolver } from "@hookform/resolvers/yup";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 
 import { Button } from "./atom/button";
@@ -19,14 +19,13 @@ import {
   DialogTrigger,
 } from "./atom/dialog";
 import { ScrollArea } from "./atom/scroll-area";
-// import { getAvailableSlot } from "@/service";
 import { Label } from "./atom/label";
 import { Input } from "./atom/input";
-import { createBooking } from "@/service";
 import Spinner from "./common/spinner";
 import { ToastAction } from "./atom/toast";
 import { useToast } from "./atom/use-toast";
 import { cn } from "@/lib/utils";
+import { createBooking } from "@/actions/booking";
 
 type TBookingWidget = {
   className: string;
@@ -54,15 +53,14 @@ type TSlot = {
   start_time: string;
 };
 
-const schema = yup.object().shape({
-  name: yup.string().required("Cần nhập"),
-  email: yup.string().email().required("Cần nhập"),
-  phone: yup.string().required("Cần nhập"),
-  note: yup.string(),
-  adults: yup.number().default(1),
-  kids: yup.number().default(0),
+const schema = z.object({
+  name: z.string().min(1, "Cần nhập"),
+  email: z.string().email("Cần nhập").min(1, "Cần nhập"),
+  phone: z.string().min(1, "Cần nhập"),
+  note: z.string().optional(),
+  adults: z.preprocess((val) => Number(val), z.number()).default(1),
+  kids: z.preprocess((val) => Number(val), z.number()).default(0),
 });
-
 function generateCalendarDay(
   first_of_month: dayjs.Dayjs,
   _selectedDate: dayjs.Dayjs,
@@ -247,12 +245,11 @@ export const BookingWidget: FC<TBookingWidget> = ({
   const {
     register,
     handleSubmit,
-    // watch,
     getValues,
     formState: { errors },
   } = useForm({
     mode: "onChange",
-    resolver: yupResolver(schema),
+    resolver: zodResolver(schema),
   });
 
   const [open, setOpen] = useState(false);
@@ -336,7 +333,9 @@ export const BookingWidget: FC<TBookingWidget> = ({
                     {...register("name")}
                   />
                   {errors.name && (
-                    <p className="text-red-500">{errors.name.message}</p>
+                    <p className="text-red-500">
+                      {String(errors.name.message)}
+                    </p>
                   )}
                 </div>
                 <div className="grid w-full gap-1.5">
@@ -348,7 +347,9 @@ export const BookingWidget: FC<TBookingWidget> = ({
                     {...register("email")}
                   />
                   {errors.email && (
-                    <p className="text-red-500">{errors.email.message}</p>
+                    <p className="text-red-500">
+                      {String(errors.email.message)}
+                    </p>
                   )}
                 </div>
                 <div className="grid w-full gap-1.5">
@@ -360,14 +361,18 @@ export const BookingWidget: FC<TBookingWidget> = ({
                     {...register("phone")}
                   />
                   {errors.phone && (
-                    <p className="text-red-500">{errors.phone.message}</p>
+                    <p className="text-red-500">
+                      {String(errors.phone.message)}
+                    </p>
                   )}
                 </div>
                 <div className="grid w-full gap-1.5">
                   <Label htmlFor="picture">Ghi chú</Label>
                   <Input type="text" placeholder="note" {...register("note")} />
                   {errors.note && (
-                    <p className="text-red-500">{errors.note.message}</p>
+                    <p className="text-red-500">
+                      {String(errors.note.message)}
+                    </p>
                   )}
                 </div>
                 <div className="grid grid-cols-2 gap-2">
@@ -404,17 +409,22 @@ export const BookingWidget: FC<TBookingWidget> = ({
                       setIsSubmitting(true);
 
                       return await createBooking({
-                        ...getValues(),
-                        adults: Number(getValues("adults")),
-                        kids: Number(getValues("kids")),
-                        start_time:
-                          dayjs(selectedSlot).format("YYYY-MM-DD HH:mm"),
-                        end_time: dayjs(selectedSlot)
-                          .add(90, "minute")
-                          .format("YYYY-MM-DD HH:mm"),
+                        data: {
+                          name: getValues("name"),
+                          email: getValues("email"),
+                          phone: getValues("phone"),
+                          note: getValues("note"),
+                          adults: Number(getValues("adults")),
+                          kids: Number(getValues("kids")),
+                          start_time: dayjs(selectedSlot).toDate(),
+                          end_time: dayjs(selectedSlot)
+                            .add(90, "minute")
+                            .toDate(),
+                        },
                       })
                         // return Promise.resolve()
-                        .then(() => {
+                        .then((data) => {
+                          console.log(data);
                           setIsSubmitting(false);
                           setOpen(false);
                           toast({
@@ -430,7 +440,6 @@ export const BookingWidget: FC<TBookingWidget> = ({
                           });
                         })
                         .catch((e) => {
-                          console.log(e);
                           setIsSubmitting(false);
                         });
                     })}

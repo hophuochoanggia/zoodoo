@@ -1,7 +1,7 @@
 "use client";
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
 
-import { BookingWidget } from "../../BookingWidget";
+import { BookingWidget } from "../../booking-widget";
 import { Button } from "../../atom/button";
 import Image from "next/image";
 import RightChevron from "../../../../public/assets/icons/chevron-forward-outline.svg";

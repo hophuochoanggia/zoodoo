@@ -8,15 +8,15 @@ import Hiring from "@/components/Sections/AboutUs/Hiring";
 import FollowUs from "@/components/common/FollowUs";
 import SectionTitle from "@/components/common/SectionTitle";
 
-import BG1 from "@/../public/assets/backgrounds/ve-zoodoo/bg1.png";
-import BG2 from "@/../public/assets/backgrounds/ve-zoodoo/bg2.png";
-import Animal2Image from "@/../public/assets/images/animals/animals2.png";
-import Icon3 from "@/../public/assets/images/section-icons/icon3.png";
-import Icon5 from "@/../public/assets/images/section-icons/icon5.png";
+import BG1 from "../../../../public/assets/backgrounds/ve-zoodoo/bg1.png";
+import BG2 from "../../../../public/assets/backgrounds/ve-zoodoo/bg2.png";
+import Animal2Image from "../../../../public/assets/images/animals/animals2.png";
+import Icon3 from "../../../../public/assets/images/section-icons/icon3.png";
+import Icon5 from "../../../../public/assets/images/section-icons/icon5.png";
 
-import EmailIcon from "@/../public/assets/icons/contact/Envelope.png";
-import MapPinIcon from "@/../public/assets/icons/contact/MapPinLine.png";
-import PhoneIcon from "@/../public/assets/icons/contact/PhoneCall.png";
+import EmailIcon from "../../../../public/assets/icons/contact/Envelope.png";
+import MapPinIcon from "../../../../public/assets/icons/contact/MapPinLine.png";
+import PhoneIcon from "../../../../public/assets/icons/contact/PhoneCall.png";
 import CTAButton from "@/components/Buttons/CTAButton/CTAButton";
 
 export const dynamic = "force-dynamic";

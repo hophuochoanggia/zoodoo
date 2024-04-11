@@ -58,6 +58,15 @@
   /* responsive settings */
   --swiper-mobile-width: 90%;
   --swiper-mobile-inactive-scale: 0.8;
+
+  /* Full Calendar Variables */
+  /* https://github.com/fullcalendar/fullcalendar/blob/main/packages/core/src/styles/vars.css */
+  --fc-daygrid-event-dot-width: 8px;
+  --fc-button-text-color: #78829d;
+  --fc-button-bg-color: #f9f9f9;
+  --fc-button-border-color: #f9f9f9;
+  --fc-button-active-bg-color: #f1f1f4;
+  --fc-button-active-border-color: #f1f1f4;
 }
 
 body {
