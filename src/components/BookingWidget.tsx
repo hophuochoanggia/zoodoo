@@ -17,7 +17,6 @@ import {
   DialogContent,
   DialogTitle,
   DialogTrigger,
-  DialogClose,
 } from "./atom/dialog";
 import { ScrollArea } from "./atom/scroll-area";
 // import { getAvailableSlot } from "@/service";
@@ -27,6 +26,7 @@ import { createBooking } from "@/service";
 import Spinner from "./common/spinner";
 import { ToastAction } from "./atom/toast";
 import { useToast } from "./atom/use-toast";
+import { cn } from "@/lib/utils";
 
 type TBookingWidget = {
   className: string;
@@ -179,13 +179,14 @@ const Calendar: FC<TCalendar> = ({ selectedDate, setSelectedDate }) => {
 };
 
 const Timeslot: FC<{
+  date: string;
   slots: TSlot[];
   value: string | undefined;
   onChange: (d: string) => void;
-}> = ({ slots, onChange }) => (
+}> = ({ slots, onChange, date }) => (
   <section className="mt-12 md:mt-0 md:pl-8">
     <span className="text-base font-semibold leading-6 text-gray-900">
-      Schedule for <time dateTime="2022-01-21">January 21, 2022</time>
+      Schedule for <time dateTime="2022-01-21">{date}</time>
     </span>
     <ol className="mt-4 space-y-1 text-sm leading-6 text-gray-500">
       {slots.map((slot) => (
@@ -204,14 +205,24 @@ const Timeslot: FC<{
 
 function generateSlots(date: Date): TSlot[] {
   const slots = [];
-  const start = dayjs(date).set("hour", 9).set("minute", 0).set("second", 0);
-  for (let i = 0; i < 8; i++) {
-    const current = start.add(1 * i, "hour");
+  const HourOffsetFromNow = dayjs()
+    .add(18, "hour")
+    .set("minute", 0)
+    .set("second", 0);
+  const beginningOfDay = dayjs(date)
+    .set("hour", 9)
+    .set("minute", 0)
+    .set("second", 0);
+  let start = HourOffsetFromNow.isAfter(beginningOfDay)
+    ? HourOffsetFromNow
+    : beginningOfDay;
+  while (start.get("hour") < 17) {
     slots.push({
-      id: i,
-      start: current.format("HH:mm"),
-      start_time: current.toISOString(),
+      id: start.get("hour"),
+      start: start.format("HH:mm"),
+      start_time: start.toISOString(),
     });
+    start = start.add(1, "hour");
   }
   return slots;
 }
@@ -223,7 +234,9 @@ export const BookingWidget: FC<TBookingWidget> = ({
   address,
   trigger,
 }) => {
-  const [selectedDate, setSelectedDate] = useState(dayjs().add(1, 'day').toDate());
+  const [selectedDate, setSelectedDate] = useState(
+    dayjs().add(1, "day").toDate()
+  );
 
   const [slots, setSlots] = useState({
     isLoading: true,
@@ -248,11 +261,8 @@ export const BookingWidget: FC<TBookingWidget> = ({
   const { toast } = useToast();
 
   useEffect(() => {
-    // getAvailableSlot(selectedDate).then(({ data }) => {
     const genericSlot = generateSlots(selectedDate);
     setSlots({ isLoading: false, data: genericSlot });
-    //   console.log(data);
-    // });
   }, [selectedDate]);
 
   return (
@@ -268,167 +278,170 @@ export const BookingWidget: FC<TBookingWidget> = ({
       </DialogTrigger>
 
       <DialogContent
-        className={
+        className={cn(
+          "sm:max-w-[425px] border-4 bg-white",
           !selectedSlot
-            ? "sm:max-w-[425px] md:max-w-[768px] lg:max-w-[1040px] border-4 bg-white"
-            : "sm:max-w-[425px] md:max-w-[568px] lg:max-w-[750px]  border-4 bg-white"
-        }
+            ? "md:max-w-[768px] lg:max-w-[1040px]"
+            : "md:max-w-[568px] lg:max-w-[750px]"
+        )}
       >
-        <div
-          className={
-            !selectedSlot
-              ? "grid grid-cols-1 md:grid-cols-5 gap-8 md:divide-x md:divide-gray-200"
-              : "grid grid-cols-1 md:grid-cols-3 gap-8 md:divide-x md:divide-gray-200"
-          }
-        >
-          <div>
-            <DialogTitle className="mb-4">
-              <span className="scroll-m-20 text-md lg:text-xl">{title}</span>
-            </DialogTitle>
-            <ScrollArea className="h-60 mb-4">
-              <p className="text-left whitespace-pre-wrap overflow-hidden text-sm">
-                {description}
-              </p>
-            </ScrollArea>
+        <ScrollArea className="max-h-[50vh] no-scrollbar">
+          <div
+            className={cn(
+              "grid grid-cols-1 md:grid-cols-5 gap-8 md:divide-x md:divide-gray-200",
+              !selectedSlot ? "md:grid-cols-5" : "md:grid-cols-3"
+            )}
+          >
+            <div>
+              <DialogTitle className="mb-4">
+                <span className="scroll-m-20 text-md lg:text-xl">{title}</span>
+              </DialogTitle>
+              <ScrollArea className="h-60 mb-4">
+                <p className="text-left whitespace-pre-wrap overflow-hidden text-sm">
+                  {description}
+                </p>
+              </ScrollArea>
 
-            <div className="flex">
-              <SewingPinFilledIcon width="36" height="36" />
-              <p className="ml-2 text-sm">{address}</p>
+              <div className="flex">
+                <SewingPinFilledIcon width="36" height="36" />
+                <p className="ml-2 text-sm">{address}</p>
+              </div>
             </div>
-          </div>
 
-          {!selectedSlot ? (
-            <>
-              <div className="col-span-2 md:pl-8">
-                <Calendar
-                  selectedDate={selectedDate}
-                  setSelectedDate={setSelectedDate}
-                />
-              </div>
-              <div className="col-span-2">
-                <Timeslot
-                  slots={slots.data}
-                  value={selectedSlot}
-                  onChange={(d) => setSelectedSlot(d)}
-                />
-              </div>
-            </>
-          ) : (
-            <div className="col-span-2 md:pl-8 grid gap-1.5">
-              <div className="grid w-full gap-1.5">
-                <Label htmlFor="picture">Họ và tên</Label>
-                <Input
-                  type="text"
-                  placeholder="name"
-                  required
-                  {...register("name")}
-                />
-                {errors.name && (
-                  <p className="text-red-500">{errors.name.message}</p>
-                )}
-              </div>
-              <div className="grid w-full gap-1.5">
-                <Label htmlFor="picture">Email</Label>
-                <Input
-                  type="email"
-                  placeholder="Email"
-                  required
-                  {...register("email")}
-                />
-                {errors.email && (
-                  <p className="text-red-500">{errors.email.message}</p>
-                )}
-              </div>
-              <div className="grid w-full gap-1.5">
-                <Label htmlFor="picture">Số điện thoại</Label>
-                <Input
-                  type="text"
-                  placeholder="phone"
-                  required
-                  {...register("phone")}
-                />
-                {errors.phone && (
-                  <p className="text-red-500">{errors.phone.message}</p>
-                )}
-              </div>
-              <div className="grid w-full gap-1.5">
-                <Label htmlFor="picture">Ghi chú</Label>
-                <Input type="text" placeholder="note" {...register("note")} />
-                {errors.note && (
-                  <p className="text-red-500">{errors.note.message}</p>
-                )}
-              </div>
-              <div className="grid grid-cols-2 gap-2">
-                <div className="grid w-full max-w-sm gap-1.5">
-                  <Label htmlFor="picture">Người lớn</Label>
-                  <Input
-                    type="number"
-                    placeholder="adults"
-                    required
-                    {...register("adults")}
+            {!selectedSlot ? (
+              <>
+                <div className="col-span-2 md:pl-8">
+                  <Calendar
+                    selectedDate={selectedDate}
+                    setSelectedDate={setSelectedDate}
                   />
                 </div>
-                <div className="grid w-full max-w-sm gap-1.5">
-                  <Label htmlFor="picture">Trẻ em</Label>
-                  <Input
-                    type="number"
-                    placeholder="kids"
-                    required
-                    {...register("kids")}
+                <div className="col-span-2">
+                  <Timeslot
+                    date={selectedDate.toLocaleDateString()}
+                    slots={slots.data}
+                    value={selectedSlot}
+                    onChange={(d) => setSelectedSlot(d)}
                   />
                 </div>
-              </div>
-              <div className="flex flex-row justify-end">
-                <Button
-                  variant="ghost"
-                  onClick={() => setSelectedSlot(undefined)}
-                  disabled={isSubmitting}
-                >
-                  Trở lại
-                </Button>
-                <Button
-                  disabled={isSubmitting}
-                  onClick={handleSubmit(async () => {
-                    setIsSubmitting(true);
+              </>
+            ) : (
+              <div className="col-span-2 md:pl-8 grid gap-1.5">
+                <div className="grid w-full gap-1.5">
+                  <Label htmlFor="picture">Họ và tên</Label>
+                  <Input
+                    type="text"
+                    placeholder="name"
+                    required
+                    {...register("name")}
+                  />
+                  {errors.name && (
+                    <p className="text-red-500">{errors.name.message}</p>
+                  )}
+                </div>
+                <div className="grid w-full gap-1.5">
+                  <Label htmlFor="picture">Email</Label>
+                  <Input
+                    type="email"
+                    placeholder="Email"
+                    required
+                    {...register("email")}
+                  />
+                  {errors.email && (
+                    <p className="text-red-500">{errors.email.message}</p>
+                  )}
+                </div>
+                <div className="grid w-full gap-1.5">
+                  <Label htmlFor="picture">Số điện thoại</Label>
+                  <Input
+                    type="text"
+                    placeholder="phone"
+                    required
+                    {...register("phone")}
+                  />
+                  {errors.phone && (
+                    <p className="text-red-500">{errors.phone.message}</p>
+                  )}
+                </div>
+                <div className="grid w-full gap-1.5">
+                  <Label htmlFor="picture">Ghi chú</Label>
+                  <Input type="text" placeholder="note" {...register("note")} />
+                  {errors.note && (
+                    <p className="text-red-500">{errors.note.message}</p>
+                  )}
+                </div>
+                <div className="grid grid-cols-2 gap-2">
+                  <div className="grid w-full max-w-sm gap-1.5">
+                    <Label htmlFor="picture">Người lớn</Label>
+                    <Input
+                      type="number"
+                      placeholder="adults"
+                      required
+                      {...register("adults")}
+                    />
+                  </div>
+                  <div className="grid w-full max-w-sm gap-1.5">
+                    <Label htmlFor="picture">Trẻ em</Label>
+                    <Input
+                      type="number"
+                      placeholder="kids"
+                      required
+                      {...register("kids")}
+                    />
+                  </div>
+                </div>
+                <div className="flex flex-row justify-end">
+                  <Button
+                    variant="ghost"
+                    onClick={() => setSelectedSlot(undefined)}
+                    disabled={isSubmitting}
+                  >
+                    Trở lại
+                  </Button>
+                  <Button
+                    disabled={isSubmitting}
+                    onClick={handleSubmit(async () => {
+                      setIsSubmitting(true);
 
-                    return await createBooking({
-                      ...getValues(),
-                      adults: Number(getValues("adults")),
-                      kids: Number(getValues("kids")),
-                      start_time:
-                        dayjs(selectedSlot).format("YYYY-MM-DD HH:mm"),
-                      end_time: dayjs(selectedSlot)
-                        .add(90, "minute")
-                        .format("YYYY-MM-DD HH:mm"),
-                    })
-                      // return Promise.resolve()
-                      .then(() => {
-                        setIsSubmitting(false);
-                        setOpen(false);
-                        toast({
-                          title: `Booking: ${getValues("name")}`,
-                          description: dayjs(selectedSlot).format(
-                            "ddd DD-MM-YYYY HH:mm"
-                          ),
-                          action: (
-                            <ToastAction altText="Goto schedule to undo">
-                              Undo
-                            </ToastAction>
-                          ),
-                        });
+                      return await createBooking({
+                        ...getValues(),
+                        adults: Number(getValues("adults")),
+                        kids: Number(getValues("kids")),
+                        start_time:
+                          dayjs(selectedSlot).format("YYYY-MM-DD HH:mm"),
+                        end_time: dayjs(selectedSlot)
+                          .add(90, "minute")
+                          .format("YYYY-MM-DD HH:mm"),
                       })
-                      .catch((e) => {
-                        console.log(e);
-                        setIsSubmitting(false);
-                      });
-                  })}
-                >
-                  {isSubmitting ? <Spinner /> : "Xác nhận"}
-                </Button>
+                        // return Promise.resolve()
+                        .then(() => {
+                          setIsSubmitting(false);
+                          setOpen(false);
+                          toast({
+                            title: `Booking: ${getValues("name")}`,
+                            description: dayjs(selectedSlot).format(
+                              "ddd DD-MM-YYYY HH:mm"
+                            ),
+                            action: (
+                              <ToastAction altText="Goto schedule to undo">
+                                Undo
+                              </ToastAction>
+                            ),
+                          });
+                        })
+                        .catch((e) => {
+                          console.log(e);
+                          setIsSubmitting(false);
+                        });
+                    })}
+                  >
+                    {isSubmitting ? <Spinner /> : "Xác nhận"}
+                  </Button>
+                </div>
               </div>
-            </div>
-          )}
-        </div>
+            )}
+          </div>
+        </ScrollArea>
       </DialogContent>
     </Dialog>
   );
