@@ -6,7 +6,7 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import listPlugin from "@fullcalendar/list";
-import { getBookings } from "@/actions/booking";
+import { getBookings, updateBooking } from "@/actions/booking";
 import { Booking } from "@prisma/client";
 import { DatesSetArg } from "@fullcalendar/core/index.js";
 import { useRouter } from "next/navigation";
@@ -21,6 +21,7 @@ const viewEvent = (events: Booking[]) => {
   return events.map((e) => ({
     title: e.name,
     start: e.start_time,
+    end: e.end_time,
     backgroundColor: STATUS_COLOR_MAP[e.status],
     borderColor: STATUS_COLOR_MAP[e.status],
     extendedProps: {
@@ -84,6 +85,13 @@ export const Calendar = () => {
         }}
         eventClick={(info) => {
           router.push(`/admin/booking/${info.event._def.extendedProps.id}`);
+        }}
+        eventDrop={(info) => {
+          if (!info.event.start) return;
+          updateBooking({
+            id: info.event._def.extendedProps.id,
+            data: { start_time: info.event.start },
+          });
         }}
         nowIndicator
       />

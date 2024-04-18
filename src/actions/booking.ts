@@ -71,7 +71,7 @@ export async function updateBooking({
   data,
 }: {
   id: string;
-  data: TUpdateBookingSchema;
+  data: Partial<TUpdateBookingSchema>;
 }) {
   try {
     const result = await prisma.booking.update({
