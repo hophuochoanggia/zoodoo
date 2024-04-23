@@ -70,11 +70,13 @@ export async function createBooking({
         pretty: true,
       }
     );
-    await sendEmail({
+    const t = await sendEmail({
       to: [result.email],
       subject: "✔ Confirm Booking",
       html,
     });
+
+    console.log("---->", t);
 
     return result;
   } catch (err) {
