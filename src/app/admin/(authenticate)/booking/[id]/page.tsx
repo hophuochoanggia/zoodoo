@@ -17,9 +17,7 @@ export default async function AdminBookingDetail({
       </Link>
 
       <div className="space-y-2 mt-4">
-        <h2 className="text-2xl font-bold">
-          Booking: <u>{booking.id.slice(0, 6)}</u>
-        </h2>
+        <h2 className="text-2xl font-bold">Booking: {booking.code}</h2>
         <p className="text-gray-500 dark:text-gray-400">
           Edit information for customer booking
         </p>

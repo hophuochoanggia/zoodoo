@@ -9,7 +9,6 @@ export const ENV = {
   EMAIL_SMTP_USER: process.env.EMAIL_SMTP_USER,
   EMAIL_SMTP_PASSWORD: process.env.EMAIL_SMTP_PASSWORD,
   MONGODB_URI: process.env.MONGODB_URI,
-  JWT_SECRET: process.env.JWT_SECRET,
   SESSION_PASSWORD: process.env.SESSION_PASSWORD,
   SESSION_SECURE: process.env.SESSION_SECURE === "true" ? true : false,
 };

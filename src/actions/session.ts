@@ -19,7 +19,11 @@ export async function getSession(): Promise<ISession | null> {
       })) as string)
     : null;
 
-  return session ? (JSON.parse(session) as ISession) : null;
+  try {
+    return session ? (JSON.parse(session) as ISession) : null;
+  } catch (e) {
+    throw e;
+  }
 }
 
 export async function setSession(user: ISession): Promise<void> {

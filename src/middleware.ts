@@ -15,6 +15,7 @@ export async function middleware(request: NextRequest) {
 
   if (request.nextUrl.pathname === "/admin") {
     const user = await getSession();
+
     if (!user) {
       return NextResponse.redirect(new URL("/admin/login", request.url));
     }
