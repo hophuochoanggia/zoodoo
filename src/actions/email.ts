@@ -14,10 +14,12 @@ const transport = nodemailer.createTransport({
 
 export async function sendEmail({
   to,
+  bcc,
   subject,
   html,
 }: {
   to: string[];
+  bcc?: string[];
   subject: string;
   html: string;
 }): Promise<{ ok: true }> {
@@ -25,6 +27,7 @@ export async function sendEmail({
     transport.sendMail({
       from: `"Zoodoo" <${ENV.EMAIL_FROM}>`, // sender address
       to,
+      bcc,
       subject,
       html,
     });
