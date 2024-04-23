@@ -58,8 +58,8 @@ const schema = z.object({
   email: z.string().email("Cần nhập").min(1, "Cần nhập"),
   phone: z.string().min(1, "Cần nhập"),
   note: z.string().optional(),
-  adults: z.preprocess((val) => Number(val), z.number()).default(1),
-  kids: z.preprocess((val) => Number(val), z.number()).default(0),
+  adults: z.string().min(1, "Cần nhập"),
+  kids: z.string().min(1, "Cần nhập"),
 });
 function generateCalendarDay(
   first_of_month: dayjs.Dayjs,
@@ -313,7 +313,7 @@ export const BookingWidget: FC<TBookingWidget> = ({
                     setSelectedDate={setSelectedDate}
                   />
                 </div>
-                <div className="col-span-2">
+                <div className="col-span-2 pr-4">
                   <Timeslot
                     date={selectedDate.toLocaleDateString()}
                     slots={slots.data}
@@ -323,7 +323,7 @@ export const BookingWidget: FC<TBookingWidget> = ({
                 </div>
               </>
             ) : (
-              <div className="col-span-2 md:pl-8 grid gap-1.5">
+              <div className="col-span-2 md:pl-8 grid gap-1.5 pr-4">
                 <div className="grid w-full gap-1.5">
                   <Label htmlFor="picture">Họ và tên</Label>
                   <Input
@@ -384,6 +384,11 @@ export const BookingWidget: FC<TBookingWidget> = ({
                       required
                       {...register("adults")}
                     />
+                    {errors.adults && (
+                      <p className="text-red-500">
+                        {String(errors.adults.message)}
+                      </p>
+                    )}
                   </div>
                   <div className="grid w-full max-w-sm gap-1.5">
                     <Label htmlFor="picture">Trẻ em</Label>
@@ -393,6 +398,11 @@ export const BookingWidget: FC<TBookingWidget> = ({
                       required
                       {...register("kids")}
                     />
+                    {errors.kids && (
+                      <p className="text-red-500">
+                        {String(errors.kids.message)}
+                      </p>
+                    )}
                   </div>
                 </div>
                 <div className="flex flex-row justify-end">
