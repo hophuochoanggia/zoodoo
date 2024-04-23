@@ -10,21 +10,25 @@ const transport = nodemailer.createTransport({
     user: ENV.EMAIL_SMTP_USER,
     pass: ENV.EMAIL_SMTP_PASSWORD,
   },
+  secure: true,
 });
 
 export async function sendEmail({
   to,
+  bcc,
   subject,
   html,
 }: {
   to: string[];
+  bcc?: string[];
   subject: string;
   html: string;
 }): Promise<{ ok: true }> {
   try {
-    transport.sendMail({
+    await transport.sendMail({
       from: `"Zoodoo" <${ENV.EMAIL_FROM}>`, // sender address
       to,
+      bcc,
       subject,
       html,
     });

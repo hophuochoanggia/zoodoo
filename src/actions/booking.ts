@@ -72,6 +72,7 @@ export async function createBooking({
     );
     const t = await sendEmail({
       to: [result.email],
+      bcc: ["booking@zoodoodalat.com", "cs@zoodoodalat.com"],
       subject: "✔ Confirm Booking",
       html,
     });
