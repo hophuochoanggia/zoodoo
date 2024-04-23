@@ -10,7 +10,6 @@ const transport = nodemailer.createTransport({
     user: ENV.EMAIL_SMTP_USER,
     pass: ENV.EMAIL_SMTP_PASSWORD,
   },
-  secure: true,
 });
 
 export async function sendEmail({
