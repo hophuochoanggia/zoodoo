@@ -6,6 +6,7 @@ import { prisma } from "@/prisma";
 import { TUpdateBookingSchema } from "@/schema/booking";
 import { sendEmail } from "@/actions/email";
 
+import BookingReceiveEmail from "@/emails/new-booking.template";
 import BookingConfirmEmail from "@/emails/confirm-booking.email";
 import { randomChar } from "@/lib/random-char";
 
@@ -58,10 +59,25 @@ export async function createBooking({
         code: randomChar(6),
       },
     });
+    const html = render(
+      BookingReceiveEmail({
+        time: dayjs(result.start_time).format("ddd, HH:mm DD-MM-YYYY"),
+        adults: result.adults,
+        kids: result.kids,
+        validationCode: result.code,
+      }),
+      {
+        pretty: true,
+      }
+    );
+    await sendEmail({
+      to: [result.email],
+      subject: "✔ Confirm Booking",
+      html,
+    });
 
     return result;
   } catch (err) {
-    console.log(err);
     throw new Error("Internal Server Error");
   }
 }
@@ -103,19 +119,18 @@ export async function acceptBooking({ id }: { id: string }) {
     if (!result) {
       throw new Error("Booking not found");
     }
-    console.log(result);
     const html = render(
       BookingConfirmEmail({
         time: dayjs(result.start_time).format("ddd, HH:mm DD-MM-YYYY"),
         adults: result.adults,
         kids: result.kids,
-        validationCode: result.id.slice(0, 6).toUpperCase(),
+        validationCode: result.code,
       }),
       {
         pretty: true,
       }
     );
-    const t = await sendEmail({
+    await sendEmail({
       to: [result.email],
       subject: "✔ Confirm Booking",
       html,

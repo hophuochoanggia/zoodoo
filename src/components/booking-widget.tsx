@@ -432,9 +432,7 @@ export const BookingWidget: FC<TBookingWidget> = ({
                             .toDate(),
                         },
                       })
-                        // return Promise.resolve()
-                        .then((data) => {
-                          console.log(data);
+                        .then(() => {
                           setIsSubmitting(false);
                           setOpen(false);
                           toast({
