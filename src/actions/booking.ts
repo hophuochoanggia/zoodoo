@@ -70,14 +70,12 @@ export async function createBooking({
         pretty: true,
       }
     );
-    const t = await sendEmail({
+    await sendEmail({
       to: [result.email],
       bcc: ["booking@zoodoodalat.com", "cs@zoodoodalat.com"],
       subject: "✔ Confirm Booking",
       html,
     });
-
-    console.log("---->", t);
 
     return result;
   } catch (err) {
