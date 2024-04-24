@@ -28,7 +28,6 @@ export async function login(
   if (!validatedFields) {
     throw new Error("Please enter a valid email");
   }
-
   const user = await prisma.user.findUnique({
     where: { email: validatedFields.email },
   });

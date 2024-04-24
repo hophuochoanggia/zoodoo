@@ -13,6 +13,7 @@ import {
 import * as React from "react";
 
 interface BookingConfirmEmailProps {
+  preview: string;
   time: string;
   adults: number | string;
   kids: number | string;
@@ -20,6 +21,7 @@ interface BookingConfirmEmailProps {
 }
 
 export const BookingConfirmEmail = ({
+  preview,
   time,
   adults,
   kids,
@@ -27,7 +29,7 @@ export const BookingConfirmEmail = ({
 }: BookingConfirmEmailProps) => (
   <Html>
     <Head />
-    <Preview>Confirm your email address</Preview>
+    <Preview>{preview}</Preview>
     <Body style={main}>
       <Container style={container}>
         <Section style={logoContainer}>

@@ -13,6 +13,7 @@ import {
 import * as React from "react";
 
 interface BookingReceiveEmailProps {
+  preview: string;
   time: string;
   adults: number | string;
   kids: number | string;
@@ -20,6 +21,7 @@ interface BookingReceiveEmailProps {
 }
 
 export const BookingReceiveEmail = ({
+  preview,
   time,
   adults,
   kids,
@@ -27,7 +29,8 @@ export const BookingReceiveEmail = ({
 }: BookingReceiveEmailProps) => (
   <Html>
     <Head />
-    <Preview>Confirm your email address</Preview>
+
+    <Preview>{preview}</Preview>
     <Body style={main}>
       <Container style={container}>
         <Section style={logoContainer}>

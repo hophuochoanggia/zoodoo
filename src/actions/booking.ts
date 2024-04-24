@@ -61,6 +61,7 @@ export async function createBooking({
     });
     const html = render(
       BookingReceiveEmail({
+        preview: "Booking đã được tiếp nhận",
         time: dayjs(result.start_time).format("ddd, HH:mm DD-MM-YYYY"),
         adults: result.adults,
         kids: result.kids,
@@ -73,7 +74,7 @@ export async function createBooking({
     await sendEmail({
       to: [result.email],
       bcc: ["booking@zoodoodalat.com", "cs@zoodoodalat.com"],
-      subject: "✔ Confirm Booking",
+      subject: "Booking đã được tiếp nhận",
       html,
     });
 
@@ -122,6 +123,7 @@ export async function acceptBooking({ id }: { id: string }) {
     }
     const html = render(
       BookingConfirmEmail({
+        preview: "✔ Confirm Booking",
         time: dayjs(result.start_time).format("ddd, HH:mm DD-MM-YYYY"),
         adults: result.adults,
         kids: result.kids,
