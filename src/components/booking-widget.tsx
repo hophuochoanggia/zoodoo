@@ -61,6 +61,7 @@ const schema = z.object({
   adults: z.string().min(1, "Cần nhập"),
   kids: z.string().min(1, "Cần nhập"),
 });
+
 function generateCalendarDay(
   first_of_month: dayjs.Dayjs,
   _selectedDate: dayjs.Dayjs,
@@ -202,6 +203,13 @@ const Timeslot: FC<{
 );
 
 function generateSlots(date: Date): TSlot[] {
+  const NotAvailable = new Set([
+    "2024-04-28T03:00:00.000Z",
+    "2024-04-29T02:00:00.000Z",
+    "2024-04-29T03:00:00.000Z",
+    "2024-04-29T04:00:00.000Z",
+  ]);
+
   const slots = [];
   const HourOffsetFromNow = dayjs()
     .add(18, "hour")
@@ -215,11 +223,13 @@ function generateSlots(date: Date): TSlot[] {
     ? HourOffsetFromNow
     : beginningOfDay;
   while (start.get("hour") < 17) {
-    slots.push({
-      id: start.get("hour"),
-      start: start.format("HH:mm"),
-      start_time: start.toISOString(),
-    });
+    if (!NotAvailable.has(start.toISOString())) {
+      slots.push({
+        id: start.get("hour"),
+        start: start.format("HH:mm"),
+        start_time: start.toISOString(),
+      });
+    }
     start = start.add(1, "hour");
   }
   return slots;
