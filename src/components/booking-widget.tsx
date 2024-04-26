@@ -184,7 +184,7 @@ const Timeslot: FC<{
 }> = ({ slots, onChange, date }) => (
   <section className="mt-12 md:mt-0 md:pl-8">
     <span className="text-base font-semibold leading-6 text-gray-900">
-      Schedule for <time dateTime="2022-01-21">{date}</time>
+      Schedule for <time dateTime="2022-01-21">{date}</time> (Timezone: GMT+7)
     </span>
     <ol className="mt-4 space-y-1 text-sm leading-6 text-gray-500">
       {slots.map((slot) => (

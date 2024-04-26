@@ -1,6 +1,10 @@
 "use server";
 import { render } from "@react-email/render";
 import dayjs from "dayjs";
+import timezone from "dayjs/plugin/timezone";
+
+dayjs.extend(timezone);
+const TZ = "Asia/Ho_Chi_Minh";
 
 import { prisma } from "@/prisma";
 import { TUpdateBookingSchema } from "@/schema/booking";
@@ -62,7 +66,7 @@ export async function createBooking({
     const html = render(
       BookingReceiveEmail({
         preview: "Booking đã được tiếp nhận",
-        time: dayjs(result.start_time).format("ddd, HH:mm DD-MM-YYYY"),
+        time: dayjs(result.start_time).tz(TZ).format("ddd, HH:mm DD-MM-YYYY"),
         adults: result.adults,
         kids: result.kids,
         validationCode: result.code,
@@ -124,7 +128,7 @@ export async function acceptBooking({ id }: { id: string }) {
     const html = render(
       BookingConfirmEmail({
         preview: "✔ Confirm Booking",
-        time: dayjs(result.start_time).format("ddd, HH:mm DD-MM-YYYY"),
+        time: dayjs(result.start_time).tz(TZ).format("ddd, HH:mm DD-MM-YYYY"),
         adults: result.adults,
         kids: result.kids,
         validationCode: result.code,
