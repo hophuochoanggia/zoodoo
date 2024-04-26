@@ -214,15 +214,18 @@ function generateSlots(date: Date): TSlot[] {
   const HourOffsetFromNow = dayjs()
     .add(18, "hour")
     .set("minute", 0)
-    .set("second", 0);
+    .set("second", 0)
+    .set("millisecond", 0);
   const beginningOfDay = dayjs(date)
     .set("hour", 9)
     .set("minute", 0)
-    .set("second", 0);
+    .set("second", 0)
+    .set("millisecond", 0);
   let start = HourOffsetFromNow.isAfter(beginningOfDay)
     ? HourOffsetFromNow
     : beginningOfDay;
   while (start.get("hour") < 17) {
+    console.log(start.toISOString());
     if (!NotAvailable.has(start.toISOString())) {
       slots.push({
         id: start.get("hour"),
@@ -232,6 +235,7 @@ function generateSlots(date: Date): TSlot[] {
     }
     start = start.add(1, "hour");
   }
+
   return slots;
 }
 
