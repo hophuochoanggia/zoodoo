@@ -1,8 +1,10 @@
 "use server";
 import { render } from "@react-email/render";
 import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
 
+dayjs.extend(utc);
 dayjs.extend(timezone);
 const TZ = "Asia/Ho_Chi_Minh";
 
@@ -63,10 +65,15 @@ export async function createBooking({
         code: randomChar(6),
       },
     });
+
+    const time = dayjs(result.start_time)
+      .tz(TZ)
+      .format("ddd, HH:mm DD-MM-YYYY");
+
     const html = render(
       BookingReceiveEmail({
         preview: "Booking đã được tiếp nhận",
-        time: dayjs(result.start_time).tz(TZ).format("ddd, HH:mm DD-MM-YYYY"),
+        time,
         adults: result.adults,
         kids: result.kids,
         validationCode: result.code,
@@ -125,10 +132,14 @@ export async function acceptBooking({ id }: { id: string }) {
     if (!result) {
       throw new Error("Booking not found");
     }
+    const time = dayjs(result.start_time)
+      .tz(TZ)
+      .format("ddd, HH:mm DD-MM-YYYY");
+
     const html = render(
       BookingConfirmEmail({
         preview: "✔ Confirm Booking",
-        time: dayjs(result.start_time).tz(TZ).format("ddd, HH:mm DD-MM-YYYY"),
+        time,
         adults: result.adults,
         kids: result.kids,
         validationCode: result.code,
@@ -144,6 +155,7 @@ export async function acceptBooking({ id }: { id: string }) {
     });
 
     return result;
-  } catch (err) {}
-  throw new Error("Internal Server Error");
+  } catch (err) {
+    throw new Error("Internal Server Error");
+  }
 }

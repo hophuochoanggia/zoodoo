@@ -24,7 +24,7 @@ export async function sendEmail({
   html: string;
 }): Promise<{ ok: true }> {
   try {
-    await transport.sendMail({
+    const t = await transport.sendMail({
       from: `"Zoodoo" <${ENV.EMAIL_FROM}>`, // sender address
       to,
       bcc,
@@ -32,9 +32,10 @@ export async function sendEmail({
       html,
     });
 
+    console.log("T--->", t);
+
     return { ok: true };
   } catch (e: any) {
-    console.log(JSON.stringify(e, null, 2));
     return { ok: true };
     // throw new Error("Internal Server Error", { cause: e.message });
   }
