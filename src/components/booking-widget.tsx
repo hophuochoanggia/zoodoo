@@ -204,10 +204,13 @@ const Timeslot: FC<{
 
 function generateSlots(date: Date): TSlot[] {
   const NotAvailable = new Set([
+    "2024-04-28T02:00:00.000Z",
     "2024-04-28T03:00:00.000Z",
+    "2024-04-28T04:00:00.000Z",
     "2024-04-29T02:00:00.000Z",
     "2024-04-29T03:00:00.000Z",
     "2024-04-29T04:00:00.000Z",
+    "2024-04-29T08:00:00.000Z",
   ]);
 
   const slots = [];
