@@ -207,16 +207,22 @@ const Timeslot: FC<{
       Schedule for <time dateTime="2022-01-21">{date}</time> (Timezone: GMT+7)
     </span>
     <ol className="mt-4 space-y-1 text-sm leading-6 text-gray-500">
-      {slots.map((slot) => (
-        <Button
-          variant="outline"
-          className="w-full"
-          key={slot.id}
-          onClick={() => onChange(slot.start_time)}
-        >
-          {slot.start}
-        </Button>
-      ))}
+      {slots.length > 0 ? (
+        slots.map((slot) => (
+          <Button
+            variant="outline"
+            className="w-full"
+            key={slot.id}
+            onClick={() => onChange(slot.start_time)}
+          >
+            {slot.start}
+          </Button>
+        ))
+      ) : (
+        <span className="text-destructive flex items-center justify-center">
+          Không còn các suất tham quan
+        </span>
+      )}
     </ol>
   </section>
 );
