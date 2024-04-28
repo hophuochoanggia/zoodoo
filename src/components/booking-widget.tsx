@@ -178,7 +178,15 @@ const Calendar: FC<TCalendar> = ({
                   "mx-auto flex h-8 w-8 items-center justify-center rounded-full"
                 )}
               >
-                <time dateTime={day.date}>{day.date.split("-").pop()}</time>
+                <p>
+                  <time dateTime={day.date}>
+                    {_notAvailableDate.has(day.date) ? (
+                      <span className="text-destructive">Full</span>
+                    ) : (
+                      day.date.split("-").pop()
+                    )}
+                  </time>
+                </p>
               </button>
             </div>
           );
