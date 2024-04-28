@@ -38,6 +38,7 @@ type TBookingWidget = {
 type TCalendar = {
   selectedDate: Date;
   setSelectedDate: (d: Date) => void;
+  notAvailableDate: string[];
 };
 
 type TCalendarDay = {
@@ -95,7 +96,11 @@ function generateCalendarDay(
   return days;
 }
 
-const Calendar: FC<TCalendar> = ({ selectedDate, setSelectedDate }) => {
+const Calendar: FC<TCalendar> = ({
+  selectedDate,
+  setSelectedDate,
+  notAvailableDate,
+}) => {
   const _selectedDate = useMemo(() => dayjs(selectedDate), [selectedDate]);
   const [viewMonth, setViewMonth] = useState(_selectedDate.set("date", 1));
   const today = dayjs();
@@ -103,6 +108,8 @@ const Calendar: FC<TCalendar> = ({ selectedDate, setSelectedDate }) => {
     () => generateCalendarDay(viewMonth, _selectedDate, today),
     [viewMonth, _selectedDate, today]
   );
+
+  const _notAvailableDate = new Set(notAvailableDate);
 
   return (
     <div>
@@ -137,41 +144,45 @@ const Calendar: FC<TCalendar> = ({ selectedDate, setSelectedDate }) => {
         <div>CN</div>
       </div>
       <div className="mt-2 grid grid-cols-7 text-sm">
-        {days.map((day, dayIdx) => (
-          <div
-            key={day.date}
-            className={clsx(dayIdx > 6 && "border-t border-gray-200", "py-2")}
-          >
-            <button
-              type="button"
-              disabled={today.isAfter(day.date)}
-              onClick={() => {
-                setSelectedDate(dayjs(day.date).toDate());
-                setViewMonth(dayjs(day.date).set("date", 1));
-              }}
-              className={clsx(
-                today.isAfter(day.date) && "opacity-50 pointer-events-none",
-                day.isSelected && "text-white",
-                !day.isSelected && day.isToday && "text-green-light",
-                !day.isSelected &&
-                  !day.isToday &&
-                  day.isCurrentMonth &&
-                  "text-gray-900",
-                !day.isSelected &&
-                  !day.isToday &&
-                  !day.isCurrentMonth &&
-                  "text-gray-400",
-                day.isSelected && day.isToday && "bg-gray-900",
-                day.isSelected && !day.isToday && "bg-gray-900",
-                !day.isSelected && "hover:bg-gray-200",
-                (day.isSelected || day.isToday) && "font-semibold",
-                "mx-auto flex h-8 w-8 items-center justify-center rounded-full"
-              )}
+        {days.map((day, dayIdx) => {
+          const isNotAvailable =
+            today.isAfter(day.date) || _notAvailableDate.has(day.date);
+          return (
+            <div
+              key={day.date}
+              className={clsx(dayIdx > 6 && "border-t border-gray-200", "py-2")}
             >
-              <time dateTime={day.date}>{day.date.split("-").pop()}</time>
-            </button>
-          </div>
-        ))}
+              <button
+                type="button"
+                disabled={isNotAvailable}
+                onClick={() => {
+                  setSelectedDate(dayjs(day.date).toDate());
+                  setViewMonth(dayjs(day.date).set("date", 1));
+                }}
+                className={clsx(
+                  isNotAvailable && "opacity-50 pointer-events-none",
+                  day.isSelected && "text-white",
+                  !day.isSelected && day.isToday && "text-green-light",
+                  !day.isSelected &&
+                    !day.isToday &&
+                    day.isCurrentMonth &&
+                    "text-gray-900",
+                  !day.isSelected &&
+                    !day.isToday &&
+                    !day.isCurrentMonth &&
+                    "text-gray-400",
+                  day.isSelected && day.isToday && "bg-gray-900",
+                  day.isSelected && !day.isToday && "bg-gray-900",
+                  !day.isSelected && "hover:bg-gray-200",
+                  (day.isSelected || day.isToday) && "font-semibold",
+                  "mx-auto flex h-8 w-8 items-center justify-center rounded-full"
+                )}
+              >
+                <time dateTime={day.date}>{day.date.split("-").pop()}</time>
+              </button>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
@@ -204,13 +215,24 @@ const Timeslot: FC<{
 
 function generateSlots(date: Date): TSlot[] {
   const NotAvailable = new Set([
-    "2024-04-28T02:00:00.000Z",
-    "2024-04-28T03:00:00.000Z",
-    "2024-04-28T04:00:00.000Z",
     "2024-04-29T02:00:00.000Z",
     "2024-04-29T03:00:00.000Z",
     "2024-04-29T04:00:00.000Z",
+    "2024-04-29T05:00:00.000Z",
+    "2024-04-29T06:00:00.000Z",
+    "2024-04-29T07:00:00.000Z",
     "2024-04-29T08:00:00.000Z",
+    "2024-04-29T09:00:00.000Z",
+    "2024-04-29T10:00:00.000Z",
+    "2024-04-30T02:00:00.000Z",
+    "2024-04-30T03:00:00.000Z",
+    "2024-04-30T04:00:00.000Z",
+    "2024-04-30T05:00:00.000Z",
+    "2024-04-30T06:00:00.000Z",
+    "2024-04-30T07:00:00.000Z",
+    "2024-04-30T08:00:00.000Z",
+    "2024-04-30T09:00:00.000Z",
+    "2024-04-30T10:00:00.000Z",
   ]);
 
   const slots = [];
@@ -228,7 +250,6 @@ function generateSlots(date: Date): TSlot[] {
     ? HourOffsetFromNow
     : beginningOfDay;
   while (start.get("hour") < 17) {
-    console.log(start.toISOString());
     if (!NotAvailable.has(start.toISOString())) {
       slots.push({
         id: start.get("hour"),
@@ -279,6 +300,8 @@ export const BookingWidget: FC<TBookingWidget> = ({
     setSlots({ isLoading: false, data: genericSlot });
   }, [selectedDate]);
 
+  const notAvailableDate = ["2024-04-29", "2024-04-30"];
+
   return (
     <Dialog
       onOpenChange={(e) => {
@@ -328,6 +351,7 @@ export const BookingWidget: FC<TBookingWidget> = ({
                   <Calendar
                     selectedDate={selectedDate}
                     setSelectedDate={setSelectedDate}
+                    notAvailableDate={notAvailableDate}
                   />
                 </div>
                 <div className="col-span-2 pr-4">
