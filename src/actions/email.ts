@@ -25,7 +25,7 @@ export async function sendEmail({
 }): Promise<{ ok: true }> {
   try {
     const t = await transport.sendMail({
-      from: `"Zoodoo" <${ENV.EMAIL_FROM}>`, // sender address
+      from: `"ZooDoo" <${ENV.EMAIL_FROM}>`, // sender address
       to,
       bcc,
       subject,

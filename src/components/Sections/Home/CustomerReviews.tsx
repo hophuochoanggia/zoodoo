@@ -23,7 +23,7 @@ const slides = [
   {
     user: "Phạm Yun",
     description:
-      "Điểm đến cực kỳ lý tưởng cho những ai yêu động vật. Thú được chăm sóc tốt, sạch sẽ, thân thiện với con người.Nhóm mình đã có một trải nghiệm tuyệt vời ở Zoodoo, có bạn dẫn đoàn tên Hoàng rất nhiệt tình và hiểu biết về các bé thú. Nhất định sẽ quay lại.",
+      "Điểm đến cực kỳ lý tưởng cho những ai yêu động vật. Thú được chăm sóc tốt, sạch sẽ, thân thiện với con người.Nhóm mình đã có một trải nghiệm tuyệt vời ở ZooDoo, có bạn dẫn đoàn tên Hoàng rất nhiệt tình và hiểu biết về các bé thú. Nhất định sẽ quay lại.",
   },
   {
     user: "Cao Thị Thanh Thảo",
@@ -33,7 +33,7 @@ const slides = [
   {
     user: "Sơn Nguyễn",
     description:
-      "Điểm đến cực kỳ lý tưởng cho những ai yêu động vật. Thú được chăm sóc tốt, sạch sẽ, thân thiện với con người. Nhóm mình đã có một trải nghiệm tuyệt vời ở Zoodoo.",
+      "Điểm đến cực kỳ lý tưởng cho những ai yêu động vật. Thú được chăm sóc tốt, sạch sẽ, thân thiện với con người. Nhóm mình đã có một trải nghiệm tuyệt vời ở ZooDoo.",
   },
   ,
 ];

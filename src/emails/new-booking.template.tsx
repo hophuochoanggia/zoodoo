@@ -43,7 +43,7 @@ export const BookingReceiveEmail = ({
         </Section>
         <Heading style={h1}>Lịch hẹn</Heading>
         <Text style={heroText}>
-          Lịch hẹn của bạn đã được tiếp nhận Zoodoo vẫn cần xác nhận lịch hẹn.
+          Lịch hẹn của bạn đã được tiếp nhận ZooDoo vẫn cần xác nhận lịch hẹn.
         </Text>
 
         <Section style={codeBox}>
